@@ -1,39 +1,89 @@
-import Link from "next/link";
+"use client";
+
+import { motion } from "framer-motion";
 import { Container } from "@/components/container";
+import { ServiceCard } from "@/components/service-card";
+import { Comparison } from "@/components/comparison";
+import { AntiPositioning } from "@/components/anti-positioning";
+import { PageCTA } from "@/components/page-cta";
 import { services } from "@/data/site";
 
-export const metadata = { title: "Services" };
+const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 
-export default function Services() {
+export const dynamic = "force-static";
+
+export default function ServicesIndex() {
   return (
-    <section className="pt-24 pb-32 md:pt-32">
-      <Container size="narrow">
-        <p className="eyebrow mb-6">Services</p>
-        <h1 className="text-[var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold">
-          Three practices. One senior partner each.
-        </h1>
-        <p className="text-[var(--text-body-xl)] text-[var(--color-mute)] mt-6">
-          HR Support and Editorial run by Evert. Workplace Mediation run by Wendy. No analysts. No outsourcing.
-        </p>
+    <>
+      {/* HEADER */}
+      <section className="bg-[var(--color-paper)] pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-20">
+        <Container size="wide">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="max-w-4xl"
+          >
+            <p className="eyebrow mb-8">Services</p>
+            <h1 className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
+              Three practices.<br />
+              <span className="text-[var(--color-secondary)]">One senior partner each.</span>
+            </h1>
+            <p className="text-[length:var(--text-body-xl)] leading-[1.55] text-[var(--color-mute)] max-w-2xl">
+              Fractional HR with Evert. Workplace mediation with Wendy. Editorial and communications with Evert. No retainers required. No junior staff on the file.
+            </p>
+          </motion.div>
+        </Container>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-16">
-          {services.map((s) => (
-            <Link
-              key={s.slug}
-              href={`/services/${s.slug}`}
-              className="group block rounded-2xl bg-[var(--color-surface)] p-8 hover:bg-[#ececef] transition-colors"
-            >
-              <p className="text-[11px] uppercase tracking-[0.1em] font-medium text-[var(--color-accent)] mb-3">{s.principal}</p>
-              <h3 className="text-[22px] font-semibold tracking-tight mb-3">{s.name}</h3>
-              <p className="text-[15px] leading-[1.55] text-[var(--color-mute)] mb-6">{s.blurb}</p>
-              <span className="inline-flex items-center gap-1 text-[15px] text-[var(--color-accent)]">
-                Learn more
-                <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">›</span>
-              </span>
-            </Link>
-          ))}
-        </div>
-      </Container>
-    </section>
+      {/* SERVICE CARDS */}
+      <section className="py-20 md:py-24 bg-[var(--color-paper)]">
+        <Container size="wide">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {services.map((s, i) => (
+              <ServiceCard key={s.slug} service={s} index={i} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* WHAT WE DON'T DO */}
+      <AntiPositioning />
+
+      {/* WHY XNL */}
+      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
+        <Container size="wide">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="max-w-4xl mb-12 md:mb-16"
+          >
+            <p className="eyebrow mb-8">Why XNL</p>
+            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-6">
+              Three ways to solve an HR problem.<br />
+              <span className="text-[var(--color-secondary)]">One that doesn&rsquo;t cost a year of overhead.</span>
+            </h2>
+          </motion.div>
+          <div className="overflow-x-auto -mx-6 md:mx-0 px-6 md:px-0">
+            <div className="min-w-[820px] md:min-w-0">
+              <Comparison />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <PageCTA
+        eyebrow="Next step"
+        headline={
+          <>
+            Not sure which fits?<br />
+            <span className="text-brand-gradient">We&rsquo;ll tell you straight.</span>
+          </>
+        }
+        subhead="30-minute intake, no cost. If XNL isn't the right fit, we'll refer you to someone who is."
+      />
+    </>
   );
 }

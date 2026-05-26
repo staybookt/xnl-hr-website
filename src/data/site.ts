@@ -14,11 +14,7 @@ export const contact = {
   phone: "289.338.4001",
   phoneE164: "+12893384001",
   email: "info@xnlhr.com",
-  address: {
-    locality: "Newmarket",
-    region: "ON",
-    country: "Canada",
-  },
+  address: { locality: "Newmarket", region: "ON", country: "Canada" },
   hours: "Mon–Fri 9–5 ET",
 } as const;
 
@@ -31,7 +27,7 @@ export const principals = {
   },
   wendy: {
     name: "Wendy Akkerman",
-    credential: "Mediation",
+    credential: "Mediator",
     role: "Workplace Mediation",
     linkedin: "",
     launchNote: "Now booking",
@@ -46,45 +42,16 @@ export const nav = [
 ] as const;
 
 export const scenarios = [
-  {
-    key: "termination",
-    label: "Just terminated someone",
-    context: "Recent termination — we'll help you get the file right, contain risk, and document defensibly.",
-    urgency: "Usually same-week response",
-  },
-  {
-    key: "hrto",
-    label: "Got an HRTO notice",
-    context: "HRTO notice received — we'll walk you through mediation prep, response strategy, and timelines.",
-    urgency: "Time-sensitive — we'll prioritize",
-  },
-  {
-    key: "handbook",
-    label: "Handbook is 5+ years old",
-    context: "Handbook rewrite — we'll audit your current handbook and rebuild against current ESA, OHSA, and AODA standards.",
-    urgency: "Typically 2–4 weeks",
-  },
-  {
-    key: "turnover",
-    label: "Turnover is bleeding us",
-    context: "Turnover analysis — we'll diagnose root causes and design retention interventions that actually hold.",
-    urgency: "Diagnostic in 2 weeks",
-  },
+  { key: "termination", label: "Just terminated someone", context: "Recent termination — we'll help you get the file right, contain risk, and document defensibly.", urgency: "Usually same-week response" },
+  { key: "hrto", label: "Got an HRTO notice", context: "HRTO notice received — we'll walk you through mediation prep, response strategy, and timelines.", urgency: "Time-sensitive — we'll prioritize" },
+  { key: "handbook", label: "Handbook is 5+ years old", context: "Handbook rewrite — we'll audit your current handbook and rebuild against current ESA, OHSA, and AODA standards.", urgency: "Typically 2–4 weeks" },
+  { key: "turnover", label: "Turnover is bleeding us", context: "Turnover analysis — we'll diagnose root causes and design retention interventions that actually hold.", urgency: "Diagnostic in 2 weeks" },
 ] as const;
 
 export const wontDo = [
-  {
-    title: "Payroll processing",
-    body: "We don't run your payroll. That's ADP, Wagepoint, or Ceridian.",
-  },
-  {
-    title: "ATS implementation",
-    body: "We won't configure your applicant tracking system. That's Greenhouse or Lever support.",
-  },
-  {
-    title: "EOR / PEO services",
-    body: "We're not your employer of record. That's Justworks, Borderless, or Deel.",
-  },
+  { title: "Payroll processing", body: "We don't run your payroll. That's ADP, Wagepoint, or Ceridian." },
+  { title: "ATS implementation", body: "We won't configure your applicant tracking system. That's Greenhouse or Lever support." },
+  { title: "EOR / PEO services", body: "We're not your employer of record. That's Justworks, Borderless, or Deel." },
 ] as const;
 
 export const services = [
@@ -92,14 +59,12 @@ export const services = [
     slug: "hr-support",
     name: "Fractional HR",
     principal: "Evert Akkerman",
-    blurb:
-      "Hiring, terminations, handbooks, policy, compliance. The outsourced HR department, scoped by the project.",
+    blurb: "Hiring, terminations, handbooks, policy, compliance. The outsourced HR department, scoped by the project.",
     forLine: "For owner-operated employers without an in-house HR lead.",
     engagement: "Project or retainer",
-    price: "From $2,500",                  // PLACEHOLDER
-    typicalLength: "2–4 weeks per project",  // PLACEHOLDER
-    anonymizedCase:
-      "Manufacturer, 80 employees. Terminated CFO without documented cause. We rebuilt the file and the settlement landed at $35k instead of the projected $140k.",  // PLACEHOLDER — fictional
+    price: "From $2,500",
+    typicalLength: "2–4 weeks per project",
+    anonymizedCase: "Manufacturer, 80 employees. Terminated CFO without documented cause. We rebuilt the file and the settlement landed at $35k instead of the projected $140k.",
     icon: "briefcase",
     gradient: "linear-gradient(135deg, #1A1D24 0%, #2D3D4E 50%, #6B5F7D 100%)",
   },
@@ -107,14 +72,12 @@ export const services = [
     slug: "mediation",
     name: "Workplace Mediation",
     principal: "Wendy Akkerman · Now booking",
-    blurb:
-      "Independent mediation for workplace conflict, harassment complaints, and termination disputes. Timed to the HRTO mandatory-mediation rule.",
+    blurb: "Independent mediation for workplace conflict, harassment complaints, and termination disputes. Timed to the HRTO mandatory-mediation rule.",
     forLine: "For employers facing internal conflict or HRTO proceedings.",
     engagement: "Per-session",
-    price: "From $1,800",                          // PLACEHOLDER
-    typicalLength: "Half-day or full-day sessions",  // PLACEHOLDER
-    anonymizedCase:
-      "NFP board, harassment complaint between ED and program director. Two half-day sessions. Both stayed. No formal complaint filed.",  // PLACEHOLDER — fictional
+    price: "From $1,800",
+    typicalLength: "Half-day or full-day sessions",
+    anonymizedCase: "NFP board, harassment complaint between ED and program director. Two half-day sessions. Both stayed. No formal complaint filed.",
     icon: "scale",
     gradient: "linear-gradient(135deg, #2D3D4E 0%, #6B5F7D 50%, #A8B5A8 100%)",
   },
@@ -122,84 +85,31 @@ export const services = [
     slug: "editorial",
     name: "Editorial & Communications",
     principal: "Evert Akkerman",
-    blurb:
-      "Op-eds, board memos, communications plans, book editing, EN↔NL translation. Drawn from 25+ Canadian bylines.",
+    blurb: "Op-eds, board memos, communications plans, book editing, EN↔NL translation. Drawn from 25+ Canadian bylines.",
     forLine: "For leaders who need a clearer voice in public or internal communication.",
     engagement: "Per-project",
-    price: "From $1,200",                  // PLACEHOLDER
-    typicalLength: "1–3 weeks per project",  // PLACEHOLDER
-    anonymizedCase:
-      "Professional services firm. Founder needed a board memo on a partner exit. 48-hour turnaround. The memo carried the room.",  // PLACEHOLDER — fictional
+    price: "From $1,200",
+    typicalLength: "1–3 weeks per project",
+    anonymizedCase: "Professional services firm. Founder needed a board memo on a partner exit. 48-hour turnaround. The memo carried the room.",
     icon: "pen",
     gradient: "linear-gradient(135deg, #1A1D24 0%, #2D3D4E 60%, #FAF7F2 100%)",
   },
 ] as const;
 
-export const credentials = [
-  "Since 2012",
-  "CHRL",
-  "LL.M. (NL)",
-  "Randstad Innovation in HR Award",
-  "Canada's Top-25 HR · 2016, 2017",
-] as const;
+export const credentials = ["Since 2012", "CHRL", "LL.M. (NL)", "Randstad Innovation in HR Award", "Canada's Top-25 HR · 2016, 2017"] as const;
 
-// Testimonials — PLACEHOLDER quotes + attribution (see PLACEHOLDERS.md)
 export const testimonials = [
-  {
-    quote:
-      "We had a termination going sideways and a board meeting in 72 hours. Evert had us documented, defensible, and confident before the meeting. The room felt different.",
-    role: "Executive Director",
-    org: "Mid-size Ontario nonprofit",
-    placeholder: true,
-  },
-  {
-    quote:
-      "Wendy made a hard conversation possible without making it harder. Two sessions and the team is still intact.",
-    role: "Founder + CEO",
-    org: "Professional services firm",
-    placeholder: true,
-  },
-  {
-    quote:
-      "Evert wrote the board memo I'd been trying to write for two weeks. It landed in 20 minutes of his time.",
-    role: "COO",
-    org: "Ontario municipal corporation",
-    placeholder: true,
-  },
+  { quote: "We had a termination going sideways and a board meeting in 72 hours. Evert had us documented, defensible, and confident before the meeting. The room felt different.", role: "Executive Director", org: "Mid-size Ontario nonprofit", placeholder: true },
+  { quote: "Wendy made a hard conversation possible without making it harder. Two sessions and the team is still intact.", role: "Founder + CEO", org: "Professional services firm", placeholder: true },
+  { quote: "Evert wrote the board memo I'd been trying to write for two weeks. It landed in 20 minutes of his time.", role: "COO", org: "Ontario municipal corporation", placeholder: true },
 ] as const;
 
-// Recent thinking — PLACEHOLDER article previews (see PLACEHOLDERS.md)
 export const articles = [
-  {
-    title: "Why the cheapest HR mistake is the one you spot first",
-    publication: "Canadian HR Reporter",
-    date: "March 2026",
-    excerpt:
-      "Most wrongful dismissal claims have a signal weeks before they file. The cost of catching them early vs. defending them later isn't close.",
-    url: "#",
-    placeholder: true,
-  },
-  {
-    title: "Mandatory mediation: what Ontario employers should be doing right now",
-    publication: "The Lawyer's Daily",
-    date: "January 2026",
-    excerpt:
-      "The HRTO mandatory-mediation rule took effect in June 2025. Most employers still treat mediation as a courtroom delay. Here's why that's the wrong instinct.",
-    url: "#",
-    placeholder: true,
-  },
-  {
-    title: "Hiring is a search problem, not a sales problem",
-    publication: "Municipal World",
-    date: "November 2025",
-    excerpt:
-      "The best hires aren't sold on you. They're found. That distinction changes the entire process, the cost, and the retention math.",
-    url: "#",
-    placeholder: true,
-  },
+  { title: "Why the cheapest HR mistake is the one you spot first", publication: "Canadian HR Reporter", date: "March 2026", excerpt: "Most wrongful dismissal claims have a signal weeks before they file. The cost of catching them early vs. defending them later isn't close.", url: "#", placeholder: true },
+  { title: "Mandatory mediation: what Ontario employers should be doing right now", publication: "The Lawyer's Daily", date: "January 2026", excerpt: "The HRTO mandatory-mediation rule took effect in June 2025. Most employers still treat mediation as a courtroom delay. Here's why that's the wrong instinct.", url: "#", placeholder: true },
+  { title: "Hiring is a search problem, not a sales problem", publication: "Municipal World", date: "November 2025", excerpt: "The best hires aren't sold on you. They're found. That distinction changes the entire process, the cost, and the retention math.", url: "#", placeholder: true },
 ] as const;
 
-// Publication wordmark styling — typographic variation to evoke real wordmarks
 export const publications = [
   { name: "Canadian HR Reporter", weight: 700, tracking: "-0.025em", style: "normal" },
   { name: "Municipal World", weight: 300, tracking: "0.02em", style: "italic" },
@@ -211,42 +121,77 @@ export const publications = [
 ] as const;
 
 export const faqs = [
-  {
-    q: "How is XNL different from a traditional HR firm?",
-    a: "One senior partner on every file. No retainers required, no junior analysts, no bait-and-switch from the partner you signed with to the staff who actually do the work. You hire Evert (or Wendy for mediation), and Evert (or Wendy) does the work.",
-  },
-  {
-    q: "What does an engagement cost?",
-    a: "Project work is fixed-fee. Ongoing support is hourly with a cap. We scope it transparently during the intake call. There are no monthly retainers you can't opt out of — you pay for the work we actually do.",
-  },
-  {
-    q: "How fast can you start?",
-    a: "Intake call within 48 hours. Scoped proposal in 3 business days. Live engagement typically within two weeks of the intake. Urgent terminations or HRTO proceedings can move faster.",
-  },
-  {
-    q: "Do you work with companies outside Ontario?",
-    a: "Most engagements are Ontario-based since that's where Evert is licensed and where the legal frameworks (ESA, OHSA, AODA, HRTO) sit. We'll take federally regulated work and out-of-province engagements case by case.",
-  },
-  {
-    q: "What size company is the right fit?",
-    a: "Owner-operated SMBs (15–250 employees) and not-for-profits without a senior HR lead. Below that, you usually don't need fractional HR. Above that, you typically have an HR team and want a senior advisor on specific projects.",
-  },
-  {
-    q: "Can you handle just the mediation, without the rest?",
-    a: "Yes. Wendy's mediation practice is independent — we'll mediate a single workplace dispute or HRTO matter without any other XNL engagement attached.",
-  },
-  {
-    q: "What if I'm not sure XNL is the right fit?",
-    a: "That's what the 30-minute intake call is for. No cost, no obligation. If we're not the right fit, we'll tell you straight — and we'll refer you to someone who is.",
-  },
+  { q: "How is XNL different from a traditional HR firm?", a: "One senior partner on every file. No retainers required, no junior analysts, no bait-and-switch from the partner you signed with to the staff who actually do the work. You hire Evert (or Wendy for mediation), and Evert (or Wendy) does the work." },
+  { q: "What does an engagement cost?", a: "Project work is fixed-fee. Ongoing support is hourly with a cap. We scope it transparently during the intake call. There are no monthly retainers you can't opt out of — you pay for the work we actually do." },
+  { q: "How fast can you start?", a: "Intake call within 48 hours. Scoped proposal in 3 business days. Live engagement typically within two weeks of the intake. Urgent terminations or HRTO proceedings can move faster." },
+  { q: "Do you work with companies outside Ontario?", a: "Most engagements are Ontario-based since that's where Evert is licensed and where the legal frameworks (ESA, OHSA, AODA, HRTO) sit. We'll take federally regulated work and out-of-province engagements case by case." },
+  { q: "What size company is the right fit?", a: "Owner-operated SMBs (15–250 employees) and not-for-profits without a senior HR lead. Below that, you usually don't need fractional HR. Above that, you typically have an HR team and want a senior advisor on specific projects." },
+  { q: "Can you handle just the mediation, without the rest?", a: "Yes. Wendy's mediation practice is independent — we'll mediate a single workplace dispute or HRTO matter without any other XNL engagement attached." },
+  { q: "What if I'm not sure XNL is the right fit?", a: "That's what the 30-minute intake call is for. No cost, no obligation. If we're not the right fit, we'll tell you straight — and we'll refer you to someone who is." },
 ] as const;
 
-export const comparison = {
-  rows: [
-    { label: "Pricing model", traditional: "Monthly retainer, often $5k–$15k", inhouse: "$90k–$160k salary + benefits", xnl: "Fixed-fee project or capped hourly" },
-    { label: "Who's on the file", traditional: "Junior staff, partner reviews", inhouse: "One generalist", xnl: "Senior partner directly" },
-    { label: "Time to start", traditional: "2–6 weeks (RFP, onboarding)", inhouse: "3–6 months (hire, ramp)", xnl: "Under 2 weeks" },
-    { label: "Specialty depth", traditional: "Broad but generic", inhouse: "Day-to-day only", xnl: "25 years, published" },
-    { label: "Lock-in", traditional: "6–12 month contracts", inhouse: "Permanent overhead", xnl: "Project-by-project" },
-  ],
-} as const;
+// Service-specific FAQs
+export const mediationFaqs = [
+  { q: "What does a mediation session cost?", a: "Half-day sessions start at $1,800. Full-day sessions $3,000. HRTO mandatory mediation matters quoted per file. [Placeholder — Wendy to confirm.]" },
+  { q: "Virtual or in-person?", a: "Both. Most workplace disputes resolve faster in person; HRTO mandatory mediation usually runs virtual. Your preference, we accommodate." },
+  { q: "What if the parties don't settle?", a: "Written impasse statement at close, preserving the mediation record. The matter proceeds through its formal channel without prejudice to what was discussed in mediation." },
+  { q: "Is it confidential?", a: "Yes. All parties sign a confidentiality agreement at intake. Nothing discussed in mediation is admissible if the matter proceeds to a tribunal or court, with limited statutory exceptions." },
+  { q: "Do you handle the new Ontario HRTO mandatory-mediation rule?", a: "Yes. The rule took effect in June 2025 — most HRTO applications now require mediation before a hearing. Wendy's practice is built around it." },
+  { q: "How is this different from arbitration?", a: "Mediation is voluntary settlement-seeking; the mediator has no authority to impose an outcome. Arbitration is adjudicative — the arbitrator decides. We mediate. We do not arbitrate." },
+  { q: "When is mediation NOT the right call?", a: "Active criminal proceedings, court orders pending, or when one party refuses to participate in good faith. We'll tell you straight at intake." },
+] as const;
+
+export const hrSupportFaqs = [
+  { q: "What's the smallest project you'll take?", a: "A scoped one-week piece — typically a termination file, a single policy review, or a job description rebuild. Below that we usually refer you to a templated solution." },
+  { q: "Do you do monthly retainers?", a: "Only if it genuinely serves you. The default is project-based fixed-fee or capped hourly. Most clients prefer it that way — you pay for the work we do, not a slot on the calendar." },
+  { q: "What's the typical first engagement?", a: "Three patterns come up most often: a termination prep + documentation file, a handbook audit + rewrite, or a policy stack review for a specific compliance gap (ESA, OHSA, AODA)." },
+  { q: "Do you handle unionized workplaces?", a: "Yes, case by case. Collective agreement work, grievance preparation, and progressive discipline matters in a union environment — Evert has done all of it. Not every union file is the right fit; we scope at intake." },
+  { q: "Can Evert sit in on a board meeting?", a: "Yes, as an HR advisor. Especially useful around senior terminations, ED/CEO performance conversations, and post-incident reviews." },
+  { q: "What if we already have HR staff?", a: "Then we're an advisor, not a replacement. The best engagements alongside in-house HR are senior-level matters (executive terminations, policy overhauls, HRTO defense) where your HR team needs depth, not bandwidth." },
+] as const;
+
+export const editorialFaqs = [
+  { q: "What can you write?", a: "Op-eds, board memos, internal communications plans, book editing, technical HR writing, and EN↔NL translation. The throughline is plain, direct, defensible language for senior audiences." },
+  { q: "How long is a typical project?", a: "One to three weeks per piece. Urgent pieces can move faster (48-hour minimum). Book-length editing runs longer and scopes separately." },
+  { q: "Do you ghostwrite?", a: "Yes, both attributed and unattributed. Many of Evert's bylines began as ghostwriting engagements for HR leaders; the client gets to decide whose name lands on it." },
+  { q: "What's the turnaround on urgent work?", a: "48 hours minimum for a one-page memo. Tighter than that, we'll tell you straight whether we can deliver." },
+  { q: "Do you handle technical HR writing?", a: "That's the wheelhouse. 25+ bylines in Canadian HR Reporter, Municipal World, Talent Canada, and The Lawyer's Daily — specifically on HR, employment law, and workplace governance." },
+  { q: "Can you work in Dutch?", a: "Yes. Evert is Dutch-native and works EN↔NL fluently — useful for Canadian subsidiaries of Dutch parent companies or for North American firms with operations in the Netherlands." },
+] as const;
+
+// Mediation: what we mediate
+export const mediationCovers = [
+  { title: "Workplace conflict", body: "Peer-to-peer disputes, manager-to-report breakdowns, team-level dysfunction." },
+  { title: "Harassment complaints", body: "Formal or informal complaints, before or during investigation." },
+  { title: "Termination disputes", body: "Severance negotiations, reference language, post-termination grievances." },
+  { title: "HRTO applications", body: "Mandatory mediation prep and representation under the June 2025 rule." },
+  { title: "Board-level conflicts", body: "ED vs. board, between board members, NFP governance disputes." },
+  { title: "Post-layoff settlements", body: "Group settlement frameworks following workforce reductions." },
+] as const;
+
+export const mediationProcess = [
+  { n: "01", title: "Intake call", time: "30 min, no cost", body: "Both parties separately. We confirm the matter is mediable and scope the session(s)." },
+  { n: "02", title: "Pre-session prep", time: "3–5 business days", body: "Document review, position briefs from each side, confidentiality agreements signed." },
+  { n: "03", title: "Session", time: "Half-day or full-day", body: "Wendy mediates. Joint and separate caucus as needed. Settlement, partial settlement, or impasse." },
+  { n: "04", title: "Written record", time: "Within 5 business days", body: "Signed settlement agreement or impasse statement. The matter is closed or proceeds with full record intact." },
+] as const;
+
+// HR Support: what we cover
+export const hrSupportCovers = [
+  { title: "Hiring + onboarding", body: "Job description rebuilds, interview structure, offer letters, onboarding programs." },
+  { title: "Terminations", body: "Termination prep, documentation, severance calculations, exit conversations." },
+  { title: "Handbooks + policy", body: "Full handbook audits and rewrites, single-policy reviews, compliance gap analyses." },
+  { title: "Compliance", body: "ESA, OHSA, AODA, pay equity, accessibility audits and remediation." },
+  { title: "Performance management", body: "PIP design, progressive discipline frameworks, performance review systems." },
+  { title: "Senior advisory", body: "Executive terminations, board-level HR strategy, post-incident reviews." },
+] as const;
+
+// Editorial: what we write
+export const editorialCovers = [
+  { title: "Op-eds", body: "Bylined or ghostwritten thought leadership for HR trade press and general media." },
+  { title: "Board memos", body: "Senior decision documents, governance briefings, board-pack content." },
+  { title: "Communications plans", body: "Internal change announcements, layoff messaging, organizational transition comms." },
+  { title: "Book editing", body: "Developmental and structural editing for HR, leadership, and professional services books." },
+  { title: "Technical HR writing", body: "Compliance documentation, policy explainers, training material that holds up to scrutiny." },
+  { title: "EN ↔ NL translation", body: "Native-quality Dutch translation of HR, legal, and business documents." },
+] as const;
