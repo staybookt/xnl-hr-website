@@ -88,7 +88,7 @@ export default function EditorialPage() {
         </div>
       </section>
 
-      {/* PUBLISHED IN strip (specific to editorial) */}
+      {/* PUBLISHED IN strip */}
       <section className="py-12 md:py-14 bg-[var(--color-brand-soft)] border-y border-[var(--color-rule)]">
         <Container size="wide">
           <div className="flex flex-col md:flex-row items-baseline gap-4 md:gap-8">
@@ -99,7 +99,12 @@ export default function EditorialPage() {
               {publications.map((p, i) => (
                 <span
                   key={p.name}
-                  style={{ fontWeight: p.weight, letterSpacing: p.tracking, fontStyle: p.style, textTransform: ("uppercase" in p && p.uppercase ? "uppercase" : "none") as React.CSSProperties["textTransform"] }}
+                  style={{
+                    fontWeight: p.weight,
+                    letterSpacing: p.tracking,
+                    fontStyle: p.style,
+                    textTransform: p.uppercase ? "uppercase" : "none",
+                  }}
                 >
                   {p.name}
                   {i < publications.length - 1 && (

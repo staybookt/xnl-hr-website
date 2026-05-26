@@ -110,14 +110,15 @@ export const articles = [
   { title: "Hiring is a search problem, not a sales problem", publication: "Municipal World", date: "November 2025", excerpt: "The best hires aren't sold on you. They're found. That distinction changes the entire process, the cost, and the retention math.", url: "#", placeholder: true },
 ] as const;
 
+// Publication wordmark styling — normalized so every entry has the same shape
 export const publications = [
-  { name: "Canadian HR Reporter", weight: 700, tracking: "-0.025em", style: "normal" },
-  { name: "Municipal World", weight: 300, tracking: "0.02em", style: "italic" },
-  { name: "Ottawa Life", weight: 400, tracking: "0.04em", style: "italic" },
-  { name: "Talent Canada", weight: 700, tracking: "-0.03em", style: "normal" },
-  { name: "The Lawyer's Daily", weight: 400, tracking: "0.01em", style: "italic" },
+  { name: "Canadian HR Reporter", weight: 700, tracking: "-0.025em", style: "normal", uppercase: false },
+  { name: "Municipal World", weight: 300, tracking: "0.02em", style: "italic", uppercase: false },
+  { name: "Ottawa Life", weight: 400, tracking: "0.04em", style: "italic", uppercase: false },
+  { name: "Talent Canada", weight: 700, tracking: "-0.03em", style: "normal", uppercase: false },
+  { name: "The Lawyer's Daily", weight: 400, tracking: "0.01em", style: "italic", uppercase: false },
   { name: "HR Professional Now", weight: 500, tracking: "0.12em", style: "normal", uppercase: true },
-  { name: "HRD Canada", weight: 700, tracking: "-0.015em", style: "italic" },
+  { name: "HRD Canada", weight: 700, tracking: "-0.015em", style: "italic", uppercase: false },
 ] as const;
 
 export const faqs = [
@@ -130,7 +131,6 @@ export const faqs = [
   { q: "What if I'm not sure XNL is the right fit?", a: "That's what the 30-minute intake call is for. No cost, no obligation. If we're not the right fit, we'll tell you straight — and we'll refer you to someone who is." },
 ] as const;
 
-// Service-specific FAQs
 export const mediationFaqs = [
   { q: "What does a mediation session cost?", a: "Half-day sessions start at $1,800. Full-day sessions $3,000. HRTO mandatory mediation matters quoted per file. [Placeholder — Wendy to confirm.]" },
   { q: "Virtual or in-person?", a: "Both. Most workplace disputes resolve faster in person; HRTO mandatory mediation usually runs virtual. Your preference, we accommodate." },
@@ -159,7 +159,6 @@ export const editorialFaqs = [
   { q: "Can you work in Dutch?", a: "Yes. Evert is Dutch-native and works EN↔NL fluently — useful for Canadian subsidiaries of Dutch parent companies or for North American firms with operations in the Netherlands." },
 ] as const;
 
-// Mediation: what we mediate
 export const mediationCovers = [
   { title: "Workplace conflict", body: "Peer-to-peer disputes, manager-to-report breakdowns, team-level dysfunction." },
   { title: "Harassment complaints", body: "Formal or informal complaints, before or during investigation." },
@@ -176,7 +175,6 @@ export const mediationProcess = [
   { n: "04", title: "Written record", time: "Within 5 business days", body: "Signed settlement agreement or impasse statement. The matter is closed or proceeds with full record intact." },
 ] as const;
 
-// HR Support: what we cover
 export const hrSupportCovers = [
   { title: "Hiring + onboarding", body: "Job description rebuilds, interview structure, offer letters, onboarding programs." },
   { title: "Terminations", body: "Termination prep, documentation, severance calculations, exit conversations." },
@@ -186,7 +184,6 @@ export const hrSupportCovers = [
   { title: "Senior advisory", body: "Executive terminations, board-level HR strategy, post-incident reviews." },
 ] as const;
 
-// Editorial: what we write
 export const editorialCovers = [
   { title: "Op-eds", body: "Bylined or ghostwritten thought leadership for HR trade press and general media." },
   { title: "Board memos", body: "Senior decision documents, governance briefings, board-pack content." },

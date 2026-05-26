@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/container";
@@ -7,7 +8,7 @@ import { contact } from "@/data/site";
 
 type Props = {
   eyebrow?: string;
-  headline: React.ReactNode;
+  headline: ReactNode;
   subhead?: string;
 };
 
