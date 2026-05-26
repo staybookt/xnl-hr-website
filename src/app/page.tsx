@@ -56,7 +56,7 @@ export default function Home() {
 
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
           <div className="max-w-[1440px] mx-auto flex items-start justify-between text-white/65">
-            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">Fig. 01 — XNL</span>
+            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">XNL</span>
             <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">Newmarket, ON · Est. 2012</span>
           </div>
         </div>
@@ -129,7 +129,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: SLOW_OUT }}
             className="max-w-4xl mb-16 md:mb-24"
           >
-            <p className="eyebrow mb-8">Fig. 02 — What we do</p>
+            <p className="eyebrow mb-8">What we do</p>
             <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
               Three practices.<br />
               <span className="text-[var(--color-secondary)]">One senior partner each.</span>
@@ -154,7 +154,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: SLOW_OUT }}
             className="max-w-4xl mb-16 md:mb-24"
           >
-            <p className="eyebrow mb-8">Fig. 03 — How it works</p>
+            <p className="eyebrow mb-8">How it works</p>
             <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
               Intro call to live engagement.<br />
               <span className="text-[var(--color-brand-deep)]">Under two weeks.</span>
@@ -180,7 +180,7 @@ export default function Home() {
                     Step {step.n}
                   </span>
                 </div>
-                <h3 className="text-[24px] md:text-[28px] leading-[1.15] tracking-[-0.02em] font-semibold text-[var(--color-ink)] mb-2">
+                <h3 className="text-[24px] md:text-[28px] leading-[1.15] tracking-[-0.02em] font-semibold text-[var(--color-ink)] mb-4">
                   {step.title}
                 </h3>
                 <p className="text-[12px] uppercase tracking-[0.12em] font-semibold text-[var(--color-secondary-deep)] mb-4">
@@ -203,7 +203,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: SLOW_OUT }}
             className="max-w-4xl mb-12 md:mb-16"
           >
-            <p className="eyebrow mb-8">Fig. 04 — Why XNL</p>
+            <p className="eyebrow mb-8">Why XNL</p>
             <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-6">
               Three ways to solve an HR problem.<br />
               <span className="text-[var(--color-secondary)]">One that doesn&rsquo;t cost a year of overhead.</span>
@@ -245,7 +245,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: SLOW_OUT }}
             className="max-w-3xl mb-16 md:mb-24"
           >
-            <p className="eyebrow-light mb-8">Fig. 05 — Track record</p>
+            <p className="eyebrow-light mb-8">Track record</p>
             <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold">
               The proof is on paper.<br />
               <span className="text-brand-gradient">Twenty-five years of it.</span>
@@ -287,7 +287,7 @@ export default function Home() {
         />
 
         <Container size="wide" className="relative">
-          <p className="eyebrow-light mb-10 md:mb-14">Fig. 06 — The founder</p>
+          <p className="eyebrow-light mb-10 md:mb-14">The founder</p>
 
           <motion.blockquote
             initial={{ opacity: 0, y: 24 }}
@@ -337,7 +337,7 @@ export default function Home() {
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20"
           >
             <div className="lg:col-span-4">
-              <p className="eyebrow mb-8">Fig. 07 — Common questions</p>
+              <p className="eyebrow mb-8">Common questions</p>
               <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
                 The honest answers.
               </h2>
@@ -362,7 +362,7 @@ export default function Home() {
       {/* PUBLICATIONS MARQUEE */}
       <section className="bg-[var(--color-brand-soft)] py-20 md:py-24 overflow-hidden border-t border-[var(--color-rule)]">
         <Container size="wide">
-          <p className="eyebrow text-center mb-10">Fig. 08 — Published in</p>
+          <p className="eyebrow text-center mb-10">Published in</p>
         </Container>
         <div className="relative">
           <div className="marquee-track">
@@ -397,7 +397,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: SLOW_OUT }}
             className="max-w-5xl"
           >
-            <p className="eyebrow-brand mb-8">Fig. 09 — Next step</p>
+            <p className="eyebrow-brand mb-8">Next step</p>
             <h2 className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-white mb-12">
               Ready to scope<br />
               <span className="text-brand-gradient">a project?</span>
