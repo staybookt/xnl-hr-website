@@ -68,13 +68,6 @@ export const services = [
     blurb:
       "Independent mediation for Ontario employers — timed to the new HRTO mandatory-mediation rule.",
   },
-  {
-    slug: "mediation",
-    name: "Workplace Mediation",
-    principal: "Wendy · Now booking",
-    blurb:
-      "Independent mediation for Ontario employers — timed to the new HRTO mandatory-mediation rule.",
-  },
 ] as const;
 
 export const credentials = [
