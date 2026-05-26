@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-/* XNL HR — Wave 5: Apple/Stripe modern reset.
-   White paper + ink + single navy accent. Geist throughout. */
+/* XNL HR — Wave 6: true Apple/Stripe scale.
+   Massive type, dramatic contrast, generous space. */
 
 @theme {
   /* Color */
@@ -21,29 +21,39 @@
   /* Type */
   --font-sans: var(--font-geist), -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
 
-  /* Display scale */
-  --text-hero: 80px;
-  --text-hero--line-height: 1.04;
-  --text-hero--letter-spacing: -0.035em;
+  /* Display scale — BIG */
+  --text-stat: 200px;
+  --text-stat--line-height: 0.92;
+  --text-stat--letter-spacing: -0.045em;
+  --text-stat--font-weight: 500;
+
+  --text-hero: 144px;
+  --text-hero--line-height: 0.96;
+  --text-hero--letter-spacing: -0.04em;
   --text-hero--font-weight: 600;
 
-  --text-display-xl: 56px;
-  --text-display-xl--line-height: 1.06;
-  --text-display-xl--letter-spacing: -0.03em;
+  --text-display-2xl: 112px;
+  --text-display-2xl--line-height: 0.98;
+  --text-display-2xl--letter-spacing: -0.035em;
+  --text-display-2xl--font-weight: 600;
+
+  --text-display-xl: 88px;
+  --text-display-xl--line-height: 1.0;
+  --text-display-xl--letter-spacing: -0.032em;
   --text-display-xl--font-weight: 600;
 
-  --text-display-lg: 40px;
-  --text-display-lg--line-height: 1.1;
-  --text-display-lg--letter-spacing: -0.025em;
+  --text-display-lg: 64px;
+  --text-display-lg--line-height: 1.04;
+  --text-display-lg--letter-spacing: -0.028em;
   --text-display-lg--font-weight: 600;
 
-  --text-display-md: 28px;
-  --text-display-md--line-height: 1.2;
+  --text-display-md: 40px;
+  --text-display-md--line-height: 1.1;
   --text-display-md--letter-spacing: -0.02em;
   --text-display-md--font-weight: 600;
 
-  --text-body-xl: 20px;
-  --text-body-xl--line-height: 1.55;
+  --text-body-xl: 22px;
+  --text-body-xl--line-height: 1.5;
   --text-body-xl--letter-spacing: -0.011em;
 
   --text-body-lg: 17px;
@@ -58,9 +68,9 @@
 
   --text-eyebrow: 12px;
   --text-eyebrow--line-height: 1;
-  --text-eyebrow--letter-spacing: 0.08em;
+  --text-eyebrow--letter-spacing: 0.14em;
 
-  --container-max: 1280px;
+  --container-max: 1440px;
 }
 
 /* Reset + base */
@@ -81,14 +91,27 @@ body {
   letter-spacing: -0.011em;
 }
 
-/* Mobile display scaling */
-@media (max-width: 768px) {
+/* Mobile display scaling — still big, just not insane */
+@media (max-width: 1024px) {
   :root {
-    --text-hero: 44px;
-    --text-display-xl: 32px;
-    --text-display-lg: 26px;
-    --text-display-md: 22px;
-    --text-body-xl: 17px;
+    --text-stat: 120px;
+    --text-hero: 84px;
+    --text-display-2xl: 64px;
+    --text-display-xl: 56px;
+    --text-display-lg: 44px;
+    --text-display-md: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --text-stat: 80px;
+    --text-hero: 56px;
+    --text-display-2xl: 44px;
+    --text-display-xl: 40px;
+    --text-display-lg: 32px;
+    --text-display-md: 24px;
+    --text-body-xl: 18px;
   }
 }
 
@@ -110,4 +133,35 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
   text-transform: uppercase;
   color: var(--color-mute);
+}
+
+.eyebrow-light {
+  font-size: var(--text-eyebrow);
+  line-height: var(--text-eyebrow--line-height);
+  letter-spacing: var(--text-eyebrow--letter-spacing);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Stat — massive number utility */
+.stat-num {
+  font-size: var(--text-stat);
+  line-height: var(--text-stat--line-height);
+  letter-spacing: var(--text-stat--letter-spacing);
+  font-weight: var(--text-stat--font-weight);
+}
+
+/* Marquee animation for publication strip */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
 }

@@ -7,9 +7,16 @@ export function Container({
 }: {
   children: ReactNode;
   className?: string;
-  size?: "narrow" | "default" | "wide";
+  size?: "narrow" | "default" | "wide" | "full";
 }) {
-  const max = size === "narrow" ? "max-w-3xl" : size === "wide" ? "max-w-[1440px]" : "max-w-[1280px]";
+  const max =
+    size === "narrow"
+      ? "max-w-3xl"
+      : size === "wide"
+      ? "max-w-[1600px]"
+      : size === "full"
+      ? "max-w-none"
+      : "max-w-[1440px]";
   return (
     <div className={`${max} mx-auto px-6 md:px-12 lg:px-16 ${className}`}>
       {children}

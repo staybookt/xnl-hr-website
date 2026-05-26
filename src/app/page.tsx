@@ -8,48 +8,42 @@ import { contact, services } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 const FADE_UP = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: SLOW_OUT } },
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: SLOW_OUT } },
 };
 const STAGGER = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+  show: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
 };
 
 const steps = [
   {
     n: "01",
     title: "Intake call",
-    time: "30 minutes · no cost",
-    body: "You describe the situation. We tell you whether XNL is the right fit. If not, we refer you to someone who is.",
+    body: "You describe the situation. We tell you if XNL is the right fit. If not, we refer you.",
   },
   {
     n: "02",
     title: "Scoped proposal",
-    time: "Within 3 business days",
-    body: "Fixed-fee for defined work, or hourly with a cap. You know what you're paying before we start.",
+    body: "Fixed-fee for defined work or hourly with a cap. You know what you're paying before we start.",
   },
   {
     n: "03",
     title: "Delivery",
-    time: "Evert (or Wendy) on the file",
-    body: "No analysts. No handoffs. The senior partner you hired is the one doing the work.",
+    body: "Evert (or Wendy) on the file. No analysts. No handoffs.",
   },
   {
     n: "04",
     title: "Stay close",
-    time: "As long as it serves you",
     body: "Quarterly check-ins. Call when you need us. No retainer required.",
   },
 ];
 
-const industries = [
-  "Manufacturing",
-  "Professional services",
-  "Not-for-profit",
-  "Municipal",
-  "Healthcare",
-  "Retail",
+const stats = [
+  { num: "25", suffix: "yrs", label: "in Canadian HR" },
+  { num: "25", suffix: "+", label: "published bylines" },
+  { num: "2", suffix: "x", label: "Canada's Top-25 HR" },
+  { num: "1", suffix: "", label: "senior partner per file" },
 ];
 
 const publications = [
@@ -59,50 +53,51 @@ const publications = [
   "Talent Canada",
   "The Lawyer's Daily",
   "HR Professional Now",
+  "HRD Canada",
 ];
 
 export default function Home() {
   return (
     <>
-      {/* HERO — split: copy left, founder portrait right */}
-      <section className="bg-[var(--color-paper)] pt-20 md:pt-28 lg:pt-32 pb-24 md:pb-32 lg:pb-40">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-24 items-center">
+      {/* HERO — full viewport scale, split copy + portrait */}
+      <section className="bg-[var(--color-paper)] min-h-[88vh] flex items-center pt-20 md:pt-28 pb-20 md:pb-24">
+        <Container size="wide">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-center">
             <motion.div
               className="lg:col-span-7"
               initial="hidden"
               animate="show"
               variants={STAGGER}
             >
-              <motion.p variants={FADE_UP} className="eyebrow mb-6">
-                Fractional HR · Workplace Mediation · Editorial
+              <motion.p variants={FADE_UP} className="eyebrow mb-8">
+                Fig. 01 — XNL HR &amp; Communications
               </motion.p>
 
               <motion.h1
                 variants={FADE_UP}
-                className="text-[var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8"
+                className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-[var(--color-ink)] mb-10"
               >
-                The outsourced HR<br />department.
+                The outsourced<br />HR department.
               </motion.h1>
 
               <motion.p
                 variants={FADE_UP}
-                className="text-[var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-[var(--color-mute)] max-w-xl mb-10"
+                className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-[var(--color-mute)] max-w-xl mb-12"
               >
-                Senior HR judgment, scoped by the project. For Ontario&rsquo;s owner-operated employers and not-for-profits. No retainers required. No junior staff.
+                Senior HR judgment, scoped by the project. For Ontario&rsquo;s owner-operated employers and not-for-profits.
               </motion.p>
 
-              <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row gap-4 sm:gap-5 sm:items-center">
+              <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row gap-5 sm:items-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-ink)] text-[var(--color-paper)] px-6 py-3.5 text-[15px] font-medium hover:bg-[var(--color-accent)] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-ink)] text-[var(--color-paper)] px-8 py-4 text-[16px] font-medium hover:bg-[var(--color-accent)] transition-colors"
                 >
-                  Book a 30-min intro call
+                  Book a 30-min call
                   <span aria-hidden="true">→</span>
                 </Link>
                 <a
-                  href="#how-it-works"
-                  className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+                  href="#how"
+                  className="inline-flex items-center gap-2 text-[16px] font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
                 >
                   How it works
                   <span aria-hidden="true">↓</span>
@@ -112,61 +107,84 @@ export default function Home() {
 
             <motion.div
               className="lg:col-span-5"
-              initial={{ opacity: 0, scale: 0.96 }}
+              initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, ease: SLOW_OUT, delay: 0.15 }}
+              transition={{ duration: 1.1, ease: SLOW_OUT, delay: 0.2 }}
             >
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--color-surface-deep)]">
+              <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-surface-deep)] rounded-3xl">
                 <Image
                   src="/img/founder.png"
                   alt="Evert Akkerman, CHRL — founder of XNL HR & Communications"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  sizes="(min-width: 1024px) 42vw, 100vw"
                   className="object-cover"
                 />
-              </div>
-              <div className="flex items-center justify-between mt-4 text-[13px] text-[var(--color-mute)]">
-                <span className="font-medium text-[var(--color-ink)]">Evert Akkerman</span>
-                <span>CHRL · LL.M. (NL)</span>
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex items-baseline justify-between text-[13px] text-white" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%)" }}>
+                  <span className="font-semibold">Evert Akkerman</span>
+                  <span className="opacity-80 uppercase tracking-[0.12em] text-[11px]">CHRL · LL.M. (NL)</span>
+                </div>
               </div>
             </motion.div>
           </div>
         </Container>
       </section>
 
-      {/* PUBLICATIONS STRIP */}
-      <section className="bg-[var(--color-paper)] border-y border-[var(--color-rule)]">
-        <Container className="py-10 md:py-12">
-          <div className="flex flex-wrap items-baseline justify-center gap-x-6 md:gap-x-8 gap-y-3">
-            <p className="text-[11px] uppercase tracking-[0.14em] text-[var(--color-mute)] font-medium w-full md:w-auto text-center mb-2 md:mb-0 md:mr-2">
-              Published in
-            </p>
-            {publications.map((p, i) => (
-              <span key={p} className="flex items-baseline gap-3 md:gap-4 text-[14px] md:text-[15px] text-[var(--color-ink-soft)]">
-                <span className="font-medium">{p}</span>
-                {i < publications.length - 1 && (
-                  <span className="text-[var(--color-rule-strong)] hidden md:inline" aria-hidden="true">·</span>
-                )}
-              </span>
+      {/* PROOF STATS — BLACK panel, massive numbers */}
+      <section className="bg-[var(--color-ink)] text-[var(--color-paper)] py-28 md:py-36 lg:py-44">
+        <Container size="wide">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="flex flex-col md:flex-row md:items-end justify-between mb-20 md:mb-28 gap-8"
+          >
+            <div className="max-w-3xl">
+              <p className="eyebrow-light mb-8">Fig. 02 — Track record</p>
+              <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold">
+                The case is on paper.<br />
+                <span className="text-[var(--color-mute-soft)]">In ink. In print.</span>
+              </h2>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={STAGGER}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-y-14 gap-x-8 border-t border-white/15 pt-14 md:pt-20"
+          >
+            {stats.map((s) => (
+              <motion.div key={s.label} variants={FADE_UP}>
+                <div className="stat-num text-white mb-4 flex items-baseline">
+                  <span>{s.num}</span>
+                  <span className="text-[var(--color-mute-soft)] text-[40%] ml-2">{s.suffix}</span>
+                </div>
+                <p className="text-[14px] md:text-[15px] uppercase tracking-[0.12em] font-medium text-[var(--color-mute-soft)]">
+                  {s.label}
+                </p>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </Container>
       </section>
 
-      {/* WHAT WE DO */}
-      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
-        <Container>
+      {/* SERVICES — white, BIG cards */}
+      <section className="py-28 md:py-36 lg:py-44 bg-[var(--color-paper)]">
+        <Container size="wide">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: SLOW_OUT }}
-            className="max-w-3xl mb-14 md:mb-20"
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="max-w-4xl mb-20 md:mb-28"
           >
-            <p className="eyebrow mb-5">What we do</p>
-            <h2 className="text-[var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
-              Three practices.<br />One senior partner each.
+            <p className="eyebrow mb-8">Fig. 03 — What we do</p>
+            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
+              Three practices.<br />
+              <span className="text-[var(--color-mute-soft)]">One senior partner each.</span>
             </h2>
           </motion.div>
 
@@ -181,34 +199,31 @@ export default function Home() {
               <motion.div key={s.slug} variants={FADE_UP}>
                 <Link
                   href={`/services/${s.slug}`}
-                  className="group block rounded-2xl bg-[var(--color-paper)] border border-[var(--color-rule)] overflow-hidden transition-all hover:-translate-y-1 hover:border-[var(--color-rule-strong)] hover:shadow-[0_20px_40px_-16px_rgba(0,0,0,0.1)]"
+                  className="group block rounded-3xl bg-[var(--color-surface)] overflow-hidden transition-all duration-500 hover:bg-[var(--color-surface-deep)]"
                 >
-                  <div className="relative aspect-[5/4] overflow-hidden bg-[var(--color-surface-deep)]">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-surface-deep)]">
                     <Image
                       src={s.image}
                       alt={s.imageAlt}
                       fill
                       sizes="(min-width: 768px) 33vw, 100vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.05]"
                     />
                   </div>
-                  <div className="p-7 md:p-8">
-                    <h3 className="text-[22px] md:text-[24px] leading-[1.2] tracking-[-0.02em] font-semibold text-[var(--color-ink)] mb-3">
+                  <div className="p-8 md:p-10">
+                    <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[var(--color-accent)] mb-6">
+                      {s.engagement}
+                    </p>
+                    <h3 className="text-[length:var(--text-display-md)] leading-[var(--text-display-md--line-height)] tracking-[var(--text-display-md--letter-spacing)] font-semibold text-[var(--color-ink)] mb-4">
                       {s.name}
                     </h3>
-                    <p className="text-[15px] leading-[1.6] text-[var(--color-mute)] mb-4">
+                    <p className="text-[16px] md:text-[17px] leading-[1.55] text-[var(--color-mute)] mb-8">
                       {s.blurb}
                     </p>
-                    <p className="text-[13px] leading-[1.5] text-[var(--color-mute-soft)] mb-6">
-                      <span className="text-[var(--color-ink-soft)] font-medium">Best for:</span> {s.forLine}
-                    </p>
-                    <div className="flex items-center justify-between pt-5 border-t border-[var(--color-rule)] text-[12px] uppercase tracking-[0.08em]">
-                      <span className="text-[var(--color-mute)]">{s.engagement}</span>
-                      <span className="inline-flex items-center gap-1.5 font-semibold text-[var(--color-accent)] group-hover:gap-2.5 transition-all">
-                        Learn more
-                        <span aria-hidden="true">→</span>
-                      </span>
-                    </div>
+                    <span className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[var(--color-ink)] group-hover:gap-3 transition-all">
+                      Learn more
+                      <span aria-hidden="true">→</span>
+                    </span>
                   </div>
                 </Link>
               </motion.div>
@@ -217,19 +232,20 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section id="how-it-works" className="py-24 md:py-32 lg:py-40 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
-        <Container>
+      {/* HOW IT WORKS — surface, BIG step numbers */}
+      <section id="how" className="py-28 md:py-36 lg:py-44 bg-[var(--color-surface)]">
+        <Container size="wide">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: SLOW_OUT }}
-            className="max-w-3xl mb-14 md:mb-20"
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="max-w-4xl mb-20 md:mb-28"
           >
-            <p className="eyebrow mb-5">How it works</p>
-            <h2 className="text-[var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
-              First call to live engagement<br className="hidden md:inline" /> in under two weeks.
+            <p className="eyebrow mb-8">Fig. 04 — How it works</p>
+            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
+              Intro call to live engagement.<br />
+              <span className="text-[var(--color-mute-soft)]">Under two weeks.</span>
             </h2>
           </motion.div>
 
@@ -238,155 +254,130 @@ export default function Home() {
             whileInView="show"
             viewport={{ once: true, margin: "-50px" }}
             variants={STAGGER}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-10"
           >
             {steps.map((step) => (
-              <motion.li key={step.n} variants={FADE_UP} className="relative pt-7">
-                <div className="absolute top-0 left-0 right-0 h-px bg-[var(--color-rule-strong)]">
-                  <div className="h-px bg-[var(--color-accent)] w-12" aria-hidden="true" />
+              <motion.li key={step.n} variants={FADE_UP} className="flex flex-col">
+                <div className="text-[96px] md:text-[120px] leading-none tracking-[-0.04em] font-semibold text-[var(--color-accent)]/15 mb-4">
+                  {step.n}
                 </div>
-                <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[var(--color-accent)] mb-4">
-                  Step {step.n}
-                </p>
-                <h3 className="text-[20px] leading-[1.2] tracking-[-0.02em] font-semibold text-[var(--color-ink)] mb-2">
+                <h3 className="text-[26px] md:text-[30px] leading-[1.15] tracking-[-0.02em] font-semibold text-[var(--color-ink)] mb-4">
                   {step.title}
                 </h3>
-                <p className="text-[13px] text-[var(--color-mute-soft)] mb-4">{step.time}</p>
-                <p className="text-[15px] leading-[1.6] text-[var(--color-mute)]">{step.body}</p>
+                <p className="text-[16px] leading-[1.6] text-[var(--color-mute)]">{step.body}</p>
               </motion.li>
             ))}
           </motion.ol>
         </Container>
       </section>
 
-      {/* PROOF — industries + credentials */}
-      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+      {/* FOUNDER MOMENT — BLACK panel, dramatic */}
+      <section className="bg-[var(--color-ink)] text-[var(--color-paper)] py-28 md:py-36 lg:py-44">
+        <Container size="wide">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: SLOW_OUT }}
+              transition={{ duration: 1, ease: SLOW_OUT }}
               className="lg:col-span-5"
             >
-              <p className="eyebrow mb-5">Industries served</p>
-              <h2 className="text-[var(--text-display-lg)] leading-[var(--text-display-lg--line-height)] tracking-[var(--text-display-lg--letter-spacing)] font-semibold text-[var(--color-ink)] mb-6">
-                Where we&rsquo;ve been useful.
-              </h2>
-              <p className="text-[17px] leading-[1.6] text-[var(--color-mute)]">
-                A short list of the sectors where Evert has delivered HR work, op-eds, or board-level communications since 2012.
-              </p>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-[var(--color-surface-deep)]">
+                <Image
+                  src="/img/founder.png"
+                  alt="Evert Akkerman in his Newmarket office"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: SLOW_OUT, delay: 0.1 }}
+              transition={{ duration: 0.8, ease: SLOW_OUT, delay: 0.1 }}
               className="lg:col-span-7"
             >
-              <div className="flex flex-wrap gap-3 mb-12">
-                {industries.map((i) => (
-                  <span
-                    key={i}
-                    className="inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-surface)] border border-[var(--color-rule)] text-[14px] font-medium text-[var(--color-ink-soft)]"
-                  >
-                    {i}
-                  </span>
-                ))}
-              </div>
+              <p className="eyebrow-light mb-8">Fig. 05 — The founder</p>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-[var(--color-rule)]">
-                {[
-                  { num: "25+", label: "published articles" },
-                  { num: "13", label: "years of bylines" },
-                  { num: "2", label: "industry awards" },
-                  { num: "1", label: "senior partner per file" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-[36px] md:text-[44px] leading-none tracking-[-0.03em] font-semibold text-[var(--color-ink)] mb-2">
-                      {stat.num}
-                    </div>
-                    <div className="text-[12px] uppercase tracking-[0.1em] font-medium text-[var(--color-mute)]">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
+              <blockquote className="text-[length:var(--text-display-lg)] leading-[var(--text-display-lg--line-height)] tracking-[var(--text-display-lg--letter-spacing)] font-semibold text-white mb-12">
+                &ldquo;The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.&rdquo;
+              </blockquote>
+
+              <div className="flex flex-col sm:flex-row sm:items-end gap-6 sm:gap-12 pt-10 border-t border-white/15">
+                <div>
+                  <p className="text-[18px] font-semibold mb-1">Evert Akkerman</p>
+                  <p className="text-[14px] text-[var(--color-mute-soft)]">Founder · CHRL · LL.M. (NL)</p>
+                </div>
+                <div className="flex-1 text-[14px] text-[var(--color-mute-soft)] leading-[1.55]">
+                  Twenty-five years in Canadian HR. Named to Canada&rsquo;s Top-25 HR Professionals in 2016 and 2017. Randstad Innovation in HR Award, 2015.
+                </div>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 text-[15px] font-semibold text-white hover:gap-3 transition-all whitespace-nowrap"
+                >
+                  About Evert
+                  <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </motion.div>
           </div>
         </Container>
       </section>
 
-      {/* FOUNDER STRIP — single row, demoted from slab */}
-      <section className="py-16 md:py-20 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: SLOW_OUT }}
-            className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8"
-          >
-            <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-[var(--color-surface-deep)] flex-shrink-0">
-              <Image
-                src="/img/founder.png"
-                alt="Evert Akkerman"
-                fill
-                sizes="96px"
-                className="object-cover"
-              />
-            </div>
-            <div className="flex-1">
-              <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[var(--color-accent)] mb-2">
-                Led by Evert Akkerman, CHRL, LL.M.
-              </p>
-              <p className="text-[16px] md:text-[17px] leading-[1.55] text-[var(--color-ink-soft)] max-w-3xl">
-                25 years in Canadian HR, 25+ bylines in Canadian HR Reporter, Municipal World, Ottawa Life, and Talent Canada. Named to Canada&rsquo;s Top-25 HR Professionals in 2016 and 2017.
-              </p>
-            </div>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-accent)] hover:gap-3 transition-all flex-shrink-0"
-            >
-              About Evert
-              <span aria-hidden="true">→</span>
-            </Link>
-          </motion.div>
+      {/* PUBLICATIONS MARQUEE — white, bigger pub names */}
+      <section className="bg-[var(--color-paper)] py-20 md:py-24 overflow-hidden">
+        <Container size="wide">
+          <p className="eyebrow text-center mb-12">Fig. 06 — Published in</p>
         </Container>
+        <div className="relative">
+          <div className="marquee-track">
+            {[...publications, ...publications].map((p, i) => (
+              <span
+                key={i}
+                className="mx-8 md:mx-12 text-[40px] md:text-[56px] leading-none tracking-[-0.02em] font-medium text-[var(--color-ink-soft)]"
+              >
+                {p}
+                <span className="text-[var(--color-rule-strong)] ml-8 md:ml-12" aria-hidden="true">·</span>
+              </span>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* CTA BAND */}
-      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
-        <Container size="narrow">
+      {/* FINAL CTA — BLACK panel, massive */}
+      <section className="bg-[var(--color-ink)] text-[var(--color-paper)] py-32 md:py-40 lg:py-52">
+        <Container size="wide">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: SLOW_OUT }}
-            className="text-center"
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="max-w-5xl"
           >
-            <p className="eyebrow mb-5">Next step</p>
-            <h2 className="text-[var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-6">
-              Ready to scope a project?
+            <p className="eyebrow-light mb-8">Fig. 07 — Next step</p>
+            <h2 className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-white mb-12">
+              Ready to scope<br />
+              <span className="text-[var(--color-mute-soft)]">a project?</span>
             </h2>
-            <p className="text-[17px] md:text-[19px] leading-[1.6] text-[var(--color-mute)] max-w-2xl mx-auto mb-10">
+            <p className="text-[length:var(--text-body-xl)] leading-[1.55] text-[var(--color-mute-soft)] max-w-2xl mb-14">
               30 minutes, no cost, no obligation. We&rsquo;ll tell you whether XNL is the right fit — or refer you to someone who is.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-ink)] text-[var(--color-paper)] px-6 py-3.5 text-[15px] font-medium hover:bg-[var(--color-accent)] transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-white text-[var(--color-ink)] px-8 py-4 text-[16px] font-medium hover:bg-[var(--color-accent-soft)] transition-colors"
               >
                 Book an intro call
                 <span aria-hidden="true">→</span>
               </Link>
               <a
                 href={`tel:${contact.phoneE164}`}
-                className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+                className="inline-flex items-center gap-2 text-[16px] font-medium text-white hover:text-[var(--color-accent-soft)] transition-colors"
               >
-                Call {contact.phone}
+                Or call {contact.phone}
               </a>
             </div>
           </motion.div>
