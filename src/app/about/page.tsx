@@ -8,7 +8,6 @@ import { SignatureEvert, SignatureWendy } from "@/components/signature";
 import { VoiceSamples } from "@/components/voice-samples";
 import { FrameworkDiagram } from "@/components/framework-diagram";
 import { PageCTA } from "@/components/page-cta";
-import { HeroImage } from "@/components/hero-image";
 import { contact } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
@@ -16,7 +15,7 @@ const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 export default function AboutPage() {
   return (
     <>
-      {/* HERO — dark gradient with editorial photo backdrop */}
+      {/* HERO — type-driven, no Unsplash backdrop */}
       <section
         className="relative text-white overflow-hidden -mt-16 md:-mt-20"
         style={{
@@ -26,7 +25,6 @@ export default function AboutPage() {
             "radial-gradient(ellipse 90% 75% at 22% 25%, rgba(150, 144, 181, 0.5) 0%, transparent 58%), radial-gradient(ellipse 80% 65% at 80% 80%, rgba(232, 155, 122, 0.4) 0%, transparent 60%), linear-gradient(160deg, #2D3D4E 0%, #1A1D24 100%)",
         }}
       >
-        <HeroImage src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2400&q=80" alt="" imageOpacity={0.13} />
         <div className="gradient-grain" aria-hidden="true" />
 
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
@@ -51,7 +49,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* EVERT */}
+      {/* EVERT — long-form bio in Egon Zehnder pattern */}
       <section className="bg-[var(--color-paper)] py-24 md:py-32">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -63,26 +61,73 @@ export default function AboutPage() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: SLOW_OUT, delay: 0.1 }} className="lg:col-span-7">
-              <p className="eyebrow mb-5">Founder</p>
-              <h2 className="text-[length:var(--text-display-lg)] leading-[var(--text-display-lg--line-height)] tracking-[var(--text-display-lg--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">Senior HR judgment, on the file.</h2>
-              <div className="space-y-5 text-[17px] leading-[1.7] text-[var(--color-ink-soft)]">
-                <p>Evert has been writing about Canadian HR for thirteen years. Op-eds, guest commentary, and feature columns in <span className="font-medium">Canadian HR Reporter</span>, <span className="font-medium">Municipal World</span>, <span className="font-medium">Ottawa Life</span>, <span className="font-medium">Talent Canada</span>, and <span className="font-medium">The Lawyer&rsquo;s Daily</span>.</p>
-                <p>Before XNL, he managed HR for a Canadian financial institution. He holds an LL.M. from a Dutch law school and a CHRL designation from the Human Resources Professionals Association.</p>
-                <p>He runs XNL as a one-partner practice on purpose. No analysts, no bait-and-switch, no monthly retainers you can&rsquo;t opt out of. You get him on the file, and you pay for the work he does.</p>
+              <p className="eyebrow mb-5">Founder · senior partner</p>
+              <h2 className="text-[length:var(--text-display-lg)] leading-[var(--text-display-lg--line-height)] tracking-[var(--text-display-lg--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
+                Evert Akkerman.
+              </h2>
+              <div className="space-y-5 text-[17px] leading-[1.75] text-[var(--color-ink-soft)]">
+                <p>
+                  Evert has been writing about Canadian HR for thirteen years. Op-eds, guest commentary, and feature columns in <span className="font-medium">Canadian HR Reporter</span>, <span className="font-medium">Municipal World</span>, <span className="font-medium">Ottawa Life</span>, <span className="font-medium">Talent Canada</span>, and <span className="font-medium">The Lawyer&rsquo;s Daily</span>. The throughline: plain, direct, defensible language for senior audiences.
+                </p>
+                <p>
+                  Before founding XNL in 2012, Evert managed HR for a Canadian financial institution. He holds an LL.M. from a Dutch law school and a CHRL designation from the Human Resources Professionals Association.
+                </p>
+                <p>
+                  He runs XNL as a one-partner practice on purpose. No analysts, no bait-and-switch, no monthly retainers you can&rsquo;t opt out of. You get him on the file, and you pay for the work he does.
+                </p>
               </div>
+
               <blockquote className="text-[20px] leading-[1.5] text-[var(--color-ink)] border-l-2 border-[var(--color-brand)] pl-6 my-10 italic font-light">
                 &ldquo;The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.&rdquo;
               </blockquote>
+
               <div className="flex items-end gap-6 mt-8">
                 <SignatureEvert size={56} color="#1A1D24" />
                 <div className="text-[12px] uppercase tracking-[0.14em] text-[var(--color-mute)] pb-2">Evert Akkerman</div>
               </div>
-              <div className="mt-10 pt-8 border-t border-[var(--color-rule)]">
-                <p className="eyebrow mb-5">Recognized</p>
-                <ul className="space-y-2 text-[15px] text-[var(--color-ink-soft)]">
-                  <li>Canada&rsquo;s Top-25 HR Professionals · 2016, 2017</li>
-                  <li>Randstad Innovation in HR Award · 2015</li>
-                </ul>
+
+              {/* Long-form credential blocks — Egon Zehnder pattern */}
+              <div className="mt-12 pt-10 border-t border-[var(--color-rule)] grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div>
+                  <p className="eyebrow mb-3">Credentials</p>
+                  <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)]">
+                    <li>CHRL · Human Resources Professionals Association</li>
+                    <li>LL.M. · Dutch law school</li>
+                    <li>Senior HR practice since 2012</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="eyebrow mb-3">Recognition</p>
+                  <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)]">
+                    <li>Canada&rsquo;s Top-25 HR Professionals · 2016, 2017</li>
+                    <li>Randstad Innovation in HR Award · 2015</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="eyebrow mb-3">Representative engagements</p>
+                  <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)] italic">
+                    <li>[Placeholder — Evert to confirm what&rsquo;s publishable]</li>
+                    <li>Manufacturer, ~80 employees: executive termination file rebuild</li>
+                    <li>NFP board: governance review + HR strategy alignment</li>
+                    <li>Professional services firm: handbook overhaul + AODA audit</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="eyebrow mb-3">Languages</p>
+                  <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)]">
+                    <li>English · Native</li>
+                    <li>Nederlands · Native (EN↔NL translation)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link href="/insights" className="inline-flex items-center gap-2 text-[15px] font-semibold text-[var(--color-slate)] hover:gap-3 transition-all">
+                  Read Evert&rsquo;s insights <span aria-hidden="true">→</span>
+                </Link>
+                <Link href="/approach" className="inline-flex items-center gap-2 text-[15px] font-semibold text-[var(--color-slate)] hover:gap-3 transition-all">
+                  How Evert works <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -93,23 +138,46 @@ export default function AboutPage() {
 
       <VoiceSamples background="paper" />
 
-      {/* WENDY */}
+      {/* WENDY — same Egon Zehnder bio pattern */}
       <section className="py-24 md:py-32 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="lg:col-span-7 order-2 lg:order-1">
-              <p className="eyebrow mb-5">Workplace Mediation</p>
+              <p className="eyebrow mb-5">Workplace Mediation · senior partner</p>
               <h2 className="text-[length:var(--text-display-lg)] leading-[var(--text-display-lg--line-height)] tracking-[var(--text-display-lg--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
-                Resolve the dispute.<br />Keep the people.
+                Wendy Akkerman.
               </h2>
-              <div className="space-y-5 text-[17px] leading-[1.7] text-[var(--color-ink-soft)]">
-                <p>Wendy Akkerman joined XNL in 2026 as the practice&rsquo;s workplace mediator. She brings independent, neutral mediation to Ontario employers — timed to the new HRTO mandatory-mediation rule.</p>
-                <p>Her engagements typically resolve workplace conflict, harassment complaints, and termination disputes before they reach formal proceedings. When they don&rsquo;t, the mediation record stands up.</p>
-                <p className="text-[var(--color-mute-soft)] italic">[Full bio + credentials pending — see PLACEHOLDERS.md]</p>
+              <span className="inline-flex items-center text-[10px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2.5 py-1 rounded-full mb-6">Bio pending</span>
+              <div className="space-y-5 text-[17px] leading-[1.75] text-[var(--color-ink-soft)]">
+                <p>
+                  <span className="text-[var(--color-mute-soft)] italic">[Placeholder bio]</span> Wendy joined XNL in 2026 as the practice&rsquo;s workplace mediator. She brings independent, neutral mediation to Ontario employers — timed to the new HRTO mandatory-mediation rule that took effect June 2025.
+                </p>
+                <p>
+                  Her engagements typically resolve workplace conflict, harassment complaints, and termination disputes before they reach formal proceedings. When they don&rsquo;t, the mediation record stands up. Sessions are confidential. The record is preserved either way.
+                </p>
               </div>
+
               <div className="flex items-end gap-6 mt-8">
                 <SignatureWendy size={52} color="#1A1D24" />
                 <div className="text-[12px] uppercase tracking-[0.14em] text-[var(--color-mute)] pb-2">Wendy Akkerman</div>
+              </div>
+
+              <div className="mt-12 pt-10 border-t border-[var(--color-rule)] grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div>
+                  <p className="eyebrow mb-3">Credentials</p>
+                  <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)] italic">
+                    <li>[Placeholder] Q-Med, IMI, or other professional mediator credentials</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="eyebrow mb-3">Practice focus</p>
+                  <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)]">
+                    <li>Workplace conflict + harassment</li>
+                    <li>HRTO mandatory mediation</li>
+                    <li>Termination + severance disputes</li>
+                    <li>Board-level governance conflicts</li>
+                  </ul>
+                </div>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 1, ease: SLOW_OUT, delay: 0.1 }} className="lg:col-span-5 order-1 lg:order-2">

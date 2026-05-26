@@ -8,7 +8,6 @@ import { PageCTA } from "@/components/page-cta";
 import { ProcessSteps } from "@/components/process-steps";
 import { PortraitWendy } from "@/components/portrait";
 import { SignatureWendy } from "@/components/signature";
-import { HeroImage } from "@/components/hero-image";
 import { contact, mediationCovers, mediationProcess, mediationFaqs, services } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
@@ -23,7 +22,7 @@ const mediationService = services.find((s) => s.slug === "mediation")!;
 export default function MediationPage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO — type-driven, no Unsplash */}
       <section
         className="relative text-white overflow-hidden -mt-16 md:-mt-20"
         style={{
@@ -33,7 +32,6 @@ export default function MediationPage() {
             "radial-gradient(ellipse 90% 75% at 18% 22%, rgba(168, 181, 168, 0.45) 0%, transparent 60%), radial-gradient(ellipse 80% 70% at 82% 78%, rgba(150, 144, 181, 0.55) 0%, transparent 60%), radial-gradient(ellipse 30% 30% at 92% 12%, rgba(232, 155, 122, 0.22) 0%, transparent 60%), linear-gradient(160deg, #2D3D4E 0%, #1A1D24 100%)",
         }}
       >
-        <HeroImage src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=2400&q=80" alt="" imageOpacity={0.14} />
         <div className="gradient-grain" aria-hidden="true" />
 
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">

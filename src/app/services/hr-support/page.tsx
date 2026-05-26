@@ -6,7 +6,7 @@ import { Container } from "@/components/container";
 import { FAQ } from "@/components/faq";
 import { PageCTA } from "@/components/page-cta";
 import { ProcessSteps } from "@/components/process-steps";
-import { HeroImage } from "@/components/hero-image";
+import { CostCalculator } from "@/components/cost-calculator";
 import { contact, hrSupportCovers, hrSupportFaqs, services, scenarios } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
@@ -30,7 +30,7 @@ const hrSupportScenarios = scenarios.filter((s) => s.key !== "hrto");
 export default function HRSupportPage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO — type-driven, no Unsplash backdrop (Lazard move) */}
       <section
         className="relative text-white overflow-hidden -mt-16 md:-mt-20"
         style={{
@@ -40,7 +40,6 @@ export default function HRSupportPage() {
             "radial-gradient(ellipse 85% 70% at 18% 20%, rgba(150, 144, 181, 0.55) 0%, transparent 58%), radial-gradient(ellipse 80% 70% at 82% 80%, rgba(232, 155, 122, 0.42) 0%, transparent 60%), linear-gradient(155deg, #2D3D4E 0%, #1A1D24 100%)",
         }}
       >
-        <HeroImage src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=2400&q=80" alt="" imageOpacity={0.13} />
         <div className="gradient-grain" aria-hidden="true" />
 
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
@@ -77,7 +76,7 @@ export default function HRSupportPage() {
         </div>
       </section>
 
-      {/* SCENARIO TILES */}
+      {/* SCENARIO TILES — KEPT on service page (SMB conversion lives here) */}
       <section className="py-20 md:py-24 bg-[var(--color-paper)]">
         <Container size="wide">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="max-w-3xl mb-10">
@@ -134,6 +133,9 @@ export default function HRSupportPage() {
           <ProcessSteps steps={hrSupportProcess} />
         </Container>
       </section>
+
+      {/* COST CALCULATOR — MOVED from homepage; lives here on the conversion-funnel page */}
+      <CostCalculator />
 
       {/* PRICING + CASE */}
       <section className="py-20 md:py-24 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">

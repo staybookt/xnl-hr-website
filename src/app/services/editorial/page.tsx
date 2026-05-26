@@ -6,7 +6,6 @@ import { Container } from "@/components/container";
 import { FAQ } from "@/components/faq";
 import { PageCTA } from "@/components/page-cta";
 import { ProcessSteps } from "@/components/process-steps";
-import { HeroImage } from "@/components/hero-image";
 import { contact, editorialCovers, editorialFaqs, services, publications } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
@@ -28,7 +27,7 @@ const editorialProcess = [
 export default function EditorialPage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO — type-driven, no Unsplash */}
       <section
         className="relative text-white overflow-hidden -mt-16 md:-mt-20"
         style={{
@@ -38,7 +37,6 @@ export default function EditorialPage() {
             "radial-gradient(ellipse 85% 70% at 18% 22%, rgba(150, 144, 181, 0.5) 0%, transparent 58%), radial-gradient(ellipse 85% 75% at 82% 78%, rgba(232, 155, 122, 0.5) 0%, transparent 60%), radial-gradient(ellipse 50% 45% at 50% 100%, rgba(250, 247, 242, 0.18) 0%, transparent 60%), linear-gradient(155deg, #2D3D4E 0%, #1A1D24 100%)",
         }}
       >
-        <HeroImage src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=2400&q=80" alt="" imageOpacity={0.15} />
         <div className="gradient-grain" aria-hidden="true" />
 
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
