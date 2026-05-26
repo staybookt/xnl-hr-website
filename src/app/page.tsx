@@ -1,11 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/container";
-import { LogoMark } from "@/components/logo-mark";
-import { contact, services } from "@/data/site";
+import { ServiceCard } from "@/components/service-card";
+import { Comparison } from "@/components/comparison";
+import { FAQ } from "@/components/faq";
+import { CountUp } from "@/components/count-up";
+import { getStepIcon } from "@/components/icons";
+import { contact, services, faqs } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 const FADE_UP = {
@@ -18,17 +21,17 @@ const STAGGER = {
 };
 
 const steps = [
-  { n: "01", title: "Intake call", body: "You describe the situation. We tell you if XNL is the right fit. If not, we refer you." },
-  { n: "02", title: "Scoped proposal", body: "Fixed-fee for defined work or hourly with a cap. You know what you're paying before we start." },
-  { n: "03", title: "Delivery", body: "Evert (or Wendy) on the file. No analysts. No handoffs." },
-  { n: "04", title: "Stay close", body: "Quarterly check-ins. Call when you need us. No retainer required." },
+  { n: "01", title: "Intake call", time: "30 min · no cost", body: "You describe the situation. We tell you if XNL is the right fit. If not, we refer you." },
+  { n: "02", title: "Scoped proposal", time: "Within 3 days", body: "Fixed-fee for defined work or hourly with a cap. You know what you're paying before we start." },
+  { n: "03", title: "Delivery", time: "Senior partner on file", body: "Evert or Wendy on the file. No analysts. No handoffs to junior staff." },
+  { n: "04", title: "Stay close", time: "As needed", body: "Quarterly check-ins. Call when you need us. No monthly retainer required." },
 ];
 
 const stats = [
-  { num: "25", suffix: "yrs", label: "in Canadian HR" },
-  { num: "25", suffix: "+", label: "published bylines" },
-  { num: "2", suffix: "x", label: "Canada's Top-25 HR" },
-  { num: "1", suffix: "", label: "senior partner per file" },
+  { num: 25, suffix: "", unit: "yrs", label: "In Canadian HR" },
+  { num: 25, suffix: "+", unit: "", label: "Published bylines" },
+  { num: 2, suffix: "x", unit: "", label: "Canada's Top-25 HR" },
+  { num: 1, suffix: "", unit: "", label: "Senior partner per file" },
 ];
 
 const publications = [
@@ -44,14 +47,13 @@ const publications = [
 export default function Home() {
   return (
     <>
-      {/* HERO — full-bleed brand gradient, copy overlaid */}
+      {/* HERO — full-bleed brand gradient */}
       <section
         className="relative gradient-brand text-white overflow-hidden -mt-16 md:-mt-20"
         style={{ minHeight: "100vh" }}
       >
         <div className="gradient-grain" aria-hidden="true" />
 
-        {/* Top edge marks */}
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
           <div className="max-w-[1440px] mx-auto flex items-start justify-between text-white/65">
             <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">Fig. 01 — XNL</span>
@@ -59,7 +61,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Centered copy */}
         <div className="relative z-10 flex items-center justify-center min-h-screen pt-32 md:pt-40 pb-32 md:pb-40">
           <Container size="wide">
             <motion.div initial="hidden" animate="show" variants={STAGGER} className="max-w-6xl mx-auto text-center">
@@ -90,10 +91,10 @@ export default function Home() {
                   <span aria-hidden="true">→</span>
                 </Link>
                 <a
-                  href="#how"
+                  href="#services"
                   className="inline-flex items-center justify-center gap-2 text-[16px] font-medium text-white hover:text-[var(--color-brand-soft)] transition-colors"
                 >
-                  How it works
+                  See what we do
                   <span aria-hidden="true">↓</span>
                 </a>
               </motion.div>
@@ -101,21 +102,134 @@ export default function Home() {
           </Container>
         </div>
 
-        {/* Bottom edge marks */}
+        {/* Inline trust strip at bottom of hero */}
         <div className="absolute bottom-8 md:bottom-12 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
-          <div className="max-w-[1440px] mx-auto flex items-end justify-between text-white/65">
-            <div className="flex items-center gap-3">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-brand)]" aria-hidden="true" />
-              <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">One senior partner per file</span>
+          <div className="max-w-[1440px] mx-auto">
+            <p className="text-[10px] uppercase tracking-[0.22em] font-semibold text-white/55 text-center mb-3">
+              Published in
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 md:gap-x-10 gap-y-2 text-[12px] md:text-[13px] text-white/75 font-medium">
+              {publications.slice(0, 5).map((p, i) => (
+                <span key={p} className="flex items-center gap-x-6 md:gap-x-10">
+                  <span>{p}</span>
+                  {i < 4 && <span className="text-white/25 hidden md:inline" aria-hidden="true">·</span>}
+                </span>
+              ))}
             </div>
-            <a href="#how" className="text-[10px] uppercase tracking-[0.22em] font-semibold hover:text-white transition-colors flex items-center gap-2">
-              Scroll <span aria-hidden="true">↓</span>
-            </a>
           </div>
         </div>
       </section>
 
-      {/* PROOF STATS — BLACK panel with orange accents */}
+      {/* SERVICES — branded gradient cards with icons (no AI images) */}
+      <section id="services" className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
+        <Container size="wide">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="max-w-4xl mb-16 md:mb-24"
+          >
+            <p className="eyebrow mb-8">Fig. 02 — What we do</p>
+            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
+              Three practices.<br />
+              <span className="text-[var(--color-secondary)]">One senior partner each.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {services.map((s, i) => (
+              <ServiceCard key={s.slug} service={s} index={i} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* HOW IT WORKS — timeline with icons + connecting line */}
+      <section id="how" className="relative py-24 md:py-32 lg:py-40 overflow-hidden gradient-brand-soft">
+        <Container size="wide" className="relative">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="max-w-4xl mb-16 md:mb-24"
+          >
+            <p className="eyebrow mb-8">Fig. 03 — How it works</p>
+            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
+              Intro call to live engagement.<br />
+              <span className="text-[var(--color-secondary)]">Under two weeks.</span>
+            </h2>
+          </motion.div>
+
+          <motion.ol
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={STAGGER}
+            className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-14 gap-x-10"
+          >
+            {/* Connecting line for desktop */}
+            <div className="hidden lg:block absolute top-7 left-0 right-0 h-px bg-[var(--color-brand)]/20 z-0" aria-hidden="true" />
+
+            {steps.map((step, idx) => (
+              <motion.li key={step.n} variants={FADE_UP} className="relative z-10 flex flex-col">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="flex items-center justify-center w-14 h-14 rounded-full bg-[var(--color-paper)] border border-[var(--color-brand)]/20 text-[var(--color-brand)] shadow-[0_4px_12px_-2px_rgba(232,84,32,0.18)]">
+                    {getStepIcon(idx, { size: 22 })}
+                  </span>
+                  <span className="text-[14px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand)]">
+                    Step {step.n}
+                  </span>
+                </div>
+                <h3 className="text-[24px] md:text-[28px] leading-[1.15] tracking-[-0.02em] font-semibold text-[var(--color-ink)] mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-[12px] uppercase tracking-[0.12em] font-semibold text-[var(--color-secondary-deep)] mb-4">
+                  {step.time}
+                </p>
+                <p className="text-[16px] leading-[1.6] text-[var(--color-ink-soft)]/75">{step.body}</p>
+              </motion.li>
+            ))}
+          </motion.ol>
+        </Container>
+      </section>
+
+      {/* WHY XNL — comparison block (NEW) */}
+      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
+        <Container size="wide">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="max-w-4xl mb-12 md:mb-16"
+          >
+            <p className="eyebrow mb-8">Fig. 04 — Why XNL</p>
+            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-6">
+              Three ways to solve an HR problem.<br />
+              <span className="text-[var(--color-secondary)]">One that doesn&rsquo;t cost a year of overhead.</span>
+            </h2>
+            <p className="text-[17px] md:text-[18px] leading-[1.6] text-[var(--color-mute)] max-w-2xl">
+              We&rsquo;re not the right call for every employer. Here&rsquo;s the honest comparison.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, ease: SLOW_OUT, delay: 0.1 }}
+            className="overflow-x-auto -mx-6 md:mx-0 px-6 md:px-0"
+          >
+            <div className="min-w-[820px] md:min-w-0">
+              <Comparison />
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* PROOF STATS — BLACK panel with count-up animation */}
       <section className="bg-[var(--color-ink)] text-white py-24 md:py-32 lg:py-40">
         <Container size="wide">
           <motion.div
@@ -125,10 +239,10 @@ export default function Home() {
             transition={{ duration: 0.8, ease: SLOW_OUT }}
             className="max-w-3xl mb-16 md:mb-24"
           >
-            <p className="eyebrow-light mb-8">Fig. 02 — Track record</p>
+            <p className="eyebrow-light mb-8">Fig. 05 — Track record</p>
             <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold">
-              The case is on paper.<br />
-              <span className="text-brand-gradient">In ink. In print.</span>
+              The proof is on paper.<br />
+              <span className="text-brand-gradient">Twenty-five years of it.</span>
             </h2>
           </motion.div>
 
@@ -142,8 +256,9 @@ export default function Home() {
             {stats.map((s) => (
               <motion.div key={s.label} variants={FADE_UP}>
                 <div className="stat-num text-white mb-4 flex items-baseline">
-                  <span>{s.num}</span>
+                  <CountUp to={s.num} />
                   <span className="text-[var(--color-brand)] text-[40%] ml-2">{s.suffix}</span>
+                  {s.unit && <span className="text-white/55 text-[28%] ml-2 lowercase">{s.unit}</span>}
                 </div>
                 <p className="text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white/55">
                   {s.label}
@@ -154,108 +269,8 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* SERVICES */}
-      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
-        <Container size="wide">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: SLOW_OUT }}
-            className="max-w-4xl mb-16 md:mb-24"
-          >
-            <p className="eyebrow mb-8">Fig. 03 — What we do</p>
-            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
-              Three practices.<br />
-              <span className="text-[var(--color-secondary)]">One senior partner each.</span>
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={STAGGER}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
-          >
-            {services.map((s) => (
-              <motion.div key={s.slug} variants={FADE_UP}>
-                <Link
-                  href={`/services/${s.slug}`}
-                  className="group block rounded-3xl bg-[var(--color-surface)] overflow-hidden transition-all duration-500 hover:bg-[var(--color-surface-deep)]"
-                >
-                  <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-surface-deep)]">
-                    <Image
-                      src={s.image}
-                      alt={s.imageAlt}
-                      fill
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                      className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.05]"
-                    />
-                  </div>
-                  <div className="p-8 md:p-10">
-                    <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand)] mb-6">
-                      {s.engagement}
-                    </p>
-                    <h3 className="text-[length:var(--text-display-md)] leading-[var(--text-display-md--line-height)] tracking-[var(--text-display-md--letter-spacing)] font-semibold text-[var(--color-ink)] mb-4">
-                      {s.name}
-                    </h3>
-                    <p className="text-[16px] md:text-[17px] leading-[1.55] text-[var(--color-mute)] mb-8">
-                      {s.blurb}
-                    </p>
-                    <span className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-brand)] group-hover:gap-3 transition-all">
-                      Learn more
-                      <span aria-hidden="true">→</span>
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </Container>
-      </section>
-
-      {/* HOW IT WORKS — soft brand gradient backdrop */}
-      <section id="how" className="relative py-24 md:py-32 lg:py-40 overflow-hidden gradient-brand-soft">
-        <Container size="wide" className="relative">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: SLOW_OUT }}
-            className="max-w-4xl mb-16 md:mb-24"
-          >
-            <p className="eyebrow mb-8">Fig. 04 — How it works</p>
-            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
-              Intro call to live engagement.<br />
-              <span className="text-[var(--color-secondary)]">Under two weeks.</span>
-            </h2>
-          </motion.div>
-
-          <motion.ol
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={STAGGER}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-10"
-          >
-            {steps.map((step) => (
-              <motion.li key={step.n} variants={FADE_UP} className="flex flex-col">
-                <div className="text-[80px] md:text-[100px] leading-none tracking-[-0.04em] font-semibold text-[var(--color-brand)]/20 mb-4">
-                  {step.n}
-                </div>
-                <h3 className="text-[24px] md:text-[28px] leading-[1.15] tracking-[-0.02em] font-semibold text-[var(--color-ink)] mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-[16px] leading-[1.6] text-[var(--color-ink-soft)]/75">{step.body}</p>
-              </motion.li>
-            ))}
-          </motion.ol>
-        </Container>
-      </section>
-
       {/* FOUNDER MOMENT — BLACK panel, text-only */}
-      <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden">
+      <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden border-t border-white/10">
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
@@ -266,7 +281,7 @@ export default function Home() {
         />
 
         <Container size="wide" className="relative">
-          <p className="eyebrow-light mb-10 md:mb-14">Fig. 05 — The founder</p>
+          <p className="eyebrow-light mb-10 md:mb-14">Fig. 06 — The founder</p>
 
           <motion.blockquote
             initial={{ opacity: 0, y: 24 }}
@@ -305,10 +320,43 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* FAQ (NEW) */}
+      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20"
+          >
+            <div className="lg:col-span-4">
+              <p className="eyebrow mb-8">Fig. 07 — Common questions</p>
+              <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
+                The honest answers.
+              </h2>
+              <p className="text-[16px] md:text-[17px] leading-[1.6] text-[var(--color-mute)] mb-10">
+                Pricing, timing, fit, what we won&rsquo;t take on. Everything we get asked on the intake call.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 text-[15px] font-semibold text-[var(--color-brand)] hover:gap-3 transition-all"
+              >
+                Ask your own question
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+            <div className="lg:col-span-8">
+              <FAQ items={faqs} />
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
       {/* PUBLICATIONS MARQUEE */}
-      <section className="bg-[var(--color-paper)] py-20 md:py-24 overflow-hidden">
+      <section className="bg-[var(--color-surface)] py-20 md:py-24 overflow-hidden border-t border-[var(--color-rule)]">
         <Container size="wide">
-          <p className="eyebrow text-center mb-10">Fig. 06 — Published in</p>
+          <p className="eyebrow text-center mb-10">Fig. 08 — Published in</p>
         </Container>
         <div className="relative">
           <div className="marquee-track">
@@ -343,7 +391,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: SLOW_OUT }}
             className="max-w-5xl"
           >
-            <p className="eyebrow-light mb-8">Fig. 07 — Next step</p>
+            <p className="eyebrow-light mb-8">Fig. 09 — Next step</p>
             <h2 className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-white mb-12">
               Ready to scope<br />
               <span className="text-brand-gradient">a project?</span>

@@ -1,5 +1,4 @@
 // XNL HR — single source of truth for site-wide data.
-// NAP must stay byte-identical with GBP, schema, and directory listings.
 
 export const site = {
   legalName: "XNL HR & Communications",
@@ -41,7 +40,7 @@ export const principals = {
 
 export const nav = [
   { label: "Services", href: "/services" },
-  { label: "How it works", href: "/#how-it-works" },
+  { label: "How it works", href: "/#how" },
   { label: "About", href: "/about" },
   { label: "Articles", href: "/articles" },
 ] as const;
@@ -55,8 +54,8 @@ export const services = [
       "Hiring, terminations, handbooks, policy, compliance. The outsourced HR department, scoped by the project.",
     forLine: "For owner-operated employers without an in-house HR lead.",
     engagement: "Project or retainer",
-    image: "/img/hr-support.png",
-    imageAlt: "Hands holding a leather-bound Canadian employment law text on a sunlit walnut desk",
+    icon: "briefcase",
+    gradient: "linear-gradient(135deg, #1a1018 0%, #2a1410 40%, #C8421A 100%)",
   },
   {
     slug: "mediation",
@@ -66,8 +65,8 @@ export const services = [
       "Independent mediation for workplace conflict, harassment complaints, and termination disputes. Timed to the HRTO mandatory-mediation rule.",
     forLine: "For employers facing internal conflict or HRTO proceedings.",
     engagement: "Per-session",
-    image: "/img/mediation.png",
-    imageAlt: "Two empty Eames leather chairs facing each other in a sunlit room with autumn maples through floor-to-ceiling windows",
+    icon: "scale",
+    gradient: "linear-gradient(135deg, #1a1018 0%, #3a2e4a 40%, #9690B5 100%)",
   },
   {
     slug: "editorial",
@@ -77,8 +76,8 @@ export const services = [
       "Op-eds, board memos, communications plans, book editing, EN↔NL translation. Drawn from 25+ Canadian bylines.",
     forLine: "For leaders who need a clearer voice in public or internal communication.",
     engagement: "Per-project",
-    image: "/img/typewriter.png",
-    imageAlt: "Vintage Olivetti typewriter with HR Reporter and Municipal World magazines stacked on a walnut desk",
+    icon: "pen",
+    gradient: "linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 50%, #E85420 100%)",
   },
 ] as const;
 
@@ -88,9 +87,70 @@ export const credentials = [
   "LL.M. (NL)",
   "Randstad Innovation in HR Award",
   "Canada's Top-25 HR · 2016, 2017",
-  "Canadian HR Reporter",
-  "Municipal World",
-  "Ottawa Life",
-  "Talent Canada",
-  "The Lawyer's Daily",
 ] as const;
+
+export const faqs = [
+  {
+    q: "How is XNL different from a traditional HR firm?",
+    a: "One senior partner on every file. No retainers required, no junior analysts, no bait-and-switch from the partner you signed with to the staff who actually do the work. You hire Evert (or Wendy for mediation), and Evert (or Wendy) does the work.",
+  },
+  {
+    q: "What does an engagement cost?",
+    a: "Project work is fixed-fee. Ongoing support is hourly with a cap. We scope it transparently during the intake call. There are no monthly retainers you can't opt out of — you pay for the work we actually do.",
+  },
+  {
+    q: "How fast can you start?",
+    a: "Intake call within 48 hours. Scoped proposal in 3 business days. Live engagement typically within two weeks of the intake. Urgent terminations or HRTO proceedings can move faster.",
+  },
+  {
+    q: "Do you work with companies outside Ontario?",
+    a: "Most engagements are Ontario-based since that's where Evert is licensed and where the legal frameworks (ESA, OHSA, AODA, HRTO) sit. We'll take federally regulated work and out-of-province engagements case by case.",
+  },
+  {
+    q: "What size company is the right fit?",
+    a: "Owner-operated SMBs (15–250 employees) and not-for-profits without a senior HR lead. Below that, you usually don't need fractional HR. Above that, you typically have an HR team and want a senior advisor on specific projects.",
+  },
+  {
+    q: "Can you handle just the mediation, without the rest?",
+    a: "Yes. Wendy's mediation practice is independent — we'll mediate a single workplace dispute or HRTO matter without any other XNL engagement attached.",
+  },
+  {
+    q: "What if I'm not sure XNL is the right fit?",
+    a: "That's what the 30-minute intake call is for. No cost, no obligation. If we're not the right fit, we'll tell you straight — and we'll refer you to someone who is.",
+  },
+] as const;
+
+export const comparison = {
+  rows: [
+    {
+      label: "Pricing model",
+      traditional: "Monthly retainer, often $5k–$15k",
+      inhouse: "$90k–$160k salary + benefits",
+      xnl: "Fixed-fee project or capped hourly",
+    },
+    {
+      label: "Who's on the file",
+      traditional: "Junior staff, partner reviews",
+      inhouse: "One generalist",
+      xnl: "Senior partner directly",
+    },
+    {
+      label: "Time to start",
+      traditional: "2–6 weeks (RFP, onboarding)",
+      inhouse: "3–6 months (hire, ramp)",
+      xnl: "Under 2 weeks",
+    },
+    {
+      label: "Specialty depth",
+      traditional: "Broad but generic",
+      inhouse: "Day-to-day only",
+      xnl: "25 years, published",
+    },
+    {
+      label: "Lock-in",
+      traditional: "6–12 month contracts",
+      inhouse: "Permanent overhead",
+      xnl: "Project-by-project",
+    },
+  ],
+} as const;
