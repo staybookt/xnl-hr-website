@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
-/* XNL HR — Wave 8: cool palette pivot.
-   Slate + lavender + sage + cream lead. Orange (#FF5700, exact from logo) reserved
-   for logo dot + signature moments only. Calm, cool, collected. */
+/* XNL HR — Wave 8.1: pastel coral brand orange.
+   Softened from saturated #FF5700 to #E89B7A — calm, warm pastel that
+   reads as the orange family without aggression. Cool palette unchanged. */
 
 @theme {
-  /* Brand orange — exact hex pulled from xnlhr.com logo, used sparingly */
-  --color-brand: #FF5700;
-  --color-brand-deep: #D94800;
-  --color-brand-soft: #FFE6D9;
-  --color-brand-glow: #FF9B6E;
+  /* Brand orange — softened to pastel coral, used sparingly */
+  --color-brand: #E89B7A;
+  --color-brand-deep: #C77957;
+  --color-brand-soft: #FBEFE8;
+  --color-brand-glow: #F4B5A0;
 
-  /* Cool primary palette — the new working colors */
+  /* Cool primary palette — the working colors */
   --color-slate: #2D3D4E;
   --color-slate-deep: #1F2D3D;
   --color-slate-soft: #E8EDF1;
@@ -26,7 +26,7 @@
 
   --color-cream: #FAF7F2;            /* warm cream for balance moments */
 
-  /* Neutrals — ink is now charcoal (warmer, softer than pure black) */
+  /* Neutrals — ink is charcoal (warmer than pure black) */
   --color-ink: #1A1D24;
   --color-ink-soft: #2A2D34;
   --color-mute: #6b6b6b;
@@ -37,7 +37,7 @@
   --color-rule: #E5E7EB;
   --color-rule-strong: #D1D5DB;
 
-  /* Backwards-compat: --color-accent now points to slate (cool action color) */
+  /* Backwards-compat: --color-accent points to slate (cool action color) */
   --color-accent: var(--color-slate);
   --color-accent-hover: var(--color-slate-deep);
   --color-accent-soft: var(--color-slate-soft);
@@ -164,13 +164,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 .eyebrow-brand {
-  /* RESERVED — use sparingly; the Hermes orange moment */
+  /* Reserved — pastel coral signature moment */
   font-size: var(--text-eyebrow);
   line-height: var(--text-eyebrow--line-height);
   letter-spacing: var(--text-eyebrow--letter-spacing);
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--color-brand-deep);
 }
 
 .eyebrow-slate {
@@ -189,14 +189,14 @@ a { color: inherit; text-decoration: none; }
   font-weight: var(--text-stat--font-weight);
 }
 
-/* Hero gradient — cool-led: slate + lavender + sage, with a single tiny warm ember */
+/* Hero gradient — cool-led with a soft pastel coral ember */
 .gradient-brand {
   background-color: #1A1D24;
   background-image:
     radial-gradient(ellipse 85% 70% at 22% 20%, rgba(150, 144, 181, 0.55) 0%, transparent 58%),
     radial-gradient(ellipse 75% 60% at 78% 78%, rgba(168, 181, 168, 0.40) 0%, transparent 60%),
     radial-gradient(ellipse 55% 50% at 50% 100%, rgba(45, 61, 78, 0.85) 0%, transparent 65%),
-    radial-gradient(ellipse 22% 22% at 92% 90%, rgba(255, 87, 0, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 30% at 92% 90%, rgba(232, 155, 122, 0.28) 0%, transparent 60%),
     linear-gradient(160deg, #2D3D4E 0%, #1A1D24 100%);
 }
 
@@ -216,7 +216,7 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 
-/* Text gradient — cool stops, replaces the warm orange-coral-lavender */
+/* Text gradient — cool stops */
 .text-brand-gradient {
   background: linear-gradient(135deg, #C9D4E3 0%, var(--color-secondary) 50%, var(--color-sage) 100%);
   -webkit-background-clip: text;
