@@ -120,6 +120,16 @@ export const publications = [
   { name: "HRD Canada", weight: 700, tracking: "-0.015em", style: "italic", uppercase: false },
 ] as const;
 
+// Voice samples — PLACEHOLDER statements drafted in Evert's voice (see PLACEHOLDERS.md)
+export const voiceSamples = [
+  { text: "Most HR problems are documentation problems disguised as people problems." },
+  { text: "The HR department's job isn't to protect the company. It's to protect the company from itself." },
+  { text: "If your handbook is older than your last hire, you have a handbook problem." },
+  { text: "Senior judgment is mostly about knowing what NOT to write down." },
+  { text: "The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim." },
+  { text: "If we're not the right fit, I'll tell you in the first ten minutes. The next twenty are for who is." },
+] as const;
+
 export const faqs = [
   { q: "How is XNL different from a traditional HR firm?", a: "One senior partner on every file. No retainers required, no junior analysts, no bait-and-switch from the partner you signed with to the staff who actually do the work. You hire Evert (or Wendy for mediation), and Evert (or Wendy) does the work." },
   { q: "What does an engagement cost?", a: "Project work is fixed-fee. Ongoing support is hourly with a cap. We scope it transparently during the intake call. There are no monthly retainers you can't opt out of — you pay for the work we actually do." },
@@ -192,7 +202,6 @@ export const editorialCovers = [
   { title: "EN ↔ NL translation", body: "Native-quality Dutch translation of HR, legal, and business documents." },
 ] as const;
 
-// Comparison data — restored after Wave 11 rewrite accidentally dropped it
 export const comparison = {
   rows: [
     { label: "Pricing model", traditional: "Monthly retainer, often $5k–$15k", inhouse: "$90k–$160k salary + benefits", xnl: "Fixed-fee project or capped hourly" },

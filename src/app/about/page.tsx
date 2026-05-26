@@ -1,9 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/container";
+import { PortraitEvert, PortraitWendy } from "@/components/portrait";
+import { SignatureEvert, SignatureWendy } from "@/components/signature";
+import { VoiceSamples } from "@/components/voice-samples";
+import { FrameworkDiagram } from "@/components/framework-diagram";
+import { PageCTA } from "@/components/page-cta";
 import { contact } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
@@ -12,57 +16,48 @@ export default function AboutPage() {
   return (
     <>
       {/* PAGE HEADER */}
-      <section className="bg-[var(--color-paper)] pt-20 md:pt-28 pb-16 md:pb-20">
+      <section className="bg-[var(--color-paper)] pt-24 md:pt-32 pb-16 md:pb-20">
         <Container>
           <div className="max-w-3xl">
             <p className="eyebrow mb-6">About</p>
-            <h1 className="text-[var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
+            <h1 className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
               25 years in Canadian HR.<br />
-              <span className="text-[var(--color-accent)]">Built on judgment, not retainers.</span>
+              <span className="text-brand-gradient">Built on judgment, not retainers.</span>
             </h1>
-            <p className="text-[var(--text-body-xl)] leading-[1.55] text-[var(--color-mute)]">
-              XNL HR &amp; Communications is a one-partner practice in Newmarket, Ontario. Founded by Evert Akkerman in 2012. Now joined by Wendy Akkerman for workplace mediation.
+            <p className="text-[length:var(--text-body-xl)] leading-[1.55] text-[var(--color-mute)]">
+              XNL HR &amp; Communications is a one-partner practice in Newmarket, Ontario. Founded by Evert Akkerman in 2012. Joined in 2026 by Wendy Akkerman for workplace mediation.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* FOUNDER FULL */}
+      {/* EVERT — portrait + bio + signature */}
       <section className="bg-[var(--color-paper)] pb-24 md:pb-32">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, ease: SLOW_OUT }}
+              transition={{ duration: 1, ease: SLOW_OUT }}
               className="lg:col-span-5"
             >
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--color-surface-deep)]">
-                <Image
-                  src="/img/founder.png"
-                  alt="Evert Akkerman, founder of XNL HR & Communications"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex items-center justify-between mt-4 text-[13px] text-[var(--color-mute)]">
+              <PortraitEvert className="w-full h-auto max-w-[400px] mx-auto" />
+              <div className="flex items-center justify-between mt-4 text-[13px] text-[var(--color-mute)] max-w-[400px] mx-auto">
                 <span className="font-medium text-[var(--color-ink)]">Evert Akkerman</span>
-                <span>CHRL · LL.M. (NL)</span>
+                <span className="inline-flex items-center text-[9px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2 py-0.5 rounded-full">Illustrated</span>
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: SLOW_OUT, delay: 0.1 }}
               className="lg:col-span-7"
             >
               <p className="eyebrow mb-5">Founder</p>
-              <h2 className="text-[var(--text-display-lg)] leading-[var(--text-display-lg--line-height)] tracking-[var(--text-display-lg--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
+              <h2 className="text-[length:var(--text-display-lg)] leading-[var(--text-display-lg--line-height)] tracking-[var(--text-display-lg--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
                 Senior HR judgment, on the file.
               </h2>
 
@@ -78,11 +73,16 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <blockquote className="text-[20px] leading-[1.5] text-[var(--color-ink)] border-l-2 border-[var(--color-accent)] pl-6 my-10 italic font-light">
+              <blockquote className="text-[20px] leading-[1.5] text-[var(--color-ink)] border-l-2 border-[var(--color-brand)] pl-6 my-10 italic font-light">
                 &ldquo;The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.&rdquo;
               </blockquote>
 
-              <div className="mt-2 pt-8 border-t border-[var(--color-rule)]">
+              <div className="flex items-end gap-6 mt-8">
+                <SignatureEvert size={56} color="#1A1D24" />
+                <div className="text-[12px] uppercase tracking-[0.14em] text-[var(--color-mute)] pb-2">Evert Akkerman</div>
+              </div>
+
+              <div className="mt-10 pt-8 border-t border-[var(--color-rule)]">
                 <p className="eyebrow mb-5">Recognized</p>
                 <ul className="space-y-2 text-[15px] text-[var(--color-ink-soft)]">
                   <li>Canada&rsquo;s Top-25 HR Professionals · 2016, 2017</li>
@@ -94,19 +94,25 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* WENDY / MEDIATION */}
+      {/* THE XNL APPROACH — framework */}
+      <FrameworkDiagram background="surface" />
+
+      {/* WHAT EVERT BELIEVES — voice samples */}
+      <VoiceSamples background="paper" />
+
+      {/* WENDY — portrait + bio + signature */}
       <section className="py-24 md:py-32 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: SLOW_OUT }}
               className="lg:col-span-7 order-2 lg:order-1"
             >
               <p className="eyebrow mb-5">Workplace Mediation</p>
-              <h2 className="text-[var(--text-display-lg)] leading-[var(--text-display-lg--line-height)] tracking-[var(--text-display-lg--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
+              <h2 className="text-[length:var(--text-display-lg)] leading-[var(--text-display-lg--line-height)] tracking-[var(--text-display-lg--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
                 Resolve the dispute.<br />Keep the people.
               </h2>
               <div className="space-y-5 text-[17px] leading-[1.7] text-[var(--color-ink-soft)]">
@@ -116,56 +122,42 @@ export default function AboutPage() {
                 <p>
                   Her engagements typically resolve workplace conflict, harassment complaints, and termination disputes before they reach formal proceedings. When they don&rsquo;t, the mediation record stands up.
                 </p>
+                <p className="text-[var(--color-mute-soft)] italic">[Full bio + credentials pending — see PLACEHOLDERS.md]</p>
+              </div>
+
+              <div className="flex items-end gap-6 mt-8">
+                <SignatureWendy size={52} color="#1A1D24" />
+                <div className="text-[12px] uppercase tracking-[0.14em] text-[var(--color-mute)] pb-2">Wendy Akkerman</div>
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, ease: SLOW_OUT, delay: 0.1 }}
+              transition={{ duration: 1, ease: SLOW_OUT, delay: 0.1 }}
               className="lg:col-span-5 order-1 lg:order-2"
             >
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--color-surface-deep)]">
-                <Image
-                  src="/img/mediation.png"
-                  alt="Workplace mediation setting — two facing chairs in a sunlit room"
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="object-cover"
-                />
+              <PortraitWendy className="w-full h-auto max-w-[400px] mx-auto" />
+              <div className="flex items-center justify-between mt-4 text-[13px] text-[var(--color-mute)] max-w-[400px] mx-auto">
+                <span className="font-medium text-[var(--color-ink)]">Wendy Akkerman</span>
+                <span className="inline-flex items-center text-[9px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2 py-0.5 rounded-full">Illustrated</span>
               </div>
             </motion.div>
           </div>
         </Container>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 md:py-32 bg-[var(--color-paper)]">
-        <Container size="narrow">
-          <div className="text-center">
-            <p className="eyebrow mb-5">Next step</p>
-            <h2 className="text-[var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-6">
-              Ready to talk?
-            </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 mt-8">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-ink)] text-[var(--color-paper)] px-6 py-3.5 text-[15px] font-medium hover:bg-[var(--color-accent)] transition-colors"
-              >
-                Book an intro call
-                <span aria-hidden="true">→</span>
-              </Link>
-              <a
-                href={`tel:${contact.phoneE164}`}
-                className="inline-flex items-center gap-2 text-[15px] font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
-              >
-                Call {contact.phone}
-              </a>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <PageCTA
+        eyebrow="Next step"
+        headline={
+          <>
+            Ready to talk<br />
+            <span className="text-brand-gradient">to the practice?</span>
+          </>
+        }
+        subhead={`30-minute intake, no cost. Call ${contact.phone} or book through the contact page.`}
+      />
     </>
   );
 }
