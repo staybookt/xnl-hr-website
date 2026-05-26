@@ -4,6 +4,7 @@ import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { NoticeBar } from "@/components/notice-bar";
+import { StickyBookingBar } from "@/components/sticky-booking-bar";
 import { site } from "@/data/site";
 
 const geist = Geist({
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main>{children}</main>
         <Footer />
+        <StickyBookingBar />
       </body>
     </html>
   );

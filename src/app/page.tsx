@@ -7,6 +7,9 @@ import { ServiceCard } from "@/components/service-card";
 import { Comparison } from "@/components/comparison";
 import { FAQ } from "@/components/faq";
 import { CountUp } from "@/components/count-up";
+import { ScenarioTiles } from "@/components/scenario-tiles";
+import { MediationBand } from "@/components/mediation-band";
+import { AntiPositioning } from "@/components/anti-positioning";
 import { getStepIcon } from "@/components/icons";
 import { contact, services, faqs } from "@/data/site";
 
@@ -47,7 +50,7 @@ const publications = [
 export default function Home() {
   return (
     <>
-      {/* HERO — full-bleed cool→warm gradient mesh */}
+      {/* HERO — scenario tiles are the primary CTA */}
       <section
         className="relative gradient-brand text-white overflow-hidden -mt-16 md:-mt-20"
         style={{ minHeight: "100vh" }}
@@ -61,63 +64,73 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 flex items-center justify-center min-h-screen pt-32 md:pt-40 pb-32 md:pb-40">
+        <div className="relative z-10 flex items-center justify-center min-h-screen pt-28 md:pt-36 pb-28 md:pb-32">
           <Container size="wide">
             <motion.div initial="hidden" animate="show" variants={STAGGER} className="max-w-6xl mx-auto text-center">
-              <motion.p variants={FADE_UP} className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold text-white/65 mb-10">
+              <motion.p variants={FADE_UP} className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold text-white/65 mb-8">
                 Fractional HR · Workplace Mediation · Editorial
               </motion.p>
 
               <motion.h1
                 variants={FADE_UP}
-                className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-white mb-10"
+                className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-white mb-8"
               >
                 The outsourced<br />HR <span className="text-brand-gradient">department.</span>
               </motion.h1>
 
               <motion.p
                 variants={FADE_UP}
-                className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-white/80 max-w-2xl mx-auto mb-12"
+                className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-white/80 max-w-2xl mx-auto mb-12 md:mb-14"
               >
                 Senior HR judgment, scoped by the project. For Ontario&rsquo;s owner-operated employers and not-for-profits.
               </motion.p>
 
-              <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row gap-5 sm:items-center justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[var(--color-ink)] px-8 py-4 text-[16px] font-medium hover:bg-[var(--color-brand-soft)] transition-colors"
+              <ScenarioTiles />
+
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 1.2, ease: SLOW_OUT }}
+                className="mt-10 md:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5 sm:items-center justify-center"
+              >
+                <a
+                  href={`tel:${contact.phoneE164}`}
+                  className="inline-flex items-center justify-center gap-2 text-[15px] md:text-[16px] font-semibold text-white hover:text-[var(--color-brand)] transition-colors"
                 >
-                  Book a 30-min call
-                  <span aria-hidden="true">→</span>
-                </Link>
+                  <span aria-hidden="true">☎</span>
+                  Or talk to Evert now · {contact.phone}
+                </a>
+                <span className="text-white/30 hidden sm:inline" aria-hidden="true">/</span>
                 <a
                   href="#services"
-                  className="inline-flex items-center justify-center gap-2 text-[16px] font-medium text-white/85 hover:text-white transition-colors"
+                  className="inline-flex items-center justify-center gap-1.5 text-[14px] text-white/60 hover:text-white/90 transition-colors"
                 >
-                  See what we do
-                  <span aria-hidden="true">↓</span>
+                  See what we do <span aria-hidden="true">↓</span>
                 </a>
               </motion.div>
             </motion.div>
           </Container>
         </div>
 
-        <div className="absolute bottom-8 md:bottom-12 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
+        <div className="absolute bottom-6 md:bottom-10 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
           <div className="max-w-[1440px] mx-auto">
-            <p className="text-[10px] uppercase tracking-[0.22em] font-semibold text-white/55 text-center mb-3">
+            <p className="text-[10px] uppercase tracking-[0.22em] font-semibold text-white/45 text-center mb-2">
               Published in
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-6 md:gap-x-10 gap-y-2 text-[12px] md:text-[13px] text-white/75 font-medium">
+            <div className="flex flex-wrap items-center justify-center gap-x-5 md:gap-x-10 gap-y-1 text-[11px] md:text-[13px] text-white/65 font-medium">
               {publications.slice(0, 5).map((p, i) => (
-                <span key={p} className="flex items-center gap-x-6 md:gap-x-10">
+                <span key={p} className="flex items-center gap-x-5 md:gap-x-10">
                   <span>{p}</span>
-                  {i < 4 && <span className="text-white/25 hidden md:inline" aria-hidden="true">·</span>}
+                  {i < 4 && <span className="text-white/20 hidden md:inline" aria-hidden="true">·</span>}
                 </span>
               ))}
             </div>
           </div>
         </div>
       </section>
+
+      {/* MEDIATION BAND — Wendy launch, HRTO time-sensitive wedge */}
+      <MediationBand />
 
       {/* SERVICES */}
       <section id="services" className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
@@ -143,6 +156,9 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      {/* WHAT WE DON'T DO — anti-positioning */}
+      <AntiPositioning />
 
       {/* HOW IT WORKS */}
       <section id="how" className="relative py-24 md:py-32 lg:py-40 overflow-hidden gradient-brand-soft">
@@ -227,7 +243,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* PROOF STATS — charcoal panel with cool→warm gradient sheen */}
+      {/* PROOF STATS */}
       <section className="relative bg-[var(--color-ink)] text-white py-24 md:py-32 lg:py-40 overflow-hidden">
         <div
           aria-hidden="true"
@@ -275,7 +291,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* FOUNDER — charcoal, cool→warm radial accents */}
+      {/* FOUNDER */}
       <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden border-t border-white/10">
         <div
           aria-hidden="true"
@@ -379,7 +395,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FINAL CTA — charcoal with cool→warm mesh, coral button */}
+      {/* FINAL CTA */}
       <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden">
         <div
           aria-hidden="true"
