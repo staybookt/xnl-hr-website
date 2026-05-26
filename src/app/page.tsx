@@ -15,7 +15,7 @@ import { HomeHeroAnim, HomeFounder } from "@/components/home-client";
 import { contact, services, faqs, site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "XNL HR & Communications — fractional HR, workplace mediation, editorial",
+  title: "XNL HR & Communications · fractional HR, workplace mediation, editorial",
   description:
     "Senior HR judgment, scoped by the project. Fractional HR and workplace mediation for owner-operated employers and not-for-profits. Headquartered in Newmarket, Ontario. Canada-wide on the right files.",
   alternates: { canonical: "/" },

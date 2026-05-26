@@ -37,7 +37,7 @@ export default async function Contact({ searchParams }: Props) {
               Book a 30-minute intro call.
             </h1>
             <p className="text-[length:var(--text-body-xl)] text-[var(--color-mute)] mt-6 leading-[1.55]">
-              No cost, no obligation. We&rsquo;ll scope the problem and tell you whether XNL is the right fit — or refer you to someone who is.
+              No cost, no obligation. We&rsquo;ll scope the problem and tell you whether XNL is the right fit, or refer you to someone who is.
             </p>
           </>
         )}
@@ -60,7 +60,7 @@ export default async function Contact({ searchParams }: Props) {
           </a>
 
           <a
-            href={`mailto:${contact.email}?subject=${encodeURIComponent(scenario ? `XNL inquiry — ${scenario.label}` : "XNL intake request")}`}
+            href={`mailto:${contact.email}?subject=${encodeURIComponent(scenario ? `XNL inquiry · ${scenario.label}` : "XNL intake request")}`}
             className="group block rounded-3xl bg-[var(--color-surface)] border border-[var(--color-rule)] p-8 md:p-10 hover:border-[var(--color-rule-strong)] transition-colors"
           >
             <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-[var(--color-secondary-deep)] mb-4">
@@ -78,7 +78,7 @@ export default async function Contact({ searchParams }: Props) {
 
         <div className="mt-10 rounded-2xl bg-[var(--color-brand-soft)] border border-[var(--color-rule)] p-6 md:p-8">
           <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] mb-2">
-            Online booking — coming soon
+            Online booking · coming soon
           </p>
           <p className="text-[15px] md:text-[16px] leading-[1.55] text-[var(--color-ink-soft)]">
             We&rsquo;re wiring up a calendar so you can book Evert directly. Until then, the fastest path is the phone above.

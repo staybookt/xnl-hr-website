@@ -89,7 +89,7 @@ export function OrgChartComparison() {
             </div>
 
             <p className="text-[12px] text-[var(--color-mute)] leading-[1.5] pt-5 border-t border-[var(--color-rule)]">
-              One degree of separation — but you got whatever generalist you could hire. No senior backstop on hard matters.
+              One degree of separation, but you got whatever generalist you could hire. No senior backstop on hard matters.
             </p>
           </motion.div>
 

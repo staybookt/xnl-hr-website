@@ -46,7 +46,7 @@ export function CostCalculator() {
             <span className="text-[var(--color-secondary)]">See where the dollars actually go.</span>
           </h2>
           <p className="text-[17px] md:text-[18px] leading-[1.6] text-[var(--color-mute)] max-w-2xl">
-            Drag the sliders to your company shape. Bars below show annual cost for each option. Numbers are illustrative — we&rsquo;ll quote you specifically on the intake call.
+            Drag the sliders to your company shape. Bars below show annual cost for each option. Numbers are illustrative. We&rsquo;ll quote you specifically on the intake call.
           </p>
         </motion.div>
 

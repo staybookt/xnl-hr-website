@@ -23,7 +23,7 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.shortName} — ${site.tagline}`,
+    default: `${site.shortName} · ${site.tagline}`,
     template: `%s · ${site.shortName}`,
   },
   description: site.description,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Evert Akkerman", url: "https://www.linkedin.com/in/evertakkerman/" }],
   openGraph: {
-    title: `${site.shortName} — ${site.tagline}`,
+    title: `${site.shortName} · ${site.tagline}`,
     description: site.description,
     url: site.url,
     siteName: site.legalName,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.shortName} — ${site.tagline}`,
+    title: `${site.shortName} · ${site.tagline}`,
     description: site.description,
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
