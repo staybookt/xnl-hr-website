@@ -47,7 +47,7 @@ const publications = [
 export default function Home() {
   return (
     <>
-      {/* HERO — full-bleed cool gradient */}
+      {/* HERO — full-bleed cool→warm gradient mesh */}
       <section
         className="relative gradient-brand text-white overflow-hidden -mt-16 md:-mt-20"
         style={{ minHeight: "100vh" }}
@@ -77,7 +77,7 @@ export default function Home() {
 
               <motion.p
                 variants={FADE_UP}
-                className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-white/75 max-w-2xl mx-auto mb-12"
+                className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-white/80 max-w-2xl mx-auto mb-12"
               >
                 Senior HR judgment, scoped by the project. For Ontario&rsquo;s owner-operated employers and not-for-profits.
               </motion.p>
@@ -85,7 +85,7 @@ export default function Home() {
               <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row gap-5 sm:items-center justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[var(--color-ink)] px-8 py-4 text-[16px] font-medium hover:bg-[var(--color-secondary-soft)] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[var(--color-ink)] px-8 py-4 text-[16px] font-medium hover:bg-[var(--color-brand-soft)] transition-colors"
                 >
                   Book a 30-min call
                   <span aria-hidden="true">→</span>
@@ -157,7 +157,7 @@ export default function Home() {
             <p className="eyebrow mb-8">Fig. 03 — How it works</p>
             <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
               Intro call to live engagement.<br />
-              <span className="text-[var(--color-secondary)]">Under two weeks.</span>
+              <span className="text-[var(--color-brand-deep)]">Under two weeks.</span>
             </h2>
           </motion.div>
 
@@ -227,9 +227,17 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* PROOF STATS — charcoal panel, count-up, lavender suffixes */}
-      <section className="bg-[var(--color-ink)] text-white py-24 md:py-32 lg:py-40">
-        <Container size="wide">
+      {/* PROOF STATS — charcoal panel with cool→warm gradient sheen */}
+      <section className="relative bg-[var(--color-ink)] text-white py-24 md:py-32 lg:py-40 overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 55% at 12% 25%, rgba(150, 144, 181, 0.22) 0%, transparent 60%), radial-gradient(ellipse 65% 50% at 90% 80%, rgba(232, 155, 122, 0.18) 0%, transparent 60%)",
+          }}
+        />
+        <Container size="wide" className="relative">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -251,11 +259,11 @@ export default function Home() {
             variants={STAGGER}
             className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 border-t border-white/15 pt-14 md:pt-20"
           >
-            {stats.map((s) => (
+            {stats.map((s, i) => (
               <motion.div key={s.label} variants={FADE_UP}>
                 <div className="stat-num text-white mb-4 flex items-baseline">
                   <CountUp to={s.num} />
-                  <span className="text-[var(--color-secondary)] text-[40%] ml-2">{s.suffix}</span>
+                  <span className={`text-[40%] ml-2 ${i === 0 ? "text-[var(--color-brand)]" : "text-[var(--color-secondary)]"}`}>{s.suffix}</span>
                   {s.unit && <span className="text-white/55 text-[28%] ml-2 lowercase">{s.unit}</span>}
                 </div>
                 <p className="text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white/55">
@@ -267,14 +275,14 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* FOUNDER — charcoal, cool radial accents only */}
+      {/* FOUNDER — charcoal, cool→warm radial accents */}
       <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden border-t border-white/10">
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 70% 60% at 85% 50%, rgba(150, 144, 181, 0.32) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 10% 85%, rgba(168, 181, 168, 0.22) 0%, transparent 60%)",
+              "radial-gradient(ellipse 70% 60% at 12% 30%, rgba(150, 144, 181, 0.30) 0%, transparent 60%), radial-gradient(ellipse 70% 55% at 90% 80%, rgba(232, 155, 122, 0.28) 0%, transparent 60%), radial-gradient(ellipse 55% 45% at 50% 100%, rgba(168, 181, 168, 0.18) 0%, transparent 60%)",
           }}
         />
 
@@ -288,7 +296,7 @@ export default function Home() {
             transition={{ duration: 0.9, ease: SLOW_OUT }}
             className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-white max-w-6xl mb-14 md:mb-20"
           >
-            <span className="text-[var(--color-secondary)]">&ldquo;</span>The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.<span className="text-[var(--color-secondary)]">&rdquo;</span>
+            <span className="text-[var(--color-brand)]">&ldquo;</span>The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.<span className="text-[var(--color-brand)]">&rdquo;</span>
           </motion.blockquote>
 
           <motion.div
@@ -308,7 +316,7 @@ export default function Home() {
             <div className="md:col-span-3 md:text-right">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-[15px] font-semibold text-white hover:text-[var(--color-secondary)] hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 text-[15px] font-semibold text-white hover:text-[var(--color-brand)] hover:gap-3 transition-all"
               >
                 About Evert
                 <span aria-hidden="true">→</span>
@@ -352,7 +360,7 @@ export default function Home() {
       </section>
 
       {/* PUBLICATIONS MARQUEE */}
-      <section className="bg-[var(--color-cream)] py-20 md:py-24 overflow-hidden border-t border-[var(--color-rule)]">
+      <section className="bg-[var(--color-brand-soft)] py-20 md:py-24 overflow-hidden border-t border-[var(--color-rule)]">
         <Container size="wide">
           <p className="eyebrow text-center mb-10">Fig. 08 — Published in</p>
         </Container>
@@ -364,21 +372,21 @@ export default function Home() {
                 className="mx-8 md:mx-12 text-[32px] md:text-[48px] leading-none tracking-[-0.02em] font-medium text-[var(--color-ink-soft)]"
               >
                 {p}
-                <span className="text-[var(--color-secondary)] ml-8 md:ml-12" aria-hidden="true">·</span>
+                <span className="text-[var(--color-brand-deep)] ml-8 md:ml-12" aria-hidden="true">·</span>
               </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA — the Hermes moment: orange eyebrow + orange button */}
+      {/* FINAL CTA — charcoal with cool→warm mesh, coral button */}
       <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 60% 50% at 90% 80%, rgba(150, 144, 181, 0.25) 0%, transparent 65%), radial-gradient(ellipse 30% 30% at 10% 20%, rgba(255, 87, 0, 0.10) 0%, transparent 65%)",
+              "radial-gradient(ellipse 65% 55% at 12% 25%, rgba(150, 144, 181, 0.32) 0%, transparent 60%), radial-gradient(ellipse 75% 60% at 88% 78%, rgba(232, 155, 122, 0.38) 0%, transparent 60%)",
           }}
         />
         <Container size="wide" className="relative">

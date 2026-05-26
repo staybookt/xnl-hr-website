@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
-/* XNL HR — Wave 8.1: pastel coral brand orange.
-   Softened from saturated #FF5700 to #E89B7A — calm, warm pastel that
-   reads as the orange family without aggression. Cool palette unchanged. */
+/* XNL HR — Wave 8.2: pastel coral lives IN the gradients.
+   Hero mesh, soft mesh, and text gradient all bridge cool → warm coral.
+   The brand color is woven into the palette, not isolated as an accent. */
 
 @theme {
-  /* Brand orange — softened to pastel coral, used sparingly */
+  /* Brand orange — pastel coral pulled from the logo, anchored in gradients */
   --color-brand: #E89B7A;
   --color-brand-deep: #C77957;
   --color-brand-soft: #FBEFE8;
   --color-brand-glow: #F4B5A0;
 
-  /* Cool primary palette — the working colors */
+  /* Cool primary palette */
   --color-slate: #2D3D4E;
   --color-slate-deep: #1F2D3D;
   --color-slate-soft: #E8EDF1;
 
-  --color-secondary: #9690B5;       /* lavender from logo subtitle */
+  --color-secondary: #9690B5;
   --color-secondary-deep: #6B5F7D;
   --color-secondary-soft: #E8E4F0;
 
@@ -24,9 +24,9 @@
   --color-sage-deep: #7A8B7A;
   --color-sage-soft: #EDF1ED;
 
-  --color-cream: #FAF7F2;            /* warm cream for balance moments */
+  --color-cream: #FAF7F2;
 
-  /* Neutrals — ink is charcoal (warmer than pure black) */
+  /* Neutrals */
   --color-ink: #1A1D24;
   --color-ink-soft: #2A2D34;
   --color-mute: #6b6b6b;
@@ -37,7 +37,7 @@
   --color-rule: #E5E7EB;
   --color-rule-strong: #D1D5DB;
 
-  /* Backwards-compat: --color-accent points to slate (cool action color) */
+  /* Backwards-compat */
   --color-accent: var(--color-slate);
   --color-accent-hover: var(--color-slate-deep);
   --color-accent-soft: var(--color-slate-soft);
@@ -45,7 +45,6 @@
   /* Type */
   --font-sans: var(--font-geist), -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
 
-  /* Display scale */
   --text-stat: 160px;
   --text-stat--line-height: 0.94;
   --text-stat--letter-spacing: -0.04em;
@@ -164,7 +163,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 .eyebrow-brand {
-  /* Reserved — pastel coral signature moment */
   font-size: var(--text-eyebrow);
   line-height: var(--text-eyebrow--line-height);
   letter-spacing: var(--text-eyebrow--letter-spacing);
@@ -189,23 +187,24 @@ a { color: inherit; text-decoration: none; }
   font-weight: var(--text-stat--font-weight);
 }
 
-/* Hero gradient — cool-led with a soft pastel coral ember */
+/* HERO MESH — bridges cool slate → warm pastel coral diagonally.
+   Coral is a major stop, not a corner ember. */
 .gradient-brand {
   background-color: #1A1D24;
   background-image:
-    radial-gradient(ellipse 85% 70% at 22% 20%, rgba(150, 144, 181, 0.55) 0%, transparent 58%),
-    radial-gradient(ellipse 75% 60% at 78% 78%, rgba(168, 181, 168, 0.40) 0%, transparent 60%),
-    radial-gradient(ellipse 55% 50% at 50% 100%, rgba(45, 61, 78, 0.85) 0%, transparent 65%),
-    radial-gradient(ellipse 30% 30% at 92% 90%, rgba(232, 155, 122, 0.28) 0%, transparent 60%),
-    linear-gradient(160deg, #2D3D4E 0%, #1A1D24 100%);
+    radial-gradient(ellipse 90% 75% at 15% 18%, rgba(150, 144, 181, 0.62) 0%, transparent 58%),
+    radial-gradient(ellipse 85% 75% at 88% 85%, rgba(232, 155, 122, 0.58) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 55% 55%, rgba(168, 181, 168, 0.32) 0%, transparent 65%),
+    linear-gradient(155deg, #2D3D4E 0%, #1F2D3D 45%, #6B5F7D 75%, #C77957 100%);
 }
 
-/* Soft cool gradient — for light section backdrops (How it works) */
+/* SOFT MESH — pale lavender → pale coral wash for light section backdrops */
 .gradient-brand-soft {
   background-image:
-    radial-gradient(ellipse 90% 70% at 22% 28%, rgba(232, 228, 240, 0.85) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 60% at 82% 75%, rgba(237, 241, 237, 0.85) 0%, transparent 60%),
-    linear-gradient(160deg, #FCFBF7 0%, #FFFFFF 100%);
+    radial-gradient(ellipse 85% 65% at 18% 22%, rgba(232, 228, 240, 0.9) 0%, transparent 62%),
+    radial-gradient(ellipse 75% 60% at 85% 78%, rgba(251, 239, 232, 0.95) 0%, transparent 62%),
+    radial-gradient(ellipse 55% 45% at 55% 100%, rgba(237, 241, 237, 0.7) 0%, transparent 60%),
+    linear-gradient(160deg, #FCFBF7 0%, #FFFAF6 100%);
 }
 
 .gradient-grain {
@@ -216,9 +215,10 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 
-/* Text gradient — cool stops */
+/* TEXT GRADIENT — light slate → lavender → pastel coral.
+   Brand color is the destination, not absent. */
 .text-brand-gradient {
-  background: linear-gradient(135deg, #C9D4E3 0%, var(--color-secondary) 50%, var(--color-sage) 100%);
+  background: linear-gradient(135deg, #C9D4E3 0%, var(--color-secondary) 45%, var(--color-brand) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
