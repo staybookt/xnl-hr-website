@@ -8,6 +8,7 @@ import { PageCTA } from "@/components/page-cta";
 import { ProcessSteps } from "@/components/process-steps";
 import { PortraitWendy } from "@/components/portrait";
 import { SignatureWendy } from "@/components/signature";
+import { WendyQuoteBand } from "@/components/wendy-quote-band";
 import { contact, mediationCovers, mediationProcess, mediationFaqs, services } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
@@ -121,6 +122,8 @@ export default function MediationPage() {
       </section>
 
       {/* PROCESS */}
+      <WendyQuoteBand />
+
       <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
         <Container size="wide">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="max-w-4xl mb-16 md:mb-24">

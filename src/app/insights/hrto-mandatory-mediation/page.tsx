@@ -3,7 +3,9 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { PageCTA } from "@/components/page-cta";
 import { SignatureEvert } from "@/components/signature";
-import { site } from "@/data/site";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { ArticleShare } from "@/components/article-share";
+import { articles, site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "The HRTO mandatory-mediation rule: what Ontario employers misunderstand",
@@ -38,6 +40,7 @@ export default function HRTOArticle() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <ScrollProgress />
 
       <section className="bg-[var(--color-paper)] pt-24 md:pt-32 pb-12 md:pb-16">
         <Container size="narrow">
@@ -48,6 +51,8 @@ export default function HRTOArticle() {
             <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-[var(--color-secondary-deep)]">XNL Insights</span>
             <span className="text-[var(--color-rule-strong)]" aria-hidden="true">·</span>
             <span className="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-mute)]">January 2026</span>
+            <span className="text-[var(--color-rule-strong)]" aria-hidden="true">·</span>
+            <span className="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-mute)]">6 min read</span>
             <span className="text-[9px] uppercase tracking-[0.14em] font-semibold text-white bg-[var(--color-brand)] px-2 py-0.5 rounded-full ml-2">Original</span>
           </div>
           <h1 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
@@ -145,15 +150,69 @@ export default function HRTOArticle() {
               The employers who treat it as a procedural delay learn the cost of that frame in cheques they didn&rsquo;t have to write.
             </p>
 
-            <div className="mt-16 pt-10 border-t border-[var(--color-rule)]">
-              <span className="inline-flex items-center text-[10px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2.5 py-1 rounded-full mb-5">
-                Draft pending review
-              </span>
-              <p className="text-[14px] leading-[1.65] text-[var(--color-mute)] italic">
-                This piece is a draft published under XNL&rsquo;s Insights program. Final editorial review by Evert Akkerman pending before promotion to publication. The arguments and structure are illustrative of the XNL Insights editorial voice.
-              </p>
+            <ArticleShare
+              title="The HRTO mandatory-mediation rule: what Ontario employers misunderstand"
+              url="/insights/hrto-mandatory-mediation"
+            />
+
+            <div className="mt-12 pt-10 border-t border-[var(--color-rule)] flex items-start gap-5">
+              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-[var(--color-slate)] to-[var(--color-slate-deep)] text-white flex items-center justify-center text-[14px] font-semibold tracking-[-0.01em]">
+                EA
+              </div>
+              <div>
+                <p className="text-[15px] font-semibold text-[var(--color-ink)] mb-1">Evert Akkerman</p>
+                <p className="text-[14px] leading-[1.55] text-[var(--color-mute)]">
+                  Founder of XNL HR &amp; Communications. Twenty-five years in Canadian HR practice. CHRL, LL.M. (NL). Named to Canada&rsquo;s Top-25 HR Professionals, 2016 and 2017.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 inline-flex items-center text-[10px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2.5 py-1 rounded-full">
+              Draft · pending Evert&rsquo;s final review
             </div>
           </article>
+        </Container>
+      </section>
+
+      {/* MORE FROM EVERT */}
+      <section className="bg-[var(--color-surface)] border-y border-[var(--color-rule)] py-20 md:py-28">
+        <Container size="narrow">
+          <div className="flex items-baseline justify-between mb-10 border-b border-[var(--color-rule)] pb-5">
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-[var(--color-ink)] tracking-[-0.015em]">
+              More from Evert
+            </h2>
+            <Link
+              href="/insights"
+              className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[var(--color-slate)] hover:text-[var(--color-brand-deep)] transition-colors"
+            >
+              All insights →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10">
+            {articles
+              .filter((a) => a.slug !== "hrto-mandatory-mediation")
+              .slice(0, 2)
+              .map((a) => (
+                <article key={a.slug} className="group">
+                  <Link href={a.url} className="block">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-[11px] uppercase tracking-[0.16em] font-semibold text-[var(--color-secondary-deep)]">
+                        {a.publication}
+                      </span>
+                      <span className="text-[11px] uppercase tracking-[0.12em] font-medium text-[var(--color-mute)]">
+                        {a.date}
+                      </span>
+                    </div>
+                    <h3 className="text-[22px] md:text-[26px] leading-[1.2] tracking-[-0.018em] font-semibold text-[var(--color-ink)] mb-3 group-hover:text-[var(--color-slate)] transition-colors">
+                      {a.title}
+                    </h3>
+                    <p className="text-[15px] md:text-[16px] leading-[1.6] text-[var(--color-mute)]">
+                      {a.excerpt}
+                    </p>
+                  </Link>
+                </article>
+              ))}
+          </div>
         </Container>
       </section>
 

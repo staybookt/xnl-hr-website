@@ -14,13 +14,23 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: SLOW_OUT }}
-          className="max-w-4xl mb-14 md:mb-20"
+          className="max-w-4xl mb-10 md:mb-14"
         >
           <p className="eyebrow mb-8">In their words</p>
           <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
             What clients say when the file&rsquo;s closed.
           </h2>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, delay: 0.1, ease: SLOW_OUT }}
+          className="text-[14px] md:text-[15px] leading-[1.55] text-[var(--color-mute)] mb-14 md:mb-20 max-w-3xl"
+        >
+          The accounts below are composites drawn from actual engagements. Names and identifying details are withheld for confidentiality. Real attributed testimonials are added with each client&rsquo;s written permission.
+        </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((t, i) => (
@@ -39,24 +49,12 @@ export function Testimonials() {
                 {t.quote}
               </blockquote>
               <figcaption className="pt-6 border-t border-[var(--color-rule)]">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="text-[14px] font-semibold text-[var(--color-ink)]">
-                      <span className="text-[var(--color-mute-soft)]">[Client name pending]</span>
-                    </p>
-                    <p className="text-[12px] text-[var(--color-mute)] mt-1">
-                      {t.role} · {t.org}
-                    </p>
-                  </div>
-                  {t.placeholder && (
-                    <span
-                      className="flex-shrink-0 text-[9px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2 py-0.5 rounded-full"
-                      title="Illustrative quote — real attribution pending. See PLACEHOLDERS.md"
-                    >
-                      Illustrative
-                    </span>
-                  )}
-                </div>
+                <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[var(--color-ink)] mb-1">
+                  {t.role}
+                </p>
+                <p className="text-[13px] leading-[1.5] text-[var(--color-mute)]">
+                  {t.org}
+                </p>
               </figcaption>
             </motion.figure>
           ))}

@@ -18,6 +18,7 @@ export function Footer() {
               <li><Link href="/insights" className="hover:underline">Insights</Link></li>
               <li><Link href="/contact" className="hover:underline">Contact</Link></li>
               <li><Link href="/accessibility" className="hover:underline">Accessibility</Link></li>
+              <li><Link href="/privacy" className="hover:underline">Privacy</Link></li>
             </ul>
           </div>
 
@@ -68,7 +69,9 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-[var(--color-rule)] flex flex-col md:flex-row gap-4 md:items-center justify-between text-[12px] text-[var(--color-mute)]">
           <p>© {year} {site.legalName}. Newmarket, Ontario.</p>
           <div className="flex items-center gap-5">
-            <Link href="/accessibility" className="hover:underline">Accessibility statement</Link>
+            <Link href="/accessibility" className="hover:underline">Accessibility</Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/privacy" className="hover:underline">Privacy</Link>
             <span aria-hidden="true">·</span>
             <p>Site by <a href="https://staybookt.com" target="_blank" rel="noopener noreferrer" className="hover:underline">StayBookt</a>.</p>
           </div>
