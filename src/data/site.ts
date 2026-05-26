@@ -6,7 +6,7 @@ export const site = {
   shortName: "XNL HR",
   tagline: "Senior HR, scoped by the project.",
   description:
-    "Fractional HR and workplace mediation for Ontario's owner-operated employers and not-for-profits. No retainers. No junior staff.",
+    "Fractional HR and workplace mediation for Ontario's owner-operated employers and not-for-profits. No retainers required. No junior staff.",
   url: "https://xnlhr.com",
   founded: 2012,
 } as const;
@@ -41,38 +41,44 @@ export const principals = {
 
 export const nav = [
   { label: "Services", href: "/services" },
-  { label: "Articles", href: "/articles" },
+  { label: "How it works", href: "/#how-it-works" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Articles", href: "/articles" },
 ] as const;
 
 export const services = [
   {
     slug: "hr-support",
-    name: "HR Support",
-    principal: "Evert",
+    name: "Fractional HR",
+    principal: "Evert Akkerman",
     blurb:
-      "Hiring, terminations, handbooks, policy, compliance — senior judgment, project-priced.",
+      "Hiring, terminations, handbooks, policy, compliance. The outsourced HR department, scoped by the project.",
+    forLine: "For owner-operated employers without an in-house HR lead.",
+    engagement: "Project or retainer",
     image: "/img/hr-support.png",
     imageAlt: "Hands holding a leather-bound Canadian employment law text on a sunlit walnut desk",
   },
   {
-    slug: "editorial",
-    name: "Editorial & Communications",
-    principal: "Evert",
-    blurb:
-      "Business writing, op-eds, communications plans, book editing, EN↔NL translation.",
-    image: "/img/typewriter.png",
-    imageAlt: "Vintage Olivetti typewriter with HR Reporter and Municipal World magazines stacked on a walnut desk",
-  },
-  {
     slug: "mediation",
     name: "Workplace Mediation",
-    principal: "Wendy · Now booking",
+    principal: "Wendy Akkerman · Now booking",
     blurb:
-      "Independent mediation for Ontario employers — timed to the new HRTO mandatory-mediation rule.",
+      "Independent mediation for workplace conflict, harassment complaints, and termination disputes. Timed to the HRTO mandatory-mediation rule.",
+    forLine: "For employers facing internal conflict or HRTO proceedings.",
+    engagement: "Per-session",
     image: "/img/mediation.png",
     imageAlt: "Two empty Eames leather chairs facing each other in a sunlit room with autumn maples through floor-to-ceiling windows",
+  },
+  {
+    slug: "editorial",
+    name: "Editorial & Communications",
+    principal: "Evert Akkerman",
+    blurb:
+      "Op-eds, board memos, communications plans, book editing, EN↔NL translation. Drawn from 25+ Canadian bylines.",
+    forLine: "For leaders who need a clearer voice in public or internal communication.",
+    engagement: "Per-project",
+    image: "/img/typewriter.png",
+    imageAlt: "Vintage Olivetti typewriter with HR Reporter and Municipal World magazines stacked on a walnut desk",
   },
 ] as const;
 
