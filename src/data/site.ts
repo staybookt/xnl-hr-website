@@ -110,7 +110,6 @@ export const articles = [
   { title: "Hiring is a search problem, not a sales problem", publication: "Municipal World", date: "November 2025", excerpt: "The best hires aren't sold on you. They're found. That distinction changes the entire process, the cost, and the retention math.", url: "#", placeholder: true },
 ] as const;
 
-// Publication wordmark styling — normalized so every entry has the same shape
 export const publications = [
   { name: "Canadian HR Reporter", weight: 700, tracking: "-0.025em", style: "normal", uppercase: false },
   { name: "Municipal World", weight: 300, tracking: "0.02em", style: "italic", uppercase: false },
@@ -192,3 +191,14 @@ export const editorialCovers = [
   { title: "Technical HR writing", body: "Compliance documentation, policy explainers, training material that holds up to scrutiny." },
   { title: "EN ↔ NL translation", body: "Native-quality Dutch translation of HR, legal, and business documents." },
 ] as const;
+
+// Comparison data — restored after Wave 11 rewrite accidentally dropped it
+export const comparison = {
+  rows: [
+    { label: "Pricing model", traditional: "Monthly retainer, often $5k–$15k", inhouse: "$90k–$160k salary + benefits", xnl: "Fixed-fee project or capped hourly" },
+    { label: "Who's on the file", traditional: "Junior staff, partner reviews", inhouse: "One generalist", xnl: "Senior partner directly" },
+    { label: "Time to start", traditional: "2–6 weeks (RFP, onboarding)", inhouse: "3–6 months (hire, ramp)", xnl: "Under 2 weeks" },
+    { label: "Specialty depth", traditional: "Broad but generic", inhouse: "Day-to-day only", xnl: "25 years, published" },
+    { label: "Lock-in", traditional: "6–12 month contracts", inhouse: "Permanent overhead", xnl: "Project-by-project" },
+  ],
+} as const;
