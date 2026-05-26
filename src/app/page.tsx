@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/container";
@@ -18,14 +19,24 @@ const STAGGER = {
 export default function Home() {
   return (
     <>
-      {/* HERO — full-bleed ink black, editorial typography */}
+      {/* HERO — full-bleed Midjourney backdrop with dark overlay */}
       <section className="relative bg-[var(--color-ink-deep)] text-[var(--color-paper)] -mt-16 md:-mt-20 pt-36 md:pt-52 pb-32 md:pb-44 overflow-hidden">
-        {/* Warm bronze radial */}
+        {/* Background image */}
+        <Image
+          src="/img/hero.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-90"
+          aria-hidden="true"
+        />
+        {/* Dark overlay for text contrast */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 80% 55% at 25% 30%, rgba(200,149,109,0.15) 0%, rgba(10,10,12,0) 55%), radial-gradient(ellipse 70% 50% at 85% 90%, rgba(30,58,95,0.18) 0%, rgba(10,10,12,0) 50%)",
+              "linear-gradient(105deg, rgba(10,10,12,0.85) 0%, rgba(10,10,12,0.7) 40%, rgba(10,10,12,0.45) 75%, rgba(10,10,12,0.35) 100%)",
           }}
           aria-hidden="true"
         />
@@ -35,7 +46,7 @@ export default function Home() {
             {/* Eyebrow chip */}
             <motion.div
               variants={FADE_UP}
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.06] backdrop-blur-sm border border-white/[0.12] text-[12px] font-semibold uppercase tracking-[0.12em] mb-10 md:mb-14"
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/[0.18] text-[12px] font-semibold uppercase tracking-[0.12em] mb-10 md:mb-14"
             >
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
               <span>Newmarket, ON · Serving Ontario SMBs &amp; not-for-profits</span>
@@ -81,10 +92,10 @@ export default function Home() {
               </a>
             </motion.div>
 
-            {/* STATS TRIPTYCH — Korn Ferry pattern */}
+            {/* STATS TRIPTYCH */}
             <motion.div
               variants={FADE_UP}
-              className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 pt-10 border-t border-white/[0.1]"
+              className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 pt-10 border-t border-white/[0.12]"
             >
               {[
                 { num: "13", label: "years of bylines" },
