@@ -10,7 +10,7 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
@@ -21,13 +21,13 @@ export function Nav() {
       className={`sticky top-0 z-40 transition-all duration-300 ${
         scrolled
           ? "bg-[var(--color-paper)]/92 backdrop-blur-md border-b border-[var(--color-rule)]"
-          : "bg-[var(--color-paper)] border-b border-transparent"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex h-16 md:h-20 items-center justify-between">
           <Link href="/" aria-label="XNL HR home">
-            <LogoMark size={22} />
+            <LogoMark size={22} light={!scrolled} />
           </Link>
 
           <nav className="hidden md:flex items-center gap-9">
@@ -35,14 +35,22 @@ export function Nav() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[14px] font-medium text-[var(--color-ink-soft)] hover:text-[var(--color-brand)] transition-colors"
+                className={`text-[14px] font-medium transition-colors ${
+                  scrolled
+                    ? "text-[var(--color-ink-soft)] hover:text-[var(--color-brand)]"
+                    : "text-white/85 hover:text-white"
+                }`}
               >
                 {item.label}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="text-[14px] font-medium rounded-full px-5 py-2.5 bg-[var(--color-ink)] text-[var(--color-paper)] hover:bg-[var(--color-brand)] transition-colors"
+              className={`text-[14px] font-medium rounded-full px-5 py-2.5 transition-colors ${
+                scrolled
+                  ? "bg-[var(--color-ink)] text-white hover:bg-[var(--color-brand)]"
+                  : "bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-deep)]"
+              }`}
             >
               Book a call
             </Link>
@@ -53,7 +61,9 @@ export function Nav() {
             aria-label="Toggle navigation"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 text-[var(--color-ink)]"
+            className={`md:hidden inline-flex items-center justify-center w-10 h-10 ${
+              scrolled ? "text-[var(--color-ink)]" : "text-white"
+            }`}
           >
             <span className="sr-only">Menu</span>
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,13 +83,13 @@ export function Nav() {
         </div>
 
         {mobileOpen && (
-          <nav className="md:hidden flex flex-col py-8 gap-6 border-t border-[var(--color-rule)]">
+          <nav className="md:hidden flex flex-col py-8 gap-6 border-t border-white/15 bg-[var(--color-ink)] -mx-6 px-6">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-[19px] font-medium text-[var(--color-ink)]"
+                className="text-[19px] font-medium text-white"
               >
                 {item.label}
               </Link>

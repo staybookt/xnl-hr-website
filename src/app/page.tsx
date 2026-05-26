@@ -14,7 +14,7 @@ const FADE_UP = {
 };
 const STAGGER = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
 };
 
 const steps = [
@@ -44,35 +44,44 @@ const publications = [
 export default function Home() {
   return (
     <>
-      {/* HERO — copy left, brand gradient poster right */}
-      <section className="bg-[var(--color-paper)] min-h-[88vh] flex items-center pt-20 md:pt-28 pb-20 md:pb-24">
-        <Container size="wide">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-center">
-            <motion.div
-              className="lg:col-span-7"
-              initial="hidden"
-              animate="show"
-              variants={STAGGER}
-            >
-              <motion.p variants={FADE_UP} className="eyebrow-brand mb-8">
-                Fig. 01 — Fractional HR · Mediation · Editorial
+      {/* HERO — full-bleed brand gradient, copy overlaid */}
+      <section
+        className="relative gradient-brand text-white overflow-hidden -mt-16 md:-mt-20"
+        style={{ minHeight: "100vh" }}
+      >
+        <div className="gradient-grain" aria-hidden="true" />
+
+        {/* Top edge marks */}
+        <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1440px] mx-auto flex items-start justify-between text-white/65">
+            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">Fig. 01 — XNL</span>
+            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">Newmarket, ON · Est. 2012</span>
+          </div>
+        </div>
+
+        {/* Centered copy */}
+        <div className="relative z-10 flex items-center justify-center min-h-screen pt-32 md:pt-40 pb-32 md:pb-40">
+          <Container size="wide">
+            <motion.div initial="hidden" animate="show" variants={STAGGER} className="max-w-6xl mx-auto text-center">
+              <motion.p variants={FADE_UP} className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold text-[var(--color-brand)] mb-10">
+                Fractional HR · Workplace Mediation · Editorial
               </motion.p>
 
               <motion.h1
                 variants={FADE_UP}
-                className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-[var(--color-ink)] mb-10"
+                className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-white mb-10"
               >
                 The outsourced<br />HR <span className="text-brand-gradient">department.</span>
               </motion.h1>
 
               <motion.p
                 variants={FADE_UP}
-                className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-[var(--color-mute)] max-w-xl mb-12"
+                className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-white/75 max-w-2xl mx-auto mb-12"
               >
                 Senior HR judgment, scoped by the project. For Ontario&rsquo;s owner-operated employers and not-for-profits.
               </motion.p>
 
-              <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row gap-5 sm:items-center">
+              <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row gap-5 sm:items-center justify-center">
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-brand)] text-white px-8 py-4 text-[16px] font-medium hover:bg-[var(--color-brand-deep)] transition-colors"
@@ -82,50 +91,28 @@ export default function Home() {
                 </Link>
                 <a
                   href="#how"
-                  className="inline-flex items-center gap-2 text-[16px] font-medium text-[var(--color-ink)] hover:text-[var(--color-brand)] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 text-[16px] font-medium text-white hover:text-[var(--color-brand-soft)] transition-colors"
                 >
                   How it works
                   <span aria-hidden="true">↓</span>
                 </a>
               </motion.div>
             </motion.div>
+          </Container>
+        </div>
 
-            {/* BRAND POSTER — gradient mesh + logomark */}
-            <motion.div
-              className="lg:col-span-5"
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.1, ease: SLOW_OUT, delay: 0.2 }}
-            >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl gradient-brand">
-                <div className="gradient-grain" aria-hidden="true" />
-                {/* Top edge marks */}
-                <div className="absolute top-6 md:top-8 left-6 md:left-8 right-6 md:right-8 flex items-start justify-between text-white">
-                  <span className="text-[10px] uppercase tracking-[0.18em] font-semibold opacity-65">Fig. 01</span>
-                  <span className="text-[10px] uppercase tracking-[0.18em] font-semibold opacity-65">Newmarket, ON</span>
-                </div>
-                {/* Centered logomark */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                  <LogoMark size={140} light />
-                  <div className="mt-6 text-white/65 text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold">
-                    HR &amp; Communications
-                  </div>
-                </div>
-                {/* Bottom edge marks */}
-                <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 right-6 md:right-8 flex items-end justify-between text-white">
-                  <div>
-                    <div className="text-[10px] uppercase tracking-[0.18em] opacity-65 mb-1">Est.</div>
-                    <div className="text-[16px] font-semibold">2012</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-[10px] uppercase tracking-[0.18em] opacity-65 mb-1">Files</div>
-                    <div className="text-[16px] font-semibold">One partner each</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+        {/* Bottom edge marks */}
+        <div className="absolute bottom-8 md:bottom-12 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1440px] mx-auto flex items-end justify-between text-white/65">
+            <div className="flex items-center gap-3">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-brand)]" aria-hidden="true" />
+              <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">One senior partner per file</span>
+            </div>
+            <a href="#how" className="text-[10px] uppercase tracking-[0.22em] font-semibold hover:text-white transition-colors flex items-center gap-2">
+              Scroll <span aria-hidden="true">↓</span>
+            </a>
           </div>
-        </Container>
+        </div>
       </section>
 
       {/* PROOF STATS — BLACK panel with orange accents */}
@@ -267,7 +254,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* FOUNDER MOMENT — BLACK panel with brand mesh accents, text-only */}
+      {/* FOUNDER MOMENT — BLACK panel, text-only */}
       <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden">
         <div
           aria-hidden="true"
