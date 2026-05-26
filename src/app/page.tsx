@@ -16,6 +16,7 @@ import { VoiceSamples } from "@/components/voice-samples";
 import { FrameworkDiagram } from "@/components/framework-diagram";
 import { CostCalculator } from "@/components/cost-calculator";
 import { OrgChartComparison } from "@/components/org-chart-comparison";
+import { WhoWeServe } from "@/components/who-we-serve";
 import { HeroImage } from "@/components/hero-image";
 import { PortraitEvert } from "@/components/portrait";
 import { SignatureEvert } from "@/components/signature";
@@ -53,13 +54,9 @@ const publications = [
 export default function Home() {
   return (
     <>
-      {/* HERO with editorial backdrop photo */}
+      {/* HERO */}
       <section className="relative gradient-brand text-white overflow-hidden -mt-16 md:-mt-20" style={{ minHeight: "100vh" }}>
-        <HeroImage
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=80"
-          alt=""
-          imageOpacity={0.12}
-        />
+        <HeroImage src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=80" alt="" imageOpacity={0.12} />
         <div className="gradient-grain" aria-hidden="true" />
 
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
@@ -113,15 +110,18 @@ export default function Home() {
 
       <MediationBand />
 
-      {/* SERVICES */}
+      {/* SERVICES — with editorial-belongs resolution */}
       <section id="services" className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
         <Container size="wide">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="max-w-4xl mb-16 md:mb-24">
             <p className="eyebrow mb-8">What we do</p>
-            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
+            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-6">
               Three practices.<br />
               <span className="text-[var(--color-secondary)]">One senior partner each.</span>
             </h2>
+            <p className="text-[16px] md:text-[17px] leading-[1.6] text-[var(--color-mute)] max-w-2xl">
+              Fractional HR and Workplace Mediation share a craft: senior judgment scoped per file. Editorial extends that craft to the page — for HR teams who need a board memo to land or an op-ed to publish.
+            </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {services.map((s, i) => <ServiceCard key={s.slug} service={s} index={i} />)}
@@ -129,12 +129,13 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* WHO WE SERVE — audience depth (Wave 15) */}
+      <WhoWeServe />
+
       <AntiPositioning />
 
-      {/* THE XNL APPROACH — framework */}
       <FrameworkDiagram background="paper" />
 
-      {/* ORG-CHART COMPARISON — visual lead-in to the comparison table */}
       <OrgChartComparison />
 
       {/* HOW IT WORKS */}
@@ -166,7 +167,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* COST CALCULATOR — interactive */}
       <CostCalculator />
 
       {/* WHY XNL — comparison */}

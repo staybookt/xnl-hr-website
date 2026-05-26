@@ -120,7 +120,6 @@ export const publications = [
   { name: "HRD Canada", weight: 700, tracking: "-0.015em", style: "italic", uppercase: false },
 ] as const;
 
-// Voice samples — PLACEHOLDER statements drafted in Evert's voice (see PLACEHOLDERS.md)
 export const voiceSamples = [
   { text: "Most HR problems are documentation problems disguised as people problems." },
   { text: "The HR department's job isn't to protect the company. It's to protect the company from itself." },
@@ -128,6 +127,60 @@ export const voiceSamples = [
   { text: "Senior judgment is mostly about knowing what NOT to write down." },
   { text: "The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim." },
   { text: "If we're not the right fit, I'll tell you in the first ten minutes. The next twenty are for who is." },
+] as const;
+
+// Buyer personas — the three SMB/NFP profiles XNL most often serves
+export const buyerPersonas = [
+  {
+    role: "The founder-CEO",
+    sub: "Growing past 30 employees with no HR lead",
+    pain: "Hiring is chaos, the handbook hasn't been touched since 2019, and you just made a termination decision your gut said was right but your paper trail can't defend.",
+    fit: "Project-by-project HR with senior judgment on the file when it matters.",
+  },
+  {
+    role: "The NFP Executive Director",
+    sub: "Board governance and HR overlap, limited budget",
+    pain: "Mediation rules just changed, complaints are landing, and the board treats HR as a line item rather than a strategic risk.",
+    fit: "Senior advisor on the hard files. Wendy on mediation. No full-time HR hire required.",
+  },
+  {
+    role: "The COO with growing team",
+    sub: "You have HR staff, but need depth for senior matters",
+    pain: "Your HR generalist is great at the day-to-day but out of their depth on the executive termination, the HRTO defense, or the policy overhaul that's overdue.",
+    fit: "Senior advisory layer that sits alongside your team. We bring depth; they keep bandwidth.",
+  },
+] as const;
+
+// Company stage fit — disqualify wrong fits quickly, qualify right ones
+export const stageFit = [
+  {
+    range: "Under 15",
+    label: "Too small for fractional",
+    body: "You usually need a templated solution and an employment lawyer for one-off matters. We'll refer you.",
+    state: "out" as const,
+  },
+  {
+    range: "15–250",
+    label: "Sweet spot · XNL",
+    body: "Owner-operated SMBs and not-for-profits. Big enough to need senior HR judgment, small enough that a full-time hire is overkill.",
+    state: "in" as const,
+  },
+  {
+    range: "250+",
+    label: "Likely have HR already",
+    body: "You probably have an HR team. We can be a senior advisor for specific matters, but you don't need fractional HR as your primary HR.",
+    state: "out" as const,
+  },
+] as const;
+
+// Industries served — 6 sectors with concise descriptors
+export const industries = [
+  { name: "Manufacturing", icon: "factory", note: "15–150 employee shops with hourly + salaried mix" },
+  { name: "Professional services", icon: "briefcase", note: "Partner-led firms, growing past founder-CEO HR" },
+  { name: "Not-for-profit", icon: "heart", note: "Board-governed, ED-led, mission-driven" },
+  { name: "Municipal", icon: "building", note: "Town corporations + agencies + boards" },
+  { name: "Healthcare", icon: "cross", note: "Clinic groups, allied health, mid-size practices" },
+  { name: "Retail / hospitality", icon: "shop", note: "Multi-location operators with turnover at scale" },
 ] as const;
 
 export const faqs = [
