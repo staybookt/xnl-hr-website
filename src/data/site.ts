@@ -34,11 +34,12 @@ export const principals = {
   },
 } as const;
 
+// Nav updated: Articles → Insights, Approach added
 export const nav = [
   { label: "Services", href: "/services" },
-  { label: "How it works", href: "/#how" },
+  { label: "Approach", href: "/approach" },
+  { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
-  { label: "Articles", href: "/articles" },
 ] as const;
 
 export const scenarios = [
@@ -104,10 +105,38 @@ export const testimonials = [
   { quote: "Evert wrote the board memo I'd been trying to write for two weeks. It landed in 20 minutes of his time.", role: "COO", org: "Ontario municipal corporation", placeholder: true },
 ] as const;
 
+// Insights articles — 1 original POV (full content lives at /insights/hrto-mandatory-mediation) + 2 republished placeholders
 export const articles = [
-  { title: "Why the cheapest HR mistake is the one you spot first", publication: "Canadian HR Reporter", date: "March 2026", excerpt: "Most wrongful dismissal claims have a signal weeks before they file. The cost of catching them early vs. defending them later isn't close.", url: "#", placeholder: true },
-  { title: "Mandatory mediation: what Ontario employers should be doing right now", publication: "The Lawyer's Daily", date: "January 2026", excerpt: "The HRTO mandatory-mediation rule took effect in June 2025. Most employers still treat mediation as a courtroom delay. Here's why that's the wrong instinct.", url: "#", placeholder: true },
-  { title: "Hiring is a search problem, not a sales problem", publication: "Municipal World", date: "November 2025", excerpt: "The best hires aren't sold on you. They're found. That distinction changes the entire process, the cost, and the retention math.", url: "#", placeholder: true },
+  {
+    slug: "hrto-mandatory-mediation",
+    title: "The HRTO mandatory-mediation rule: what Ontario employers misunderstand",
+    publication: "XNL Insights",
+    date: "January 2026",
+    excerpt: "Six months in, most employers I speak with are still treating mandatory mediation as a procedural delay. They're wrong — and the cost of that misunderstanding is showing up in their settlement records, their legal bills, and their teams.",
+    url: "/insights/hrto-mandatory-mediation",
+    placeholder: false,
+    original: true,
+  },
+  {
+    slug: "cheapest-hr-mistake",
+    title: "Why the cheapest HR mistake is the one you spot first",
+    publication: "Canadian HR Reporter",
+    date: "March 2026",
+    excerpt: "Most wrongful dismissal claims have a signal weeks before they file. The cost of catching them early vs. defending them later isn't close.",
+    url: "#",
+    placeholder: true,
+    original: false,
+  },
+  {
+    slug: "hiring-search-problem",
+    title: "Hiring is a search problem, not a sales problem",
+    publication: "Municipal World",
+    date: "November 2025",
+    excerpt: "The best hires aren't sold on you. They're found. That distinction changes the entire process, the cost, and the retention math.",
+    url: "#",
+    placeholder: true,
+    original: false,
+  },
 ] as const;
 
 export const publications = [
@@ -129,51 +158,18 @@ export const voiceSamples = [
   { text: "If we're not the right fit, I'll tell you in the first ten minutes. The next twenty are for who is." },
 ] as const;
 
-// Buyer personas — the three SMB/NFP profiles XNL most often serves
 export const buyerPersonas = [
-  {
-    role: "The founder-CEO",
-    sub: "Growing past 30 employees with no HR lead",
-    pain: "Hiring is chaos, the handbook hasn't been touched since 2019, and you just made a termination decision your gut said was right but your paper trail can't defend.",
-    fit: "Project-by-project HR with senior judgment on the file when it matters.",
-  },
-  {
-    role: "The NFP Executive Director",
-    sub: "Board governance and HR overlap, limited budget",
-    pain: "Mediation rules just changed, complaints are landing, and the board treats HR as a line item rather than a strategic risk.",
-    fit: "Senior advisor on the hard files. Wendy on mediation. No full-time HR hire required.",
-  },
-  {
-    role: "The COO with growing team",
-    sub: "You have HR staff, but need depth for senior matters",
-    pain: "Your HR generalist is great at the day-to-day but out of their depth on the executive termination, the HRTO defense, or the policy overhaul that's overdue.",
-    fit: "Senior advisory layer that sits alongside your team. We bring depth; they keep bandwidth.",
-  },
+  { role: "The founder-CEO", sub: "Growing past 30 employees with no HR lead", pain: "Hiring is chaos, the handbook hasn't been touched since 2019, and you just made a termination decision your gut said was right but your paper trail can't defend.", fit: "Project-by-project HR with senior judgment on the file when it matters." },
+  { role: "The NFP Executive Director", sub: "Board governance and HR overlap, limited budget", pain: "Mediation rules just changed, complaints are landing, and the board treats HR as a line item rather than a strategic risk.", fit: "Senior advisor on the hard files. Wendy on mediation. No full-time HR hire required." },
+  { role: "The COO with growing team", sub: "You have HR staff, but need depth for senior matters", pain: "Your HR generalist is great at the day-to-day but out of their depth on the executive termination, the HRTO defense, or the policy overhaul that's overdue.", fit: "Senior advisory layer that sits alongside your team. We bring depth; they keep bandwidth." },
 ] as const;
 
-// Company stage fit — disqualify wrong fits quickly, qualify right ones
 export const stageFit = [
-  {
-    range: "Under 15",
-    label: "Too small for fractional",
-    body: "You usually need a templated solution and an employment lawyer for one-off matters. We'll refer you.",
-    state: "out" as const,
-  },
-  {
-    range: "15–250",
-    label: "Sweet spot · XNL",
-    body: "Owner-operated SMBs and not-for-profits. Big enough to need senior HR judgment, small enough that a full-time hire is overkill.",
-    state: "in" as const,
-  },
-  {
-    range: "250+",
-    label: "Likely have HR already",
-    body: "You probably have an HR team. We can be a senior advisor for specific matters, but you don't need fractional HR as your primary HR.",
-    state: "out" as const,
-  },
+  { range: "Under 15", label: "Too small for fractional", body: "You usually need a templated solution and an employment lawyer for one-off matters. We'll refer you.", state: "out" as const },
+  { range: "15–250", label: "Sweet spot · XNL", body: "Owner-operated SMBs and not-for-profits. Big enough to need senior HR judgment, small enough that a full-time hire is overkill.", state: "in" as const },
+  { range: "250+", label: "Likely have HR already", body: "You probably have an HR team. We can be a senior advisor for specific matters, but you don't need fractional HR as your primary HR.", state: "out" as const },
 ] as const;
 
-// Industries served — 6 sectors with concise descriptors
 export const industries = [
   { name: "Manufacturing", icon: "factory", note: "15–150 employee shops with hourly + salaried mix" },
   { name: "Professional services", icon: "briefcase", note: "Partner-led firms, growing past founder-CEO HR" },
@@ -185,7 +181,7 @@ export const industries = [
 
 export const faqs = [
   { q: "How is XNL different from a traditional HR firm?", a: "One senior partner on every file. No retainers required, no junior analysts, no bait-and-switch from the partner you signed with to the staff who actually do the work. You hire Evert (or Wendy for mediation), and Evert (or Wendy) does the work." },
-  { q: "What does an engagement cost?", a: "Project work is fixed-fee. Ongoing support is hourly with a cap. We scope it transparently during the intake call. There are no monthly retainers you can't opt out of — you pay for the work we actually do." },
+  { q: "What does an engagement cost?", a: "Engagements are scoped to a fixed fee or hourly cap. We share pricing on the intake call once we understand the work. There are no monthly retainers you can't opt out of." },
   { q: "How fast can you start?", a: "Intake call within 48 hours. Scoped proposal in 3 business days. Live engagement typically within two weeks of the intake. Urgent terminations or HRTO proceedings can move faster." },
   { q: "Do you work with companies outside Ontario?", a: "Most engagements are Ontario-based since that's where Evert is licensed and where the legal frameworks (ESA, OHSA, AODA, HRTO) sit. We'll take federally regulated work and out-of-province engagements case by case." },
   { q: "What size company is the right fit?", a: "Owner-operated SMBs (15–250 employees) and not-for-profits without a senior HR lead. Below that, you usually don't need fractional HR. Above that, you typically have an HR team and want a senior advisor on specific projects." },

@@ -6,40 +6,22 @@ import { Container } from "@/components/container";
 import { ServiceCard } from "@/components/service-card";
 import { Comparison } from "@/components/comparison";
 import { FAQ } from "@/components/faq";
-import { CountUp } from "@/components/count-up";
-import { ScenarioTiles } from "@/components/scenario-tiles";
 import { MediationBand } from "@/components/mediation-band";
 import { AntiPositioning } from "@/components/anti-positioning";
 import { Testimonials } from "@/components/testimonials";
 import { RecentThinking } from "@/components/recent-thinking";
 import { VoiceSamples } from "@/components/voice-samples";
 import { FrameworkDiagram } from "@/components/framework-diagram";
-import { CostCalculator } from "@/components/cost-calculator";
 import { OrgChartComparison } from "@/components/org-chart-comparison";
 import { WhoWeServe } from "@/components/who-we-serve";
 import { HeroImage } from "@/components/hero-image";
 import { PortraitEvert } from "@/components/portrait";
 import { SignatureEvert } from "@/components/signature";
-import { getStepIcon } from "@/components/icons";
 import { contact, services, faqs } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 const FADE_UP = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: SLOW_OUT } } };
 const STAGGER = { hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } };
-
-const steps = [
-  { n: "01", title: "Intake call", time: "30 min · no cost", body: "You describe the situation. We tell you if XNL is the right fit. If not, we refer you." },
-  { n: "02", title: "Scoped proposal", time: "Within 3 days", body: "Fixed-fee for defined work or hourly with a cap. You know what you're paying before we start." },
-  { n: "03", title: "Delivery", time: "Senior partner on file", body: "Evert or Wendy on the file. No analysts. No handoffs to junior staff." },
-  { n: "04", title: "Stay close", time: "As needed", body: "Quarterly check-ins. Call when you need us. No monthly retainer required." },
-];
-
-const stats = [
-  { num: 25, suffix: "", unit: "yrs", label: "In Canadian HR" },
-  { num: 25, suffix: "+", unit: "", label: "Published bylines" },
-  { num: 2, suffix: "x", unit: "", label: "Canada's Top-25 HR" },
-  { num: 1, suffix: "", unit: "", label: "Senior partner per file" },
-];
 
 const publications = [
   "Canadian HR Reporter",
@@ -54,7 +36,7 @@ const publications = [
 export default function Home() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO — editorial register, no SMB CTA stack */}
       <section className="relative gradient-brand text-white overflow-hidden -mt-16 md:-mt-20" style={{ minHeight: "100vh" }}>
         <HeroImage src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=80" alt="" imageOpacity={0.12} />
         <div className="gradient-grain" aria-hidden="true" />
@@ -66,36 +48,43 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 flex items-center justify-center min-h-screen pt-28 md:pt-36 pb-28 md:pb-32">
+        <div className="relative z-10 flex items-center justify-center min-h-screen pt-32 md:pt-40 pb-28 md:pb-32">
           <Container size="wide">
-            <motion.div initial="hidden" animate="show" variants={STAGGER} className="max-w-6xl mx-auto text-center">
-              <motion.p variants={FADE_UP} className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold text-white/65 mb-8">
+            <motion.div initial="hidden" animate="show" variants={STAGGER} className="max-w-5xl mx-auto text-center">
+              <motion.p variants={FADE_UP} className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold text-white/65 mb-10">
                 Fractional HR · Workplace Mediation · Editorial
               </motion.p>
-              <motion.h1 variants={FADE_UP} className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-white mb-8">
+              <motion.h1 variants={FADE_UP} className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-white mb-10">
                 The outsourced<br />HR <span className="text-brand-gradient">department.</span>
               </motion.h1>
-              <motion.p variants={FADE_UP} className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-white/80 max-w-2xl mx-auto mb-12 md:mb-14">
+              <motion.p variants={FADE_UP} className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-white/80 max-w-2xl mx-auto mb-14">
                 Senior HR judgment, scoped by the project. For Ontario&rsquo;s owner-operated employers and not-for-profits.
               </motion.p>
-              <ScenarioTiles />
-              <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.2, ease: SLOW_OUT }} className="mt-10 md:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5 sm:items-center justify-center">
-                <a href={`tel:${contact.phoneE164}`} className="inline-flex items-center justify-center gap-2 text-[15px] md:text-[16px] font-semibold text-white hover:text-[var(--color-brand)] transition-colors">
-                  <span aria-hidden="true">☎</span>
-                  Or talk to Evert now · {contact.phone}
-                </a>
-                <span className="text-white/30 hidden sm:inline" aria-hidden="true">/</span>
-                <a href="#services" className="inline-flex items-center justify-center gap-1.5 text-[14px] text-white/60 hover:text-white/90 transition-colors">
-                  See what we do <span aria-hidden="true">↓</span>
-                </a>
+
+              {/* Editorial-register CTAs: thinking first, conversation second */}
+              <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center justify-center">
+                <Link
+                  href="/insights"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[var(--color-ink)] px-8 py-4 text-[16px] font-medium hover:bg-[var(--color-brand-soft)] transition-colors"
+                >
+                  Read our latest thinking <span aria-hidden="true">→</span>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 text-[16px] font-medium text-white/85 hover:text-white transition-colors"
+                >
+                  Or speak with Evert <span aria-hidden="true">→</span>
+                </Link>
               </motion.div>
             </motion.div>
           </Container>
         </div>
 
-        <div className="absolute bottom-6 md:bottom-10 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
+        <div className="absolute bottom-8 md:bottom-12 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
           <div className="max-w-[1440px] mx-auto">
-            <p className="text-[10px] uppercase tracking-[0.22em] font-semibold text-white/45 text-center mb-2">Published in</p>
+            <p className="text-[10px] uppercase tracking-[0.22em] font-semibold text-white/45 text-center mb-3">
+              Where Evert publishes
+            </p>
             <div className="flex flex-wrap items-center justify-center gap-x-5 md:gap-x-10 gap-y-1 text-[11px] md:text-[13px] text-white/65 font-medium">
               {publications.slice(0, 5).map((p, i) => (
                 <span key={p} className="flex items-center gap-x-5 md:gap-x-10">
@@ -110,7 +99,7 @@ export default function Home() {
 
       <MediationBand />
 
-      {/* SERVICES — with editorial-belongs resolution */}
+      {/* SERVICES — cards keep cases but display them quietly; no calculator below */}
       <section id="services" className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
         <Container size="wide">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="max-w-4xl mb-16 md:mb-24">
@@ -129,45 +118,27 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* WHO WE SERVE — audience depth (Wave 15) */}
       <WhoWeServe />
 
       <AntiPositioning />
 
+      {/* THE XNL APPROACH (framework) + link to /approach methodology */}
       <FrameworkDiagram background="paper" />
 
-      <OrgChartComparison />
-
-      {/* HOW IT WORKS */}
-      <section id="how" className="relative py-24 md:py-32 lg:py-40 overflow-hidden gradient-brand-soft">
-        <Container size="wide" className="relative">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="max-w-4xl mb-16 md:mb-24">
-            <p className="eyebrow mb-8">How it works</p>
-            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
-              Intro call to live engagement.<br />
-              <span className="text-[var(--color-brand-deep)]">Under two weeks.</span>
-            </h2>
-          </motion.div>
-          <motion.ol initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={STAGGER} className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-14 gap-x-10">
-            <div className="hidden lg:block absolute top-7 left-0 right-0 h-px bg-[var(--color-slate)]/20 z-0" aria-hidden="true" />
-            {steps.map((step, idx) => (
-              <motion.li key={step.n} variants={FADE_UP} className="relative z-10 flex flex-col">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="flex items-center justify-center w-14 h-14 rounded-full bg-[var(--color-paper)] border border-[var(--color-slate)]/15 text-[var(--color-slate)] shadow-[0_4px_12px_-2px_rgba(45,61,78,0.15)]">
-                    {getStepIcon(idx, { size: 22 })}
-                  </span>
-                  <span className="text-[14px] uppercase tracking-[0.14em] font-semibold text-[var(--color-slate)]">Step {step.n}</span>
-                </div>
-                <h3 className="text-[24px] md:text-[28px] leading-[1.15] tracking-[-0.02em] font-semibold text-[var(--color-ink)] mb-4">{step.title}</h3>
-                <p className="text-[12px] uppercase tracking-[0.12em] font-semibold text-[var(--color-secondary-deep)] mb-4">{step.time}</p>
-                <p className="text-[16px] leading-[1.6] text-[var(--color-ink-soft)]/75">{step.body}</p>
-              </motion.li>
-            ))}
-          </motion.ol>
+      <section className="py-6 md:py-10 bg-[var(--color-paper)]">
+        <Container size="wide">
+          <div className="text-center">
+            <Link
+              href="/approach"
+              className="inline-flex items-center gap-2 text-[15px] font-semibold text-[var(--color-slate)] hover:gap-3 transition-all"
+            >
+              Read the full approach <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </Container>
       </section>
 
-      <CostCalculator />
+      <OrgChartComparison />
 
       {/* WHY XNL — comparison */}
       <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
@@ -188,34 +159,27 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* PROOF STATS */}
-      <section className="relative bg-[var(--color-ink)] text-white py-24 md:py-32 lg:py-40 overflow-hidden">
-        <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 70% 55% at 12% 25%, rgba(150, 144, 181, 0.22) 0%, transparent 60%), radial-gradient(ellipse 65% 50% at 90% 80%, rgba(232, 155, 122, 0.18) 0%, transparent 60%)" }} />
-        <Container size="wide" className="relative">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="max-w-3xl mb-16 md:mb-24">
-            <p className="eyebrow-light mb-8">Track record</p>
-            <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold">
-              The proof is on paper.<br /><span className="text-brand-gradient">Twenty-five years of it.</span>
-            </h2>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={STAGGER} className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 border-t border-white/15 pt-14 md:pt-20">
-            {stats.map((s, i) => (
-              <motion.div key={s.label} variants={FADE_UP}>
-                <div className="stat-num text-white mb-4 flex items-baseline">
-                  <CountUp to={s.num} />
-                  <span className={`text-[40%] ml-2 ${i === 0 ? "text-[var(--color-brand)]" : "text-[var(--color-secondary)]"}`}>{s.suffix}</span>
-                  {s.unit && <span className="text-white/55 text-[28%] ml-2 lowercase">{s.unit}</span>}
-                </div>
-                <p className="text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white/55">{s.label}</p>
-              </motion.div>
-            ))}
+      {/* TRACK RECORD — STATIC EDITORIAL FACT BLOCK, no count-ups */}
+      <section className="bg-[var(--color-ink)] text-white py-24 md:py-32 lg:py-40">
+        <Container size="wide">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: SLOW_OUT }}
+            className="max-w-5xl"
+          >
+            <p className="eyebrow-light mb-10">Track record</p>
+            <p className="text-[length:var(--text-display-lg)] leading-[1.15] tracking-[-0.025em] font-medium text-white">
+              Twenty-five years of practice. Twenty-five-plus bylines in Canadian HR Reporter, Municipal World, Ottawa Life, Talent Canada, and The Lawyer&rsquo;s Daily. Named to <span className="text-brand-gradient">Canada&rsquo;s Top-25 HR Professionals in 2016 and 2017</span>. Randstad Innovation in HR Award, 2015. One senior partner on every file.
+            </p>
           </motion.div>
         </Container>
       </section>
 
       <Testimonials />
 
-      {/* FOUNDER — with portrait + signature */}
+      {/* FOUNDER */}
       <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden border-t border-white/10">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 70% 60% at 12% 30%, rgba(150, 144, 181, 0.30) 0%, transparent 60%), radial-gradient(ellipse 70% 55% at 90% 80%, rgba(232, 155, 122, 0.28) 0%, transparent 60%), radial-gradient(ellipse 55% 45% at 50% 100%, rgba(168, 181, 168, 0.18) 0%, transparent 60%)" }} />
         <Container size="wide" className="relative">
@@ -288,7 +252,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* FINAL CTA — simplified, editorial */}
       <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 65% 55% at 12% 25%, rgba(150, 144, 181, 0.32) 0%, transparent 60%), radial-gradient(ellipse 75% 60% at 88% 78%, rgba(232, 155, 122, 0.38) 0%, transparent 60%)" }} />
         <Container size="wide" className="relative">
@@ -302,7 +266,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
               <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--color-brand)] text-white px-8 py-4 text-[16px] font-medium hover:bg-[var(--color-brand-deep)] transition-colors">
-                Book an intro call <span aria-hidden="true">→</span>
+                Speak with Evert <span aria-hidden="true">→</span>
               </Link>
               <a href={`tel:${contact.phoneE164}`} className="inline-flex items-center gap-2 text-[16px] font-medium text-white hover:text-[var(--color-brand)] transition-colors">
                 Or call {contact.phone}
