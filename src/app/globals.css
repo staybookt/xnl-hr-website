@@ -1,11 +1,10 @@
 @import "tailwindcss";
 
-/* XNL HR — Wave 8.2: pastel coral lives IN the gradients.
-   Hero mesh, soft mesh, and text gradient all bridge cool → warm coral.
-   The brand color is woven into the palette, not isolated as an accent. */
+/* XNL HR — Wave 8.3: brand coral leads the text gradient.
+   Accent words start with the brand color, fade through lavender to cool slate. */
 
 @theme {
-  /* Brand orange — pastel coral pulled from the logo, anchored in gradients */
+  /* Brand orange — pastel coral pulled from the logo */
   --color-brand: #E89B7A;
   --color-brand-deep: #C77957;
   --color-brand-soft: #FBEFE8;
@@ -187,8 +186,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: var(--text-stat--font-weight);
 }
 
-/* HERO MESH — bridges cool slate → warm pastel coral diagonally.
-   Coral is a major stop, not a corner ember. */
+/* HERO MESH — bridges cool slate → warm pastel coral diagonally */
 .gradient-brand {
   background-color: #1A1D24;
   background-image:
@@ -198,7 +196,7 @@ a { color: inherit; text-decoration: none; }
     linear-gradient(155deg, #2D3D4E 0%, #1F2D3D 45%, #6B5F7D 75%, #C77957 100%);
 }
 
-/* SOFT MESH — pale lavender → pale coral wash for light section backdrops */
+/* SOFT MESH — pale lavender → pale coral wash */
 .gradient-brand-soft {
   background-image:
     radial-gradient(ellipse 85% 65% at 18% 22%, rgba(232, 228, 240, 0.9) 0%, transparent 62%),
@@ -215,10 +213,10 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 
-/* TEXT GRADIENT — light slate → lavender → pastel coral.
-   Brand color is the destination, not absent. */
+/* TEXT GRADIENT — coral leads, fades through lavender to light slate.
+   Brand color is the entry, cool tones carry it away. */
 .text-brand-gradient {
-  background: linear-gradient(135deg, #C9D4E3 0%, var(--color-secondary) 45%, var(--color-brand) 100%);
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-secondary) 55%, #C9D4E3 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
