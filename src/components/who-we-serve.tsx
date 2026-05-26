@@ -50,18 +50,12 @@ function OntarioMap() {
         </linearGradient>
       </defs>
       <rect width="360" height="220" rx="16" fill="url(#onMapBg)"/>
-
-      {/* Stylized southern Ontario silhouette — abstracted, not geographically precise */}
       <path
         d="M30 90 Q60 70 110 75 Q160 70 200 85 Q240 95 280 90 Q320 85 340 100 L335 125 Q320 145 290 150 Q260 155 230 150 Q200 155 175 165 Q145 175 115 170 Q85 168 60 155 Q35 140 30 115 Z"
         fill="#2D3D4E"
         opacity="0.85"
       />
-
-      {/* Lake hint (Lake Ontario abstracted) */}
       <ellipse cx="240" cy="170" rx="55" ry="12" fill="#9690B5" opacity="0.4"/>
-
-      {/* Newmarket pin */}
       <g>
         <circle cx="205" cy="125" r="14" fill="#E89B7A" opacity="0.3"/>
         <circle cx="205" cy="125" r="6" fill="#E89B7A"/>
@@ -69,21 +63,15 @@ function OntarioMap() {
       </g>
       <text x="218" y="122" fontSize="11" fontWeight="600" fill="#1A1D24">Newmarket</text>
       <text x="218" y="134" fontSize="9" fill="#6b6b6b" letterSpacing="0.04em">XNL home base</text>
-
-      {/* Service area dots */}
       <circle cx="195" cy="148" r="3" fill="#6B5F7D"/>
       <text x="180" y="165" fontSize="9" fill="#6B5F7D" fontWeight="500">GTA</text>
-
       <circle cx="130" cy="145" r="3" fill="#6B5F7D"/>
       <text x="100" y="160" fontSize="9" fill="#6B5F7D" fontWeight="500">SW Ontario</text>
-
       <circle cx="285" cy="110" r="3" fill="#6B5F7D"/>
       <text x="275" y="100" fontSize="9" fill="#6B5F7D" fontWeight="500">Ottawa</text>
-
-      {/* Corner marks */}
-      <text x="20" y="30" fontSize="9" fill="#6b6b6b" letterSpacing="0.18em" fontWeight="600">SERVING</text>
-      <line x1="20" y1="36" x2="58" y2="36" stroke="#E89B7A" strokeWidth="2"/>
-      <text x="340" y="30" textAnchor="end" fontSize="9" fill="#6b6b6b" letterSpacing="0.18em" fontWeight="600">ON · CA</text>
+      <text x="20" y="30" fontSize="9" fill="#6b6b6b" letterSpacing="0.18em" fontWeight="600">HEADQUARTERED</text>
+      <line x1="20" y1="36" x2="100" y2="36" stroke="#E89B7A" strokeWidth="2"/>
+      <text x="340" y="30" textAnchor="end" fontSize="9" fill="#6b6b6b" letterSpacing="0.18em" fontWeight="600">CANADA-WIDE</text>
     </svg>
   );
 }
@@ -151,7 +139,7 @@ export function WhoWeServe() {
         >
           <p className="eyebrow mb-6">Company stage fit</p>
           <h3 className="text-[28px] md:text-[36px] leading-[1.1] tracking-[-0.025em] font-semibold text-[var(--color-ink)] mb-10 max-w-3xl">
-            Where XNL is the right call — and where it isn&rsquo;t.
+            Where XNL is the right call. And where it isn&rsquo;t.
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--color-rule)] rounded-3xl overflow-hidden border border-[var(--color-rule)]">
             {stageFit.map((s, i) => {
@@ -230,12 +218,12 @@ export function WhoWeServe() {
           >
             <p className="eyebrow mb-6">Where we work</p>
             <h3 className="text-[28px] md:text-[36px] leading-[1.1] tracking-[-0.025em] font-semibold text-[var(--color-ink)] mb-8">
-              Ontario-based.<br />
-              <span className="text-[var(--color-secondary)]">National when it fits.</span>
+              Headquartered in Ontario.<br />
+              <span className="text-[var(--color-secondary)]">Canada-wide on the right files.</span>
             </h3>
             <OntarioMap />
             <p className="text-[13px] leading-[1.6] text-[var(--color-mute)] mt-5">
-              Most engagements are Ontario-based since Evert is licensed here and the legal frameworks (ESA, OHSA, AODA, HRTO) sit in this jurisdiction. Federally regulated work and out-of-province engagements are taken case by case.
+              Most fractional HR engagements are Ontario-based since that&rsquo;s where the legal frameworks (ESA, OHSA, AODA, HRTO) sit and where Evert is licensed. Editorial work travels anywhere. Mediation work travels where the matter doesn&rsquo;t touch a specific tribunal. Out-of-province and federally regulated work, case by case.
             </p>
           </motion.div>
         </div>

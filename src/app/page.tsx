@@ -36,7 +36,7 @@ const publications = [
 export default function Home() {
   return (
     <>
-      {/* HERO — editorial register, no SMB CTA stack */}
+      {/* HERO */}
       <section className="relative gradient-brand text-white overflow-hidden -mt-16 md:-mt-20" style={{ minHeight: "100vh" }}>
         <HeroImage src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=80" alt="" imageOpacity={0.12} />
         <div className="gradient-grain" aria-hidden="true" />
@@ -44,7 +44,7 @@ export default function Home() {
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
           <div className="max-w-[1440px] mx-auto flex items-start justify-between text-white/65">
             <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">XNL</span>
-            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">Newmarket, ON · Est. 2012</span>
+            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">Headquartered in Newmarket, ON · Est. 2012</span>
           </div>
         </div>
 
@@ -58,10 +58,8 @@ export default function Home() {
                 The outsourced<br />HR <span className="text-brand-gradient">department.</span>
               </motion.h1>
               <motion.p variants={FADE_UP} className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-white/80 max-w-2xl mx-auto mb-14">
-                Senior HR judgment, scoped by the project. For Ontario&rsquo;s owner-operated employers and not-for-profits.
+                Senior HR judgment, scoped by the project. For owner-operated employers and not-for-profits across Canada.
               </motion.p>
-
-              {/* Editorial-register CTAs: thinking first, conversation second */}
               <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center justify-center">
                 <Link
                   href="/insights"
@@ -99,7 +97,7 @@ export default function Home() {
 
       <MediationBand />
 
-      {/* SERVICES — cards keep cases but display them quietly; no calculator below */}
+      {/* SERVICES */}
       <section id="services" className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
         <Container size="wide">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="max-w-4xl mb-16 md:mb-24">
@@ -109,7 +107,7 @@ export default function Home() {
               <span className="text-[var(--color-secondary)]">One senior partner each.</span>
             </h2>
             <p className="text-[16px] md:text-[17px] leading-[1.6] text-[var(--color-mute)] max-w-2xl">
-              Fractional HR and Workplace Mediation share a craft: senior judgment scoped per file. Editorial extends that craft to the page — for HR teams who need a board memo to land or an op-ed to publish.
+              Fractional HR and Workplace Mediation share a craft: senior judgment scoped per file. Editorial extends that craft to the page, for HR teams who need a board memo to land or an op-ed to publish.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -122,7 +120,6 @@ export default function Home() {
 
       <AntiPositioning />
 
-      {/* THE XNL APPROACH (framework) + link to /approach methodology */}
       <FrameworkDiagram background="paper" />
 
       <section className="py-6 md:py-10 bg-[var(--color-paper)]">
@@ -159,7 +156,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* TRACK RECORD — STATIC EDITORIAL FACT BLOCK, no count-ups */}
+      {/* TRACK RECORD */}
       <section className="bg-[var(--color-ink)] text-white py-24 md:py-32 lg:py-40">
         <Container size="wide">
           <motion.div
@@ -252,7 +249,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FINAL CTA — simplified, editorial */}
+      {/* FINAL CTA */}
       <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 65% 55% at 12% 25%, rgba(150, 144, 181, 0.32) 0%, transparent 60%), radial-gradient(ellipse 75% 60% at 88% 78%, rgba(232, 155, 122, 0.38) 0%, transparent 60%)" }} />
         <Container size="wide" className="relative">
@@ -262,7 +259,7 @@ export default function Home() {
               Ready to scope<br /><span className="text-brand-gradient">a project?</span>
             </h2>
             <p className="text-[length:var(--text-body-xl)] leading-[1.55] text-white/65 max-w-2xl mb-14">
-              30 minutes, no cost, no obligation. We&rsquo;ll tell you whether XNL is the right fit — or refer you to someone who is.
+              30 minutes, no cost, no obligation. We&rsquo;ll tell you whether XNL is the right fit, or refer you to someone who is.
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
               <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--color-brand)] text-white px-8 py-4 text-[16px] font-medium hover:bg-[var(--color-brand-deep)] transition-colors">

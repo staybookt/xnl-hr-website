@@ -24,7 +24,7 @@ export default function HRTOArticle() {
             The HRTO mandatory-mediation rule: <span className="text-brand-gradient">what Ontario employers misunderstand.</span>
           </h1>
           <p className="text-[length:var(--text-body-xl)] leading-[1.55] text-[var(--color-mute)] mb-10">
-            Six months in, most employers I speak with are still treating mandatory mediation as a procedural delay. They&rsquo;re wrong — and the cost of that misunderstanding is showing up in their settlement records, their legal bills, and the morale of the teams they&rsquo;re trying to defend.
+            Six months in, most employers I talk to are still treating mandatory mediation as a procedural delay. They&rsquo;re wrong. The cost of that misunderstanding is showing up in their settlement records, their legal bills, and the morale of the teams they&rsquo;re trying to defend.
           </p>
           <div className="flex items-center gap-4 pt-6 border-t border-[var(--color-rule)]">
             <SignatureEvert size={36} color="#1A1D24" />
@@ -39,46 +39,52 @@ export default function HRTOArticle() {
       {/* ARTICLE BODY */}
       <section className="pb-20 md:pb-28 bg-[var(--color-paper)]">
         <Container size="narrow">
-          <article className="prose-article">
+          <article>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-7">
-              In June 2025, the Human Rights Tribunal of Ontario made mediation mandatory for most applications before they proceed to a hearing. The change was designed to reduce a backlog the Tribunal could no longer sustain and to produce better outcomes for both sides. It is doing the first. Whether it is doing the second depends, almost entirely, on how prepared the employer arrives.
+              In June 2025, the Human Rights Tribunal of Ontario made mediation mandatory for most applications before they go to a hearing. The change was meant to do two things. Reduce a backlog the Tribunal couldn&rsquo;t sustain. Produce better outcomes for both sides.
             </p>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-12">
-              Three misunderstandings come up most often. They are also the three most expensive.
+              It&rsquo;s doing the first. Whether it&rsquo;s doing the second comes down to one thing: how prepared the employer arrives. Three misunderstandings come up most often. They&rsquo;re also the three most expensive.
             </p>
 
             <h2 className="text-[28px] md:text-[34px] leading-[1.2] tracking-[-0.022em] font-semibold text-[var(--color-ink)] mt-12 mb-5">
               1. &ldquo;Mediation is where the case stalls.&rdquo;
             </h2>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-6">
-              It is where the case usually resolves. Most matters that reach mandatory mediation settle there. That is the design of the rule and it is also the practical experience. The Tribunal made mediation mandatory because the alternative — full hearings with all the time, cost, and exposure they carry — was overwhelming the system and producing worse outcomes for both sides.
+              It&rsquo;s where the case usually resolves. Most matters that reach mandatory mediation settle there. That&rsquo;s the design of the rule, and it&rsquo;s the practical experience.
+            </p>
+            <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-6">
+              The Tribunal made mediation mandatory because the alternative was overwhelming the system. Full hearings, with all the time, cost, and exposure they carry. Worse outcomes for both sides.
             </p>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-12">
-              If your default frame is &ldquo;let&rsquo;s get through the mediation and on to the real proceeding,&rdquo; you are misreading what mediation is. The real proceeding usually does not happen.
+              If your default frame is &ldquo;let&rsquo;s get through the mediation and on to the real proceeding,&rdquo; you&rsquo;re misreading what mediation is. The real proceeding usually doesn&rsquo;t happen.
             </p>
 
             <h2 className="text-[28px] md:text-[34px] leading-[1.2] tracking-[-0.022em] font-semibold text-[var(--color-ink)] mt-12 mb-5">
               2. &ldquo;We&rsquo;ll send our lawyer.&rdquo;
             </h2>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-6">
-              Send your lawyer to the application. Send a mediator&rsquo;s discipline to the mediation. They are different jobs. A lawyer represents your position; a mediator brokers a settlement. When a lawyer walks into mandatory mediation as the only voice for the employer, the conversation collapses into legal positioning — and the matter usually fails to settle, defaulting to the full hearing the rule was designed to prevent.
+              Send your lawyer to the application. Send a mediator&rsquo;s discipline to the mediation. They&rsquo;re different jobs.
+            </p>
+            <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-6">
+              A lawyer represents your position. A mediator brokers a settlement. When a lawyer walks into mandatory mediation as the only voice for the employer, the conversation collapses into legal positioning. The matter usually fails to settle. It defaults to the full hearing the rule was designed to prevent.
             </p>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-12">
-              The employers I see succeed in mandatory mediation pair counsel with a senior HR voice who can speak to the workplace facts, the documentation, and what a livable outcome looks like for both sides.
+              The employers I see succeed in mandatory mediation pair counsel with a senior HR voice. Someone who can speak to the workplace facts, the documentation, and what a livable outcome looks like for both sides.
             </p>
 
             <h2 className="text-[28px] md:text-[34px] leading-[1.2] tracking-[-0.022em] font-semibold text-[var(--color-ink)] mt-12 mb-5">
               3. &ldquo;We&rsquo;ll start preparing when we get the notice.&rdquo;
             </h2>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-6">
-              By the time the HRTO notice arrives, the file is already written. Whatever you documented (or didn&rsquo;t) about the termination, the harassment complaint, the accommodation request — that is the record you are going to mediate on.
+              By the time the HRTO notice arrives, the file is already written. Whatever you documented (or didn&rsquo;t) about the termination, the harassment complaint, the accommodation request. That&rsquo;s the record you&rsquo;re going to mediate on.
             </p>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-12">
               The preparation window for a strong mediation outcome closes weeks or months before the application is filed, not after. The employers who settle well at mandatory mediation are the ones whose files were built defensibly from the start.
             </p>
 
             <blockquote className="text-[24px] md:text-[28px] leading-[1.35] tracking-[-0.022em] font-medium text-[var(--color-ink)] border-l-2 border-[var(--color-brand)] pl-8 my-16 italic">
-              Mediation is not where matters die. It is where they are decided.
+              Mediation isn&rsquo;t where matters die. It&rsquo;s where they get decided.
             </blockquote>
 
             <h2 className="text-[28px] md:text-[34px] leading-[1.2] tracking-[-0.022em] font-semibold text-[var(--color-ink)] mt-12 mb-5">
@@ -88,23 +94,26 @@ export default function HRTOArticle() {
               Three concrete moves, in order.
             </p>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-6">
-              <strong className="text-[var(--color-ink)]">Audit your active people files</strong>, not just the ones with current grievances. Look at the documentation around every termination of the last twenty-four months and every accommodation matter still open. Identify the files that would not survive contact with a mediator&rsquo;s questions, and rebuild the record where you can.
+              <strong className="text-[var(--color-ink)]">Audit your active people files</strong>, not just the ones with current grievances. Look at the documentation around every termination of the last twenty-four months. Every accommodation matter still open. Find the files that wouldn&rsquo;t survive contact with a mediator&rsquo;s questions. Rebuild the record where you can.
             </p>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-6">
-              <strong className="text-[var(--color-ink)]">Brief your HR team on the mediation posture.</strong> The reflex to &ldquo;let the lawyers handle it&rdquo; leaves HR locked out of the room where the matter is actually being decided. HR should be present at mandatory mediation — not as a deferential observer, but as the senior workplace voice. If you do not have a senior HR voice on staff, name one externally before you need one.
+              <strong className="text-[var(--color-ink)]">Brief your HR team on the mediation posture.</strong> The reflex to &ldquo;let the lawyers handle it&rdquo; leaves HR locked out of the room where the matter actually gets decided. HR should be present at mandatory mediation. Not as a deferential observer. As the senior workplace voice. If you don&rsquo;t have a senior HR voice on staff, name one externally before you need one.
             </p>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-12">
-              <strong className="text-[var(--color-ink)]">Stop treating settlement as a loss.</strong> The math of mandatory mediation is that the cost curve for the employer rises sharply between mediation and hearing. A settlement that closes the matter at mediation, even at a higher dollar figure than you would have hoped, is almost always cheaper than the same settlement reached at hearing — and it is vastly cheaper than the alternative outcomes a hearing can produce.
+              <strong className="text-[var(--color-ink)]">Stop treating settlement as a loss.</strong> The math of mandatory mediation is that the cost curve for the employer rises sharply between mediation and hearing. A settlement that closes the matter at mediation, even at a higher dollar figure than you&rsquo;d have hoped, is almost always cheaper than the same settlement reached at hearing. And it&rsquo;s vastly cheaper than the alternative outcomes a hearing can produce.
             </p>
 
             <h2 className="text-[28px] md:text-[34px] leading-[1.2] tracking-[-0.022em] font-semibold text-[var(--color-ink)] mt-12 mb-5">
               Where this leaves us
             </h2>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-6">
-              The HRTO&rsquo;s mandatory-mediation rule is not a bureaucratic detour. It is a structural change in how human-rights matters in Ontario actually resolve. The employers who recognize that — and who prepare for it like the high-stakes conversation it is — settle well, preserve their teams, and stop bleeding legal fees on hearings they never needed.
+              The HRTO&rsquo;s mandatory-mediation rule isn&rsquo;t a bureaucratic detour. It&rsquo;s a structural change in how human-rights matters in Ontario actually resolve.
+            </p>
+            <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-6">
+              The employers who recognize that, and who prepare for it like the high-stakes conversation it is, settle well. They preserve their teams. They stop bleeding legal fees on hearings they never needed.
             </p>
             <p className="text-[17px] md:text-[19px] leading-[1.75] text-[var(--color-ink-soft)] mb-12">
-              The employers who treat it as a procedural delay learn the cost of that frame in cheques they did not have to write.
+              The employers who treat it as a procedural delay learn the cost of that frame in cheques they didn&rsquo;t have to write.
             </p>
 
             <div className="mt-16 pt-10 border-t border-[var(--color-rule)]">
