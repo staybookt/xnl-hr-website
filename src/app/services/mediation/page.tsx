@@ -8,6 +8,7 @@ import { PageCTA } from "@/components/page-cta";
 import { ProcessSteps } from "@/components/process-steps";
 import { PortraitWendy } from "@/components/portrait";
 import { SignatureWendy } from "@/components/signature";
+import { HeroImage } from "@/components/hero-image";
 import { contact, mediationCovers, mediationProcess, mediationFaqs, services } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
@@ -32,6 +33,7 @@ export default function MediationPage() {
             "radial-gradient(ellipse 90% 75% at 18% 22%, rgba(168, 181, 168, 0.45) 0%, transparent 60%), radial-gradient(ellipse 80% 70% at 82% 78%, rgba(150, 144, 181, 0.55) 0%, transparent 60%), radial-gradient(ellipse 30% 30% at 92% 12%, rgba(232, 155, 122, 0.22) 0%, transparent 60%), linear-gradient(160deg, #2D3D4E 0%, #1A1D24 100%)",
         }}
       >
+        <HeroImage src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=2400&q=80" alt="" imageOpacity={0.14} />
         <div className="gradient-grain" aria-hidden="true" />
 
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
@@ -47,9 +49,7 @@ export default function MediationPage() {
         <div className="relative z-10 flex items-center min-h-[88vh] pt-32 md:pt-40 pb-24 md:pb-32">
           <Container size="wide">
             <motion.div initial="hidden" animate="show" variants={STAGGER} className="max-w-5xl">
-              <motion.p variants={FADE_UP} className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold text-white/65 mb-8">
-                With Wendy Akkerman
-              </motion.p>
+              <motion.p variants={FADE_UP} className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold text-white/65 mb-8">With Wendy Akkerman</motion.p>
               <motion.h1 variants={FADE_UP} className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-white mb-10">
                 Resolve the dispute.<br /><span className="text-brand-gradient">Keep the people.</span>
               </motion.h1>
@@ -74,51 +74,26 @@ export default function MediationPage() {
         </div>
       </section>
 
-      {/* WENDY — portrait + bio + signature */}
+      {/* WENDY */}
       <section className="py-24 md:py-32 bg-[var(--color-paper)]">
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 1, ease: SLOW_OUT }}
-              className="lg:col-span-4"
-            >
+            <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 1, ease: SLOW_OUT }} className="lg:col-span-4">
               <PortraitWendy className="w-full h-auto max-w-[380px]" />
               <div className="flex items-center justify-between mt-3 text-[13px] text-[var(--color-mute)] max-w-[380px]">
                 <span className="font-medium text-[var(--color-ink)]">Wendy Akkerman</span>
                 <span className="inline-flex items-center text-[9px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2 py-0.5 rounded-full">Illustrated</span>
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, ease: SLOW_OUT, delay: 0.1 }}
-              className="lg:col-span-8"
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: SLOW_OUT, delay: 0.1 }} className="lg:col-span-8">
               <p className="eyebrow mb-5">The mediator</p>
-              <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
-                Wendy Akkerman.
-              </h2>
-              <p className="text-[13px] uppercase tracking-[0.12em] font-semibold text-[var(--color-secondary-deep)] mb-6">
-                Independent workplace mediator
-              </p>
-              <span className="inline-flex items-center text-[10px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2.5 py-1 rounded-full mb-6">
-                Bio pending
-              </span>
+              <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">Wendy Akkerman.</h2>
+              <p className="text-[13px] uppercase tracking-[0.12em] font-semibold text-[var(--color-secondary-deep)] mb-6">Independent workplace mediator</p>
+              <span className="inline-flex items-center text-[10px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2.5 py-1 rounded-full mb-6">Bio pending</span>
               <div className="space-y-5 text-[17px] md:text-[18px] leading-[1.65] text-[var(--color-ink-soft)] mt-2">
-                <p>
-                  <span className="text-[var(--color-mute-soft)] italic">[Placeholder bio]</span> Wendy joined XNL in 2026 to launch the workplace mediation practice, timed to the Ontario HRTO mandatory-mediation rule that took effect in June 2025. She brings a neutral, independent voice to the kind of conversations that, left to chance, become formal complaints.
-                </p>
-                <p>
-                  <span className="text-[var(--color-mute-soft)] italic">[Placeholder bio]</span> Her practice covers workplace conflict, harassment complaints, termination disputes, and HRTO matters. She works with Ontario employers across manufacturing, professional services, not-for-profit, and municipal sectors. Sessions are confidential. The mediation record is preserved either way.
-                </p>
-                <p>
-                  <span className="text-[var(--color-mute-soft)] italic">[Credentials pending]</span> Q-Med, IMI, or other professional mediator credentials, plus years of practice experience.
-                </p>
+                <p><span className="text-[var(--color-mute-soft)] italic">[Placeholder bio]</span> Wendy joined XNL in 2026 to launch the workplace mediation practice, timed to the Ontario HRTO mandatory-mediation rule that took effect in June 2025. She brings a neutral, independent voice to the kind of conversations that, left to chance, become formal complaints.</p>
+                <p><span className="text-[var(--color-mute-soft)] italic">[Placeholder bio]</span> Her practice covers workplace conflict, harassment complaints, termination disputes, and HRTO matters. She works with Ontario employers across manufacturing, professional services, not-for-profit, and municipal sectors. Sessions are confidential. The mediation record is preserved either way.</p>
+                <p><span className="text-[var(--color-mute-soft)] italic">[Credentials pending]</span> Q-Med, IMI, or other professional mediator credentials, plus years of practice experience.</p>
               </div>
               <div className="flex items-end gap-6 mt-8">
                 <SignatureWendy size={52} color="#1A1D24" />
@@ -134,9 +109,7 @@ export default function MediationPage() {
         <Container size="wide">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="max-w-4xl mb-14 md:mb-20">
             <p className="eyebrow mb-8">What we mediate</p>
-            <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
-              Six matters we&rsquo;re built for.
-            </h2>
+            <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)]">Six matters we&rsquo;re built for.</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {mediationCovers.map((c, i) => (
@@ -209,12 +182,7 @@ export default function MediationPage() {
 
       <PageCTA
         eyebrow="Next step"
-        headline={
-          <>
-            Ready to mediate?<br />
-            <span className="text-brand-gradient">Wendy is booking now.</span>
-          </>
-        }
+        headline={<>Ready to mediate?<br /><span className="text-brand-gradient">Wendy is booking now.</span></>}
         subhead="30-minute intake call, no cost. If we're the right fit we can be mediation-ready in 10 business days."
       />
     </>
