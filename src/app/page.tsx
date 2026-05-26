@@ -10,6 +10,8 @@ import { Testimonials } from "@/components/testimonials";
 import { RecentThinking } from "@/components/recent-thinking";
 import { OrgChartComparison } from "@/components/org-chart-comparison";
 import { WhoWeServe } from "@/components/who-we-serve";
+import { PullQuoteSlab } from "@/components/pull-quote-slab";
+import { StatsSlab } from "@/components/stats-slab";
 import { HeroImage } from "@/components/hero-image";
 import { HomeHeroAnim, HomeFounder } from "@/components/home-client";
 import { contact, services, faqs, site } from "@/data/site";
@@ -121,6 +123,8 @@ export default function Home() {
         </Container>
       </section>
 
+      <PullQuoteSlab />
+
       <WhoWeServe />
 
       <AntiPositioning />
@@ -159,6 +163,8 @@ export default function Home() {
       </section>
 
       <Testimonials />
+
+      <StatsSlab />
 
       <HomeFounder />
 
