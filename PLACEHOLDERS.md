@@ -18,7 +18,7 @@ Replace each item below when the real value is available. The code locations sho
 
 **Code locations:**
 - `src/components/sticky-booking-bar.tsx` — line with `Next opening: TBD`
-- `src/app/contact/page.tsx` — placeholder messaging
+- `src/app/contact/page.tsx` — "Online booking — coming soon" notice
 - `src/components/scenario-tiles.tsx` — link targets (currently `/contact?topic=X`)
 
 ---
@@ -31,23 +31,23 @@ Replace each item below when the real value is available. The code locations sho
 
 | Service | Placeholder | Source for real |
 |---|---|---|
-| Fractional HR | "From $2,500 · typically 2–4 weeks" | Evert to confirm |
-| Workplace Mediation | "From $1,800 per half-day session" | Wendy to confirm |
-| Editorial & Communications | "From $1,200 per project" | Evert to confirm |
+| Fractional HR | "From $2,500 · 2–4 weeks per project" | Evert to confirm |
+| Workplace Mediation | "From $1,800 · Half-day or full-day sessions" | Wendy to confirm |
+| Editorial & Communications | "From $1,200 · 1–3 weeks per project" | Evert to confirm |
 
 **Code location:** `src/data/site.ts` — `services` array, each entry has `price` and `typicalLength` fields.
 
 ---
 
-## 3. Anonymized case outcomes
+## 3. Anonymized case outcomes (service cards)
 
-**Status:** Each service card shows a **fictional anonymized case** marked with an "illustrative example" tag. These are NOT real client work — they are believable composites for demonstration only.
+**Status:** Each service card shows a **fictional anonymized case** marked with an "example" pill. These are NOT real client work — they are believable composites for demonstration only.
 
 **Placeholder cases (to replace with real anonymized outcomes when Evert approves):**
 
 - **Fractional HR:** "Manufacturer, 80 employees. Terminated CFO without documented cause. We rebuilt the file and the settlement landed at $35k instead of the projected $140k."
 - **Workplace Mediation:** "NFP board, harassment complaint between ED and program director. Two half-day sessions. Both stayed. No formal complaint filed."
-- **Editorial:** "Professional services firm, founder needed a board memo on a partner exit. 48-hour turnaround. The memo carried the room."
+- **Editorial:** "Professional services firm. Founder needed a board memo on a partner exit. 48-hour turnaround. The memo carried the room."
 
 **Code location:** `src/data/site.ts` — `services` array, each entry has an `anonymizedCase` field.
 
@@ -55,7 +55,39 @@ Replace each item below when the real value is available. The code locations sho
 
 ---
 
-## 4. Sticky booking bar — "Next opening"
+## 4. Testimonials
+
+**Status:** Three **fictional but believable** testimonials show in a dedicated section. Quote text is composite. Attribution explicitly shows "[Client name pending]" plus a generic role/org line. Each card carries an "Illustrative" pill.
+
+**Placeholder quotes:**
+
+1. "We had a termination going sideways and a board meeting in 72 hours. Evert had us documented, defensible, and confident before the meeting. The room felt different." — Executive Director, Mid-size Ontario nonprofit
+2. "Wendy made a hard conversation possible without making it harder. Two sessions and the team is still intact." — Founder + CEO, Professional services firm
+3. "Evert wrote the board memo I'd been trying to write for two weeks. It landed in 20 minutes of his time." — COO, Ontario municipal corporation
+
+**Code location:** `src/data/site.ts` — `testimonials` array. Component at `src/components/testimonials.tsx`.
+
+**Action needed:** Gather 3 real testimonials with client permission. Set `placeholder: false` on each entry after replacing.
+
+---
+
+## 5. Recent thinking / article previews
+
+**Status:** Three **illustrative article previews** appear in the "Where Evert is publishing" section. Titles, excerpts, dates, and publications are believable composites — NOT real Evert articles. Each link goes to `#` until we have real URLs.
+
+**Placeholder articles:**
+
+1. "Why the cheapest HR mistake is the one you spot first" — Canadian HR Reporter — March 2026
+2. "Mandatory mediation: what Ontario employers should be doing right now" — The Lawyer's Daily — January 2026
+3. "Hiring is a search problem, not a sales problem" — Municipal World — November 2025
+
+**Code location:** `src/data/site.ts` — `articles` array. Component at `src/components/recent-thinking.tsx`.
+
+**Action needed:** Replace with three real Evert bylines (title, publication, date, 1-2 sentence excerpt, public URL). Set `placeholder: false` on each.
+
+---
+
+## 6. Sticky booking bar — "Next opening"
 
 **Status:** Sticky bar shows "Next opening: TBD." Should show the actual next available consultation slot.
 
@@ -63,7 +95,7 @@ Replace each item below when the real value is available. The code locations sho
 
 ---
 
-## 5. Real photos of Evert and Wendy
+## 7. Real photos of Evert and Wendy
 
 **Status:** The `/about` page still uses an AI-generated portrait of Evert (`/public/img/founder.png`). The homepage no longer shows it.
 
@@ -76,9 +108,9 @@ Replace each item below when the real value is available. The code locations sho
 
 ---
 
-## 6. Publication wordmarks (logos)
+## 8. Publication wordmarks (logos)
 
-**Status:** The publication marquee uses plain text names. Real wordmarks would lift the visual credibility.
+**Status:** The publication marquee now uses **typographic variation** to evoke wordmark style (different weights, italics, tracking, all-caps for HR Professional Now). Real wordmarks would still lift visual credibility further.
 
 **Publications referenced:**
 - Canadian HR Reporter
@@ -89,25 +121,15 @@ Replace each item below when the real value is available. The code locations sho
 - HR Professional Now
 - HRD Canada
 
-**What's needed:** Either get permission to use the official wordmarks (often available in their media kits) or recreate as SVGs.
+**What's needed (optional):** Either get permission to use the official wordmarks (often available in their media kits) or recreate as SVGs.
 
-**Code location:** `src/app/page.tsx` — publications marquee section
-
----
-
-## 7. Client testimonials / named clients
-
-**Status:** Zero real testimonials or named client logos on the site.
-
-**What's needed:** 3 short testimonial quotes with named attribution ("[Name], [Title], [Company]") OR 3 client logos to display as a credibility row.
-
-**Wave 10 unlocks** once these are gathered.
+**Code location:** `src/app/page.tsx` — publications marquee section. Style definitions in `src/data/site.ts` — `publications` array.
 
 ---
 
-## 8. Mediation page (`/services/mediation`)
+## 9. Mediation page (`/services/mediation`)
 
-**Status:** The sub-service page exists but is a stub. The new mediation hero band on the homepage links to it.
+**Status:** The sub-service page exists but is a stub. The mediation hero band on the homepage links to it. The "Book Wendy" CTA needs a real destination.
 
 **What's needed:**
 - Wendy's full bio
@@ -125,11 +147,12 @@ Replace each item below when the real value is available. The code locations sho
 - [ ] Calendly / Cal.com URL wired into scenario tiles, contact page, sticky bar
 - [ ] Real service pricing replaces all three illustrative ranges
 - [ ] One real anonymized case per service (with Evert's approval) OR clear disclaimer
+- [ ] 3 real testimonials gathered with named attribution
+- [ ] 3 real article previews (titles + excerpts + URLs) from Evert's catalog
 - [ ] Sticky bar "Next opening" date is live
 - [ ] Real photo of Evert replaces AI portrait on /about
 - [ ] Wendy photo added
 - [ ] Mediation page fleshed out
-- [ ] At least one client testimonial gathered
 - [ ] (Optional) Publication wordmarks replace text in marquee
 
-When all checked, the "illustrative" tags can be removed from the UI and the site is ready for the Wix → Vercel domain cutover.
+When all checked, the "illustrative" and "example" tags can be removed from the UI and the site is ready for the Wix → Vercel domain cutover.

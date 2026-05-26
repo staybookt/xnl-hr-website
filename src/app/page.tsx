@@ -10,8 +10,10 @@ import { CountUp } from "@/components/count-up";
 import { ScenarioTiles } from "@/components/scenario-tiles";
 import { MediationBand } from "@/components/mediation-band";
 import { AntiPositioning } from "@/components/anti-positioning";
+import { Testimonials } from "@/components/testimonials";
+import { RecentThinking } from "@/components/recent-thinking";
 import { getStepIcon } from "@/components/icons";
-import { contact, services, faqs } from "@/data/site";
+import { contact, services, faqs, publications } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 const FADE_UP = {
@@ -37,20 +39,10 @@ const stats = [
   { num: 1, suffix: "", unit: "", label: "Senior partner per file" },
 ];
 
-const publications = [
-  "Canadian HR Reporter",
-  "Municipal World",
-  "Ottawa Life",
-  "Talent Canada",
-  "The Lawyer's Daily",
-  "HR Professional Now",
-  "HRD Canada",
-];
-
 export default function Home() {
   return (
     <>
-      {/* HERO — scenario tiles are the primary CTA */}
+      {/* HERO */}
       <section
         className="relative gradient-brand text-white overflow-hidden -mt-16 md:-mt-20"
         style={{ minHeight: "100vh" }}
@@ -119,8 +111,8 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-5 md:gap-x-10 gap-y-1 text-[11px] md:text-[13px] text-white/65 font-medium">
               {publications.slice(0, 5).map((p, i) => (
-                <span key={p} className="flex items-center gap-x-5 md:gap-x-10">
-                  <span>{p}</span>
+                <span key={p.name} className="flex items-center gap-x-5 md:gap-x-10">
+                  <span>{p.name}</span>
                   {i < 4 && <span className="text-white/20 hidden md:inline" aria-hidden="true">·</span>}
                 </span>
               ))}
@@ -129,7 +121,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MEDIATION BAND — Wendy launch, HRTO time-sensitive wedge */}
       <MediationBand />
 
       {/* SERVICES */}
@@ -157,7 +148,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* WHAT WE DON'T DO — anti-positioning */}
       <AntiPositioning />
 
       {/* HOW IT WORKS */}
@@ -291,8 +281,11 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* TESTIMONIALS — NEW */}
+      <Testimonials />
+
       {/* FOUNDER */}
-      <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden border-t border-white/10">
+      <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
@@ -342,8 +335,11 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* RECENT THINKING — NEW */}
+      <RecentThinking />
+
       {/* FAQ */}
-      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
+      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -375,8 +371,8 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* PUBLICATIONS MARQUEE */}
-      <section className="bg-[var(--color-brand-soft)] py-20 md:py-24 overflow-hidden border-t border-[var(--color-rule)]">
+      {/* PUBLICATIONS MARQUEE — styled wordmarks */}
+      <section className="bg-[var(--color-brand-soft)] py-20 md:py-24 overflow-hidden border-y border-[var(--color-rule)]">
         <Container size="wide">
           <p className="eyebrow text-center mb-10">Published in</p>
         </Container>
@@ -385,10 +381,17 @@ export default function Home() {
             {[...publications, ...publications].map((p, i) => (
               <span
                 key={i}
-                className="mx-8 md:mx-12 text-[32px] md:text-[48px] leading-none tracking-[-0.02em] font-medium text-[var(--color-ink-soft)]"
+                className="mx-8 md:mx-12 text-[32px] md:text-[48px] leading-none text-[var(--color-ink-soft)] flex items-baseline"
+                style={{
+                  fontWeight: p.weight,
+                  letterSpacing: p.tracking,
+                  fontStyle: p.style,
+                  textTransform: "uppercase" in p && p.uppercase ? "uppercase" : "none",
+                  fontSize: "uppercase" in p && p.uppercase ? "30px" : undefined,
+                }}
               >
-                {p}
-                <span className="text-[var(--color-brand-deep)] ml-8 md:ml-12" aria-hidden="true">·</span>
+                {p.name}
+                <span className="text-[var(--color-brand-deep)] ml-8 md:ml-12 not-italic font-normal" aria-hidden="true">·</span>
               </span>
             ))}
           </div>

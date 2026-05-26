@@ -45,7 +45,6 @@ export const nav = [
   { label: "Articles", href: "/articles" },
 ] as const;
 
-// 4 scenario tiles — the new primary hero CTA mechanic
 export const scenarios = [
   {
     key: "termination",
@@ -73,7 +72,6 @@ export const scenarios = [
   },
 ] as const;
 
-// What we don't do — anti-positioning strip
 export const wontDo = [
   {
     title: "Payroll processing",
@@ -89,7 +87,6 @@ export const wontDo = [
   },
 ] as const;
 
-// Services — includes PLACEHOLDER pricing and PLACEHOLDER case studies (see PLACEHOLDERS.md)
 export const services = [
   {
     slug: "hr-support",
@@ -144,6 +141,73 @@ export const credentials = [
   "LL.M. (NL)",
   "Randstad Innovation in HR Award",
   "Canada's Top-25 HR · 2016, 2017",
+] as const;
+
+// Testimonials — PLACEHOLDER quotes + attribution (see PLACEHOLDERS.md)
+export const testimonials = [
+  {
+    quote:
+      "We had a termination going sideways and a board meeting in 72 hours. Evert had us documented, defensible, and confident before the meeting. The room felt different.",
+    role: "Executive Director",
+    org: "Mid-size Ontario nonprofit",
+    placeholder: true,
+  },
+  {
+    quote:
+      "Wendy made a hard conversation possible without making it harder. Two sessions and the team is still intact.",
+    role: "Founder + CEO",
+    org: "Professional services firm",
+    placeholder: true,
+  },
+  {
+    quote:
+      "Evert wrote the board memo I'd been trying to write for two weeks. It landed in 20 minutes of his time.",
+    role: "COO",
+    org: "Ontario municipal corporation",
+    placeholder: true,
+  },
+] as const;
+
+// Recent thinking — PLACEHOLDER article previews (see PLACEHOLDERS.md)
+export const articles = [
+  {
+    title: "Why the cheapest HR mistake is the one you spot first",
+    publication: "Canadian HR Reporter",
+    date: "March 2026",
+    excerpt:
+      "Most wrongful dismissal claims have a signal weeks before they file. The cost of catching them early vs. defending them later isn't close.",
+    url: "#",
+    placeholder: true,
+  },
+  {
+    title: "Mandatory mediation: what Ontario employers should be doing right now",
+    publication: "The Lawyer's Daily",
+    date: "January 2026",
+    excerpt:
+      "The HRTO mandatory-mediation rule took effect in June 2025. Most employers still treat mediation as a courtroom delay. Here's why that's the wrong instinct.",
+    url: "#",
+    placeholder: true,
+  },
+  {
+    title: "Hiring is a search problem, not a sales problem",
+    publication: "Municipal World",
+    date: "November 2025",
+    excerpt:
+      "The best hires aren't sold on you. They're found. That distinction changes the entire process, the cost, and the retention math.",
+    url: "#",
+    placeholder: true,
+  },
+] as const;
+
+// Publication wordmark styling — typographic variation to evoke real wordmarks
+export const publications = [
+  { name: "Canadian HR Reporter", weight: 700, tracking: "-0.025em", style: "normal" },
+  { name: "Municipal World", weight: 300, tracking: "0.02em", style: "italic" },
+  { name: "Ottawa Life", weight: 400, tracking: "0.04em", style: "italic" },
+  { name: "Talent Canada", weight: 700, tracking: "-0.03em", style: "normal" },
+  { name: "The Lawyer's Daily", weight: 400, tracking: "0.01em", style: "italic" },
+  { name: "HR Professional Now", weight: 500, tracking: "0.12em", style: "normal", uppercase: true },
+  { name: "HRD Canada", weight: 700, tracking: "-0.015em", style: "italic" },
 ] as const;
 
 export const faqs = [
