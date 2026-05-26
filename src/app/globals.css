@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
-/* XNL HR — Wave 6: true Apple/Stripe scale.
-   Massive type, dramatic contrast, generous space. */
+/* XNL HR — Wave 6.1: dial type down ~20%, keep drama. */
 
 @theme {
   /* Color */
@@ -17,42 +16,44 @@
   --color-accent: #1e3a5f;
   --color-accent-hover: #16294a;
   --color-accent-soft: #c9d4e3;
+  --color-amber: #c8956d;
+  --color-amber-deep: #a06f2c;
 
   /* Type */
   --font-sans: var(--font-geist), -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
 
-  /* Display scale — BIG */
-  --text-stat: 200px;
-  --text-stat--line-height: 0.92;
-  --text-stat--letter-spacing: -0.045em;
+  /* Display scale — pulled back ~20% */
+  --text-stat: 160px;
+  --text-stat--line-height: 0.94;
+  --text-stat--letter-spacing: -0.04em;
   --text-stat--font-weight: 500;
 
-  --text-hero: 144px;
-  --text-hero--line-height: 0.96;
-  --text-hero--letter-spacing: -0.04em;
+  --text-hero: 112px;
+  --text-hero--line-height: 0.98;
+  --text-hero--letter-spacing: -0.035em;
   --text-hero--font-weight: 600;
 
-  --text-display-2xl: 112px;
-  --text-display-2xl--line-height: 0.98;
-  --text-display-2xl--letter-spacing: -0.035em;
+  --text-display-2xl: 88px;
+  --text-display-2xl--line-height: 1.0;
+  --text-display-2xl--letter-spacing: -0.03em;
   --text-display-2xl--font-weight: 600;
 
-  --text-display-xl: 88px;
-  --text-display-xl--line-height: 1.0;
-  --text-display-xl--letter-spacing: -0.032em;
+  --text-display-xl: 72px;
+  --text-display-xl--line-height: 1.04;
+  --text-display-xl--letter-spacing: -0.028em;
   --text-display-xl--font-weight: 600;
 
-  --text-display-lg: 64px;
-  --text-display-lg--line-height: 1.04;
-  --text-display-lg--letter-spacing: -0.028em;
+  --text-display-lg: 56px;
+  --text-display-lg--line-height: 1.06;
+  --text-display-lg--letter-spacing: -0.026em;
   --text-display-lg--font-weight: 600;
 
-  --text-display-md: 40px;
-  --text-display-md--line-height: 1.1;
+  --text-display-md: 32px;
+  --text-display-md--line-height: 1.15;
   --text-display-md--letter-spacing: -0.02em;
   --text-display-md--font-weight: 600;
 
-  --text-body-xl: 22px;
+  --text-body-xl: 21px;
   --text-body-xl--line-height: 1.5;
   --text-body-xl--letter-spacing: -0.011em;
 
@@ -91,26 +92,25 @@ body {
   letter-spacing: -0.011em;
 }
 
-/* Mobile display scaling — still big, just not insane */
 @media (max-width: 1024px) {
   :root {
-    --text-stat: 120px;
-    --text-hero: 84px;
-    --text-display-2xl: 64px;
-    --text-display-xl: 56px;
-    --text-display-lg: 44px;
-    --text-display-md: 32px;
+    --text-stat: 96px;
+    --text-hero: 68px;
+    --text-display-2xl: 52px;
+    --text-display-xl: 44px;
+    --text-display-lg: 36px;
+    --text-display-md: 26px;
   }
 }
 
 @media (max-width: 640px) {
   :root {
-    --text-stat: 80px;
-    --text-hero: 56px;
-    --text-display-2xl: 44px;
-    --text-display-xl: 40px;
-    --text-display-lg: 32px;
-    --text-display-md: 24px;
+    --text-stat: 64px;
+    --text-hero: 44px;
+    --text-display-2xl: 36px;
+    --text-display-xl: 32px;
+    --text-display-lg: 28px;
+    --text-display-md: 22px;
     --text-body-xl: 18px;
   }
 }
@@ -125,7 +125,7 @@ body {
 /* Link reset */
 a { color: inherit; text-decoration: none; }
 
-/* Eyebrow utility */
+/* Eyebrow utilities */
 .eyebrow {
   font-size: var(--text-eyebrow);
   line-height: var(--text-eyebrow--line-height);
@@ -144,7 +144,7 @@ a { color: inherit; text-decoration: none; }
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Stat — massive number utility */
+/* Stat utility */
 .stat-num {
   font-size: var(--text-stat);
   line-height: var(--text-stat--line-height);
@@ -152,7 +152,25 @@ a { color: inherit; text-decoration: none; }
   font-weight: var(--text-stat--font-weight);
 }
 
-/* Marquee animation for publication strip */
+/* Hero gradient mesh — navy + bronze + ink, no animation (performance) */
+.gradient-hero {
+  background-color: #0a0a0a;
+  background-image:
+    radial-gradient(ellipse 90% 70% at 25% 20%, rgba(30, 58, 95, 0.95) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 70% at 85% 70%, rgba(200, 149, 109, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 80% at 50% 110%, rgba(22, 41, 74, 1) 0%, transparent 65%),
+    linear-gradient(160deg, #1e3a5f 0%, #0a0a0a 100%);
+}
+
+.gradient-hero-grain {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Marquee */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
