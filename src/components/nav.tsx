@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { nav, site } from "@/data/site";
+import { nav } from "@/data/site";
+import { LogoMark } from "@/components/logo-mark";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,15 +20,14 @@ export function Nav() {
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-[var(--color-paper)]/90 backdrop-blur-md border-b border-[var(--color-rule)]"
+          ? "bg-[var(--color-paper)]/92 backdrop-blur-md border-b border-[var(--color-rule)]"
           : "bg-[var(--color-paper)] border-b border-transparent"
       }`}
     >
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
-        <div className="flex h-16 md:h-18 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-[19px] md:text-[20px] tracking-[-0.02em] font-semibold text-[var(--color-ink)]">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]" aria-hidden="true" />
-            {site.shortName}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+        <div className="flex h-16 md:h-20 items-center justify-between">
+          <Link href="/" aria-label="XNL HR home">
+            <LogoMark size={22} />
           </Link>
 
           <nav className="hidden md:flex items-center gap-9">
@@ -35,16 +35,16 @@ export function Nav() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[14px] font-medium text-[var(--color-ink-soft)] hover:text-[var(--color-accent)] transition-colors"
+                className="text-[14px] font-medium text-[var(--color-ink-soft)] hover:text-[var(--color-brand)] transition-colors"
               >
                 {item.label}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="text-[14px] font-medium rounded-full px-5 py-2.5 bg-[var(--color-ink)] text-[var(--color-paper)] hover:bg-[var(--color-accent)] transition-colors"
+              className="text-[14px] font-medium rounded-full px-5 py-2.5 bg-[var(--color-ink)] text-[var(--color-paper)] hover:bg-[var(--color-brand)] transition-colors"
             >
-              Book an intro call
+              Book a call
             </Link>
           </nav>
 
@@ -87,9 +87,9 @@ export function Nav() {
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="mt-2 inline-flex w-fit rounded-full bg-[var(--color-ink)] text-[var(--color-paper)] px-6 py-3 text-[15px] font-medium"
+              className="mt-2 inline-flex w-fit rounded-full bg-[var(--color-brand)] text-white px-6 py-3 text-[15px] font-medium"
             >
-              Book an intro call
+              Book a call
             </Link>
           </nav>
         )}
