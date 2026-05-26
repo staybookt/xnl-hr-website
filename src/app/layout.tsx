@@ -8,7 +8,6 @@ import { site } from "@/data/site";
 
 const geist = Geist({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-geist",
   display: "swap",
 });
