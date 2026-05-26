@@ -14,16 +14,16 @@ import { Testimonials } from "@/components/testimonials";
 import { RecentThinking } from "@/components/recent-thinking";
 import { VoiceSamples } from "@/components/voice-samples";
 import { FrameworkDiagram } from "@/components/framework-diagram";
+import { CostCalculator } from "@/components/cost-calculator";
+import { OrgChartComparison } from "@/components/org-chart-comparison";
+import { HeroImage } from "@/components/hero-image";
 import { PortraitEvert } from "@/components/portrait";
 import { SignatureEvert } from "@/components/signature";
 import { getStepIcon } from "@/components/icons";
 import { contact, services, faqs } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
-const FADE_UP = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: SLOW_OUT } },
-};
+const FADE_UP = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: SLOW_OUT } } };
 const STAGGER = { hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } };
 
 const steps = [
@@ -53,8 +53,13 @@ const publications = [
 export default function Home() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO with editorial backdrop photo */}
       <section className="relative gradient-brand text-white overflow-hidden -mt-16 md:-mt-20" style={{ minHeight: "100vh" }}>
+        <HeroImage
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=80"
+          alt=""
+          imageOpacity={0.12}
+        />
         <div className="gradient-grain" aria-hidden="true" />
 
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
@@ -126,8 +131,11 @@ export default function Home() {
 
       <AntiPositioning />
 
-      {/* THE XNL APPROACH — framework diagram */}
-      <FrameworkDiagram background="surface" />
+      {/* THE XNL APPROACH — framework */}
+      <FrameworkDiagram background="paper" />
+
+      {/* ORG-CHART COMPARISON — visual lead-in to the comparison table */}
+      <OrgChartComparison />
 
       {/* HOW IT WORKS */}
       <section id="how" className="relative py-24 md:py-32 lg:py-40 overflow-hidden gradient-brand-soft">
@@ -157,6 +165,9 @@ export default function Home() {
           </motion.ol>
         </Container>
       </section>
+
+      {/* COST CALCULATOR — interactive */}
+      <CostCalculator />
 
       {/* WHY XNL — comparison */}
       <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
@@ -207,63 +218,31 @@ export default function Home() {
       {/* FOUNDER — with portrait + signature */}
       <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden border-t border-white/10">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 70% 60% at 12% 30%, rgba(150, 144, 181, 0.30) 0%, transparent 60%), radial-gradient(ellipse 70% 55% at 90% 80%, rgba(232, 155, 122, 0.28) 0%, transparent 60%), radial-gradient(ellipse 55% 45% at 50% 100%, rgba(168, 181, 168, 0.18) 0%, transparent 60%)" }} />
-
         <Container size="wide" className="relative">
           <p className="eyebrow-light mb-10 md:mb-14">The founder</p>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: SLOW_OUT }}
-              className="lg:col-span-4 max-w-[340px]"
-            >
+            <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 1, ease: SLOW_OUT }} className="lg:col-span-4 max-w-[340px]">
               <PortraitEvert className="w-full h-auto" />
-              <span
-                className="inline-flex items-center text-[9px] uppercase tracking-[0.14em] font-semibold text-white/45 mt-3"
-                title="Illustrated portrait — real photo pending. See PLACEHOLDERS.md"
-              >
-                Illustrated
-              </span>
+              <span className="inline-flex items-center text-[9px] uppercase tracking-[0.14em] font-semibold text-white/45 mt-3">Illustrated</span>
             </motion.div>
-
             <div className="lg:col-span-8">
-              <motion.blockquote
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.9, ease: SLOW_OUT }}
-                className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-white mb-10"
-              >
+              <motion.blockquote initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.9, ease: SLOW_OUT }} className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-white mb-10">
                 <span className="text-[var(--color-brand)]">&ldquo;</span>The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.<span className="text-[var(--color-brand)]">&rdquo;</span>
               </motion.blockquote>
-
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.7, ease: SLOW_OUT, delay: 0.1 }}
-                className="flex items-end gap-8 mb-12"
-              >
+              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.7, ease: SLOW_OUT, delay: 0.1 }} className="flex items-end gap-8 mb-12">
                 <SignatureEvert size={56} color="#E89B7A" />
                 <div className="flex-1 border-b border-white/15 pb-3">
                   <p className="text-[16px] font-semibold text-white">Evert Akkerman</p>
                   <p className="text-[12px] text-white/55 uppercase tracking-[0.1em] mt-0.5">Founder · CHRL · LL.M. (NL)</p>
                 </div>
               </motion.div>
-
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-end pt-8 border-t border-white/15">
                 <div className="md:col-span-8 text-[14px] md:text-[15px] text-white/65 leading-[1.6]">
                   Twenty-five years in Canadian HR. Named to Canada&rsquo;s Top-25 HR Professionals in 2016 and 2017. Randstad Innovation in HR Award, 2015.
                 </div>
                 <div className="md:col-span-4 md:text-right">
-                  <Link
-                    href="/about"
-                    className="inline-flex items-center gap-2 text-[15px] font-semibold text-white hover:text-[var(--color-brand)] hover:gap-3 transition-all"
-                  >
-                    About Evert
-                    <span aria-hidden="true">→</span>
+                  <Link href="/about" className="inline-flex items-center gap-2 text-[15px] font-semibold text-white hover:text-[var(--color-brand)] hover:gap-3 transition-all">
+                    About Evert <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </div>
@@ -272,7 +251,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* VOICE SAMPLES — NEW */}
       <VoiceSamples background="surface" />
 
       <RecentThinking />
