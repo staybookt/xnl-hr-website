@@ -4,7 +4,6 @@ import { Container } from "@/components/container";
 import { ServiceCard } from "@/components/service-card";
 import { Comparison } from "@/components/comparison";
 import { FAQ } from "@/components/faq";
-import { MediationBand } from "@/components/mediation-band";
 import { AntiPositioning } from "@/components/anti-positioning";
 import { Testimonials } from "@/components/testimonials";
 import { RecentThinking } from "@/components/recent-thinking";
@@ -105,8 +104,6 @@ export default function Home() {
           </Container>
         </div>
       </section>
-
-      <MediationBand />
 
       {/* SERVICES */}
       <section id="services" className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
