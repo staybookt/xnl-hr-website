@@ -10,8 +10,6 @@ import { services } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 
-export const dynamic = "force-static";
-
 export default function ServicesIndex() {
   return (
     <>
