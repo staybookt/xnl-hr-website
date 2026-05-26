@@ -1,14 +1,44 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { PageCTA } from "@/components/page-cta";
 import { SignatureEvert } from "@/components/signature";
+import { site } from "@/data/site";
 
-export const metadata = { title: "The HRTO mandatory-mediation rule: what Ontario employers misunderstand" };
+export const metadata: Metadata = {
+  title: "The HRTO mandatory-mediation rule: what Ontario employers misunderstand",
+  description:
+    "Six months into the HRTO mandatory-mediation rule, most employers are still treating it as a procedural delay. They're wrong. Evert Akkerman on the three most expensive misunderstandings and what employers should be doing now.",
+  alternates: { canonical: "/insights/hrto-mandatory-mediation" },
+  openGraph: {
+    type: "article",
+    publishedTime: "2026-01-15",
+    authors: ["Evert Akkerman"],
+  },
+};
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "The HRTO mandatory-mediation rule: what Ontario employers misunderstand",
+  description:
+    "Six months into the HRTO mandatory-mediation rule, most employers are still treating it as a procedural delay. They're wrong. Three misunderstandings and what employers should be doing now.",
+  datePublished: "2026-01-15",
+  author: { "@type": "Person", name: "Evert Akkerman", jobTitle: "CHRL, LL.M." },
+  publisher: { "@id": `${site.url}/#organization` },
+  mainEntityOfPage: { "@type": "WebPage", "@id": `${site.url}/insights/hrto-mandatory-mediation` },
+  about: [
+    { "@type": "Thing", name: "Human Rights Tribunal of Ontario" },
+    { "@type": "Thing", name: "Workplace mediation" },
+    { "@type": "Thing", name: "Mandatory mediation rule" },
+  ],
+};
 
 export default function HRTOArticle() {
   return (
     <>
-      {/* ARTICLE HEADER */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+
       <section className="bg-[var(--color-paper)] pt-24 md:pt-32 pb-12 md:pb-16">
         <Container size="narrow">
           <Link href="/insights" className="inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] font-semibold text-[var(--color-secondary-deep)] hover:text-[var(--color-brand)] transition-colors mb-12">
@@ -36,7 +66,6 @@ export default function HRTOArticle() {
         </Container>
       </section>
 
-      {/* ARTICLE BODY */}
       <section className="pb-20 md:pb-28 bg-[var(--color-paper)]">
         <Container size="narrow">
           <article>
@@ -130,12 +159,7 @@ export default function HRTOArticle() {
 
       <PageCTA
         eyebrow="On a real HRTO matter?"
-        headline={
-          <>
-            Talk to Wendy.<br />
-            <span className="text-brand-gradient">Time-sensitive.</span>
-          </>
-        }
+        headline={<>Talk to Wendy.<br /><span className="text-brand-gradient">Time-sensitive.</span></>}
         subhead="Mandatory mediation prep moves fast once a notice is in hand. Intake call within 48 hours."
       />
     </>
