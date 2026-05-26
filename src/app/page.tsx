@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+// Skip the static CDN cache so a bare URL fetch always sees the latest build.
+// Vercel's edge was pinning stale HTML for `/`; this forces a fresh render per request.
+export const revalidate = 0;
+
 const publications = [
   "Canadian HR Reporter",
   "Municipal World",
