@@ -53,6 +53,8 @@ export const services = [
     principal: "Evert",
     blurb:
       "Hiring, terminations, handbooks, policy, compliance — senior judgment, project-priced.",
+    image: "/img/hr-support.png",
+    imageAlt: "Hands holding a leather-bound Canadian employment law text on a sunlit walnut desk",
   },
   {
     slug: "editorial",
@@ -60,6 +62,8 @@ export const services = [
     principal: "Evert",
     blurb:
       "Business writing, op-eds, communications plans, book editing, EN↔NL translation.",
+    image: "/img/typewriter.png",
+    imageAlt: "Vintage Olivetti typewriter with HR Reporter and Municipal World magazines stacked on a walnut desk",
   },
   {
     slug: "mediation",
@@ -67,6 +71,8 @@ export const services = [
     principal: "Wendy · Now booking",
     blurb:
       "Independent mediation for Ontario employers — timed to the new HRTO mandatory-mediation rule.",
+    image: "/img/mediation.png",
+    imageAlt: "Two empty Eames leather chairs facing each other in a sunlit room with autumn maples through floor-to-ceiling windows",
   },
 ] as const;
 
