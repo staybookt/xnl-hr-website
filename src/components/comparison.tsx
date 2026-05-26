@@ -20,8 +20,8 @@ export function Comparison() {
           <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[var(--color-mute)] mb-1">Option B</p>
           <p className="text-[14px] md:text-[16px] font-semibold text-[var(--color-ink-soft)]">In-house HR hire</p>
         </div>
-        <div className="p-6 md:p-8 border-l-2 border-[var(--color-brand)] bg-[var(--color-brand-soft)]/40">
-          <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand)] mb-1">XNL</p>
+        <div className="p-6 md:p-8 border-l-2 border-[var(--color-slate)] bg-[var(--color-slate-soft)]">
+          <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[var(--color-slate)] mb-1">XNL</p>
           <p className="text-[14px] md:text-[16px] font-semibold text-[var(--color-ink)]">One senior partner</p>
         </div>
       </div>
@@ -47,8 +47,8 @@ export function Comparison() {
             <MinusIcon size={16} className="text-[var(--color-mute-soft)] mt-0.5 flex-shrink-0" />
             <span>{row.inhouse}</span>
           </div>
-          <div className="p-6 md:p-8 border-l-2 border-[var(--color-brand)] bg-[var(--color-brand-soft)]/40 text-[13px] md:text-[15px] text-[var(--color-ink)] leading-[1.5] font-medium flex items-start gap-3">
-            <CheckIcon size={16} className="text-[var(--color-brand)] mt-0.5 flex-shrink-0" />
+          <div className="p-6 md:p-8 border-l-2 border-[var(--color-slate)] bg-[var(--color-slate-soft)]/60 text-[13px] md:text-[15px] text-[var(--color-ink)] leading-[1.5] font-medium flex items-start gap-3">
+            <CheckIcon size={16} className="text-[var(--color-slate)] mt-0.5 flex-shrink-0" />
             <span>{row.xnl}</span>
           </div>
         </motion.div>

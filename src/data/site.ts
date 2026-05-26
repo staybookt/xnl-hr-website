@@ -55,7 +55,7 @@ export const services = [
     forLine: "For owner-operated employers without an in-house HR lead.",
     engagement: "Project or retainer",
     icon: "briefcase",
-    gradient: "linear-gradient(135deg, #1a1018 0%, #2a1410 40%, #C8421A 100%)",
+    gradient: "linear-gradient(135deg, #1A1D24 0%, #2D3D4E 50%, #6B5F7D 100%)",
   },
   {
     slug: "mediation",
@@ -66,7 +66,7 @@ export const services = [
     forLine: "For employers facing internal conflict or HRTO proceedings.",
     engagement: "Per-session",
     icon: "scale",
-    gradient: "linear-gradient(135deg, #1a1018 0%, #3a2e4a 40%, #9690B5 100%)",
+    gradient: "linear-gradient(135deg, #2D3D4E 0%, #6B5F7D 50%, #A8B5A8 100%)",
   },
   {
     slug: "editorial",
@@ -77,7 +77,7 @@ export const services = [
     forLine: "For leaders who need a clearer voice in public or internal communication.",
     engagement: "Per-project",
     icon: "pen",
-    gradient: "linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 50%, #E85420 100%)",
+    gradient: "linear-gradient(135deg, #1A1D24 0%, #2D3D4E 60%, #FAF7F2 100%)",
   },
 ] as const;
 

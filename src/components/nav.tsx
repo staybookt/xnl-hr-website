@@ -37,7 +37,7 @@ export function Nav() {
                 href={item.href}
                 className={`text-[14px] font-medium transition-colors ${
                   scrolled
-                    ? "text-[var(--color-ink-soft)] hover:text-[var(--color-brand)]"
+                    ? "text-[var(--color-ink-soft)] hover:text-[var(--color-slate)]"
                     : "text-white/85 hover:text-white"
                 }`}
               >
@@ -48,8 +48,8 @@ export function Nav() {
               href="/contact"
               className={`text-[14px] font-medium rounded-full px-5 py-2.5 transition-colors ${
                 scrolled
-                  ? "bg-[var(--color-ink)] text-white hover:bg-[var(--color-brand)]"
-                  : "bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-deep)]"
+                  ? "bg-[var(--color-ink)] text-white hover:bg-[var(--color-slate)]"
+                  : "bg-white/12 text-white border border-white/25 hover:bg-white hover:text-[var(--color-ink)]"
               }`}
             >
               Book a call

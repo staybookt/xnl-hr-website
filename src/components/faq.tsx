@@ -21,14 +21,14 @@ export function FAQ({ items }: { items: readonly QA[] }) {
               aria-expanded={isOpen}
               className="w-full flex items-center justify-between gap-8 py-7 md:py-8 text-left group"
             >
-              <span className="text-[18px] md:text-[22px] leading-[1.35] tracking-[-0.018em] font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-brand)] transition-colors">
+              <span className="text-[18px] md:text-[22px] leading-[1.35] tracking-[-0.018em] font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-slate)] transition-colors">
                 {item.q}
               </span>
               <span
                 className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all ${
                   isOpen
-                    ? "bg-[var(--color-brand)] text-white"
-                    : "bg-[var(--color-surface)] text-[var(--color-ink)] group-hover:bg-[var(--color-brand-soft)]"
+                    ? "bg-[var(--color-slate)] text-white"
+                    : "bg-[var(--color-surface)] text-[var(--color-ink)] group-hover:bg-[var(--color-secondary-soft)]"
                 }`}
               >
                 {isOpen ? <MinusIcon size={18} /> : <PlusIcon size={18} />}
