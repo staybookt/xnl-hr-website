@@ -39,6 +39,7 @@ export const nav = [
   { label: "Rates", href: "/services#pricing" },
   { label: "Approach", href: "/approach" },
   { label: "Insights", href: "/insights" },
+  { label: "Testimonials", href: "/testimonials" },
   { label: "About", href: "/about" },
 ] as const;
 
@@ -100,9 +101,13 @@ export const services = [
 export const credentials = ["Since 2012", "CHRL", "LL.M. (NL)", "Randstad Innovation in HR Award", "Canada's Top-25 HR · 2016, 2017"] as const;
 
 export const testimonials = [
-  { quote: "We had a termination going sideways and a board meeting in 72 hours. Evert had us documented, defensible, and confident before the meeting. The room felt different.", role: "Executive Director", org: "Mid-size Ontario nonprofit", placeholder: true },
-  { quote: "Wendy made a hard conversation possible without making it harder. Two sessions and the team is still intact.", role: "Founder + CEO", org: "Professional services firm", placeholder: true },
-  { quote: "Evert wrote the board memo I'd been trying to write for two weeks. It landed in 20 minutes of his time.", role: "COO", org: "Ontario municipal corporation", placeholder: true },
+  { quote: "We had a termination going sideways and a board meeting in 72 hours. Evert had us documented, defensible, and confident before the meeting. The room felt different.", role: "Executive Director", org: "Mid-size Ontario nonprofit", placeholder: true, practice: "hr" as const },
+  { quote: "Wendy made a hard conversation possible without making it harder. Two sessions and the team is still intact.", role: "Founder + CEO", org: "Professional services firm", placeholder: true, practice: "mediation" as const },
+  { quote: "Evert wrote the board memo I'd been trying to write for two weeks. It landed in 20 minutes of his time.", role: "COO", org: "Ontario municipal corporation", placeholder: true, practice: "editorial" as const },
+  { quote: "Our handbook hadn't been touched since 2018. Evert had a defensible rewrite in our hands inside four weeks, with a clean compliance trail for every change.", role: "Founder + CEO", org: "Manufacturing firm, GTA", placeholder: true, practice: "hr" as const },
+  { quote: "An HRTO application landed on a Friday afternoon. Mandatory mediation was 35 days out. Wendy walked us through the prep so we knew what we were walking into, then mediated the matter to a settlement we could live with.", role: "HR Director", org: "Municipal corporation, Southern Ontario", placeholder: true, practice: "mediation" as const },
+  { quote: "We needed an op-ed in Canadian HR Reporter under our managing partner's byline. Evert delivered a draft we barely touched before publishing.", role: "Managing Partner", org: "Professional services firm", placeholder: true, practice: "editorial" as const },
+  { quote: "Our HR generalist runs day-to-day fine. When the executive termination landed, she didn't have the depth. Evert filled the gap for the six weeks it mattered, then we went back to business as usual.", role: "COO", org: "Healthcare services group", placeholder: true, practice: "hr" as const },
 ] as const;
 
 export const articles = [
@@ -148,6 +153,12 @@ export const publications = [
   { name: "HRD Canada", weight: 700, tracking: "-0.015em", style: "italic", uppercase: false },
 ] as const;
 
+export const wendyVoiceSamples = [
+  { text: "The room doesn't need a referee. It needs someone who can hear what is not being said." },
+  { text: "Mediation works when both sides arrive ready to choose a livable outcome over a perfect one." },
+  { text: "Confidentiality isn't a feature of mediation. It's the condition that makes mediation possible." },
+] as const;
+
 export const voiceSamples = [
   { text: "Most HR problems are documentation problems wearing a people-problem costume." },
   { text: "The HR department's job isn't to protect the company. It's to protect the company from itself." },
@@ -158,9 +169,12 @@ export const voiceSamples = [
 ] as const;
 
 export const buyerPersonas = [
-  { role: "The founder-CEO", sub: "Growing past 30 employees with no HR lead", pain: "Hiring is chaos. The handbook hasn't been touched since 2019. You just made a termination call your gut said was right, but your paper trail can't defend.", fit: "Handbook rewrites, hiring support, defensible termination prep, op-ed drafting when you want to publish. Pay per project, no retainer." },
-  { role: "The NFP Executive Director", sub: "Board governance and HR overlap, limited budget", pain: "Mediation rules just changed. Complaints are landing. The board treats HR as a line item rather than a strategic risk.", fit: "Day-to-day HR work, board memos, mediation when needed. One partner who learns your file." },
-  { role: "The COO with growing team", sub: "You have HR staff, but you need depth for senior matters", pain: "Your HR generalist is great at the day-to-day. They're out of their depth on the executive termination, the HRTO defense, or the policy overhaul that's overdue.", fit: "Senior backstop on the hard matters, plus ongoing capacity for the work your team can't get to." },
+  { role: "The founder-CEO", sub: "Growing past 30 employees with no HR lead", pain: "Hiring is chaos. The handbook hasn't been touched since 2019. You just made a termination call your gut said was right, but your paper trail can't defend.", fit: "Handbook rewrites, hiring support, defensible termination prep, op-ed drafting when you want to publish. Pay per project, no retainer.", track: "hr" as const },
+  { role: "The NFP Executive Director", sub: "Board governance and HR overlap, limited budget", pain: "Mediation rules just changed. Complaints are landing. The board treats HR as a line item rather than a strategic risk.", fit: "Day-to-day HR work, board memos, mediation when needed. One partner who learns your file.", track: "hr" as const },
+  { role: "The COO with growing team", sub: "You have HR staff, but you need depth for senior matters", pain: "Your HR generalist is great at the day-to-day. They're out of their depth on the executive termination, the HRTO defense, or the policy overhaul that's overdue.", fit: "Senior backstop on the hard matters, plus ongoing capacity for the work your team can't get to.", track: "hr" as const },
+  { role: "The HR Director with an HRTO notice", sub: "Mandatory mediation in the next 60 days", pain: "The application landed. The hearing date is months out but mandatory mediation is weeks away. The case file isn't where it needs to be, and the internal voice arguing 'just settle' isn't aligned with the senior voice arguing 'we need to be ready to walk in.'", fit: "Wendy mediates. Evert preps the file. Independent and senior on both sides of the table.", track: "mediation" as const },
+  { role: "The board chair with a complaint between ED and staff", sub: "Confidential, fast, and outside the chain", pain: "A senior staff member has raised a complaint about the ED. Or vice versa. The matter can't go through internal HR. It needs an outside neutral with credibility on both sides, and it needs to land before the next board meeting.", fit: "Wendy as independent mediator. Confidentiality preserved. Settlement or impasse on the record.", track: "mediation" as const },
+  { role: "The union steward navigating a grievance", sub: "Pre-arbitration window", pain: "A grievance is heading toward arbitration. Both sides know arbitration is the worst outcome for the workforce. There's a settlement zone, but neither side trusts the other enough to find it without help.", fit: "Wendy facilitates the settlement conversation. The collective agreement holds. The grievance closes without arbitration.", track: "mediation" as const },
 ] as const;
 
 export const stageFit = [
