@@ -162,6 +162,9 @@ export default function AboutPage() {
                 <p><span className="text-[var(--color-mute-soft)] italic">[Placeholder bio]</span> Wendy joined XNL in 2026 as the practice&rsquo;s workplace mediator. She brings independent, neutral mediation to Ontario employers, timed to the new HRTO mandatory-mediation rule that took effect June 2025.</p>
                 <p>Her engagements typically resolve workplace conflict, harassment complaints, and termination disputes before they reach formal proceedings. When they don&rsquo;t, the mediation record stands up. Sessions are confidential. The record is preserved either way.</p>
               </div>
+              <blockquote className="text-[20px] leading-[1.5] text-[var(--color-ink)] border-l-2 border-[var(--color-brand)] pl-6 my-10 italic font-light">
+                &ldquo;The room doesn&rsquo;t need a referee. It needs someone who can hear what is not being said.&rdquo;
+              </blockquote>
               <div className="flex items-end gap-6 mt-8">
                 <SignatureWendy size={52} color="#1A1D24" />
                 <div className="text-[12px] uppercase tracking-[0.14em] text-[var(--color-mute)] pb-2">Wendy Akkerman</div>

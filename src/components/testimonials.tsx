@@ -33,7 +33,7 @@ export function Testimonials() {
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {testimonials.map((t, i) => (
+          {testimonials.slice(0, 3).map((t, i) => (
             <motion.figure
               key={i}
               initial={{ opacity: 0, y: 16 }}
@@ -58,6 +58,11 @@ export function Testimonials() {
               </figcaption>
             </motion.figure>
           ))}
+        </div>
+        <div className="mt-12 md:mt-16 flex justify-center">
+          <a href="/testimonials" className="inline-flex items-center gap-2 text-[15px] font-semibold text-[var(--color-slate)] hover:text-[var(--color-brand-deep)] hover:gap-3 transition-all">
+            More testimonials <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </section>
