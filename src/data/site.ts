@@ -60,7 +60,7 @@ export const services = [
     slug: "hr-support",
     name: "Fractional HR",
     principal: "Evert Akkerman",
-    blurb: "Hiring, terminations, handbooks, policy, compliance. The outsourced HR department, scoped by the project.",
+    blurb: "From handbook updates and hiring support to defensible termination prep, compliance audits, and senior advisory. The outsourced HR department, scoped by the project.",
     forLine: "For owner-operated employers without an in-house HR lead.",
     engagement: "Project or retainer",
     price: "From $2,500",
@@ -158,15 +158,15 @@ export const voiceSamples = [
 ] as const;
 
 export const buyerPersonas = [
-  { role: "The founder-CEO", sub: "Growing past 30 employees with no HR lead", pain: "Hiring is chaos. The handbook hasn't been touched since 2019. You just made a termination call your gut said was right, but your paper trail can't defend.", fit: "Project-by-project HR with senior judgment on the file when it matters." },
-  { role: "The NFP Executive Director", sub: "Board governance and HR overlap, limited budget", pain: "Mediation rules just changed. Complaints are landing. The board treats HR as a line item rather than a strategic risk.", fit: "Senior advisor on the hard files. Wendy on mediation. No full-time HR hire required." },
-  { role: "The COO with growing team", sub: "You have HR staff, but you need depth for senior matters", pain: "Your HR generalist is great at the day-to-day. They're out of their depth on the executive termination, the HRTO defense, or the policy overhaul that's overdue.", fit: "Senior advisory layer alongside your team. We bring depth. They keep bandwidth." },
+  { role: "The founder-CEO", sub: "Growing past 30 employees with no HR lead", pain: "Hiring is chaos. The handbook hasn't been touched since 2019. You just made a termination call your gut said was right, but your paper trail can't defend.", fit: "Handbook rewrites, hiring support, defensible termination prep, op-ed drafting when you want to publish. Pay per project, no retainer." },
+  { role: "The NFP Executive Director", sub: "Board governance and HR overlap, limited budget", pain: "Mediation rules just changed. Complaints are landing. The board treats HR as a line item rather than a strategic risk.", fit: "Day-to-day HR work, board memos, mediation when needed. One partner who learns your file." },
+  { role: "The COO with growing team", sub: "You have HR staff, but you need depth for senior matters", pain: "Your HR generalist is great at the day-to-day. They're out of their depth on the executive termination, the HRTO defense, or the policy overhaul that's overdue.", fit: "Senior backstop on the hard matters, plus ongoing capacity for the work your team can't get to." },
 ] as const;
 
 export const stageFit = [
-  { range: "Under 15", label: "Too small for fractional", body: "You probably need a templated solution and an employment lawyer for one-off matters. We'll refer you.", state: "out" as const },
-  { range: "15–250", label: "Sweet spot · XNL", body: "Owner-operated SMBs and not-for-profits. Big enough to need senior HR judgment. Small enough that a full-time hire is overkill.", state: "in" as const },
-  { range: "250+", label: "You likely have HR already", body: "You probably have an HR team. We can be a senior advisor for specific matters, but you don't need fractional HR as your primary HR.", state: "out" as const },
+  { range: "Under 15", label: "One-off project work", body: "Handbook drafts, single-policy reviews, hiring support, termination prep. Pay per matter. We'll refer you to an employment lawyer when the work is purely legal.", state: "secondary" as const },
+  { range: "15–250", label: "Sweet spot · fractional partner", body: "Owner-operated SMBs and not-for-profits. Day-to-day HR support, hard files when they land, ongoing project work. One senior partner who learns your file.", state: "primary" as const },
+  { range: "250+", label: "Fractional executive + interim leadership", body: "Interim HR leadership during turnover or leaves of absence. Executive search support. Board-level HR advisory on specific matters or files.", state: "secondary" as const },
 ] as const;
 
 export const industries = [
