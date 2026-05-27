@@ -34,7 +34,7 @@ export function Comparison() {
             transition={{ duration: 0.7, ease: SLOW_OUT, delay: i * 0.08 }}
             className={`relative rounded-3xl overflow-hidden flex flex-col ${
               isPrimary
-                ? "bg-[var(--color-paper)] border-2 border-[var(--color-brand)] shadow-[0_20px_60px_-20px_rgba(232,155,122,0.45)] lg:-translate-y-3"
+                ? "order-first lg:order-none bg-[var(--color-paper)] border-2 border-[var(--color-brand)] shadow-[0_20px_60px_-20px_rgba(232,155,122,0.45)] lg:-translate-y-3"
                 : "bg-[var(--color-surface)] border border-[var(--color-rule)]"
             }`}
           >

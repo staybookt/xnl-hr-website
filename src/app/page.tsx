@@ -91,11 +91,12 @@ export default function Home() {
         <div className="absolute top-20 md:top-28 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
           <div className="max-w-[1440px] mx-auto flex items-start justify-between text-white/65">
             <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">XNL</span>
-            <span className="text-[10px] uppercase tracking-[0.22em] font-semibold">Headquartered in Newmarket, ON · Est. 2012</span>
+            <span className="hidden sm:inline text-[10px] uppercase tracking-[0.22em] font-semibold">Headquartered in Newmarket, ON · Est. 2012</span>
+            <span className="sm:hidden text-[10px] uppercase tracking-[0.22em] font-semibold">Est. 2012</span>
           </div>
         </div>
 
-        <div className="relative z-10 flex items-center justify-center min-h-screen pt-32 md:pt-40 pb-28 md:pb-32">
+        <div className="relative z-10 flex items-center justify-center min-h-screen pt-28 md:pt-40 pb-32 md:pb-32">
           <Container size="wide">
             <HomeHeroAnim publications={publications} />
           </Container>

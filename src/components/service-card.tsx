@@ -20,7 +20,7 @@ type Service = {
 export function ServiceCard({ service, index }: { service: Service; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 1, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.08 }}
@@ -55,11 +55,11 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
             {getServiceIcon(service.icon, { size: 92 })}
           </div>
           <div className="absolute bottom-5 left-5 right-5 text-[10px] uppercase tracking-[0.18em] font-semibold text-white/55">
-            XNL / {service.slug.toUpperCase()}
+            XNL / {service.slug.toUpperCase()}
           </div>
         </div>
 
-        <div className="p-8 md:p-10 flex-1 flex flex-col">
+        <div className="p-7 md:p-10 flex-1 flex flex-col">
           <h3 className="text-[length:var(--text-display-md)] leading-[var(--text-display-md--line-height)] tracking-[var(--text-display-md--letter-spacing)] font-semibold text-[var(--color-ink)] mb-4">
             {service.name}
           </h3>
