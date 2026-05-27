@@ -18,7 +18,7 @@ export function PullQuoteSlab() {
       <div className="relative max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 1, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: SLOW_OUT }}
@@ -28,7 +28,7 @@ export function PullQuoteSlab() {
             &ldquo;
           </motion.div>
           <motion.blockquote
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.9, ease: SLOW_OUT, delay: 0.1 }}
@@ -39,7 +39,7 @@ export function PullQuoteSlab() {
             <span className="text-brand-gradient">It scales by being on the file.</span>
           </motion.blockquote>
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 1, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: SLOW_OUT, delay: 0.25 }}

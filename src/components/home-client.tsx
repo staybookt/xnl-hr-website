@@ -7,8 +7,8 @@ import { PortraitEvert } from "@/components/portrait";
 import { SignatureEvert } from "@/components/signature";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
-const FADE_UP = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: SLOW_OUT } } };
-const STAGGER = { hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } };
+const FADE_UP = { hidden: { opacity: 1, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: SLOW_OUT } } };
+const STAGGER = { hidden: {}, show: { transition: { staggerChildren: 0.05, delayChildren: 0 } } };
 
 export function HomeHeroAnim({ publications }: { publications: readonly string[] }) {
   return (
@@ -24,11 +24,11 @@ export function HomeHeroAnim({ publications }: { publications: readonly string[]
           Senior HR judgment, scoped by the project. For owner-operated employers and not-for-profits across Canada.
         </motion.p>
         <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center justify-center">
-          <Link href="/insights" className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[var(--color-ink)] px-8 py-4 text-[16px] font-medium hover:bg-[var(--color-brand-soft)] transition-colors">
-            Read our latest thinking <span aria-hidden="true">→</span>
+          <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-brand)] text-white px-8 py-4 text-[16px] font-semibold hover:bg-[var(--color-brand-deep)] transition-colors shadow-lg shadow-[var(--color-brand)]/20">
+            Book a 30-min intro call <span aria-hidden="true">→</span>
           </Link>
-          <Link href="/contact" className="inline-flex items-center justify-center gap-2 text-[16px] font-medium text-white/85 hover:text-white transition-colors">
-            Or speak with Evert <span aria-hidden="true">→</span>
+          <Link href="/insights" className="inline-flex items-center justify-center gap-2 text-[16px] font-medium text-white/85 hover:text-white transition-colors">
+            Or read our latest thinking <span aria-hidden="true">→</span>
           </Link>
         </motion.div>
       </motion.div>
@@ -59,15 +59,15 @@ export function HomeFounder() {
       <Container size="wide" className="relative">
         <p className="eyebrow-light mb-10 md:mb-14">The founder</p>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 1, ease: SLOW_OUT }} className="lg:col-span-4 max-w-[340px]">
+          <motion.div initial={{ opacity: 1, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 1, ease: SLOW_OUT }} className="lg:col-span-4 max-w-[340px]">
             <PortraitEvert className="w-full h-auto" />
             <span className="inline-flex items-center text-[9px] uppercase tracking-[0.14em] font-semibold text-white/45 mt-3">Illustrated</span>
           </motion.div>
           <div className="lg:col-span-8">
-            <motion.blockquote initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.9, ease: SLOW_OUT }} className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-white mb-10">
+            <motion.blockquote initial={{ opacity: 1, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.9, ease: SLOW_OUT }} className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-white mb-10">
               <span className="text-[var(--color-brand)]">&ldquo;</span>The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.<span className="text-[var(--color-brand)]">&rdquo;</span>
             </motion.blockquote>
-            <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.7, ease: SLOW_OUT, delay: 0.1 }} className="flex items-end gap-8 mb-12">
+            <motion.div initial={{ opacity: 1, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.7, ease: SLOW_OUT, delay: 0.1 }} className="flex items-end gap-8 mb-12">
               <SignatureEvert size={56} color="#E89B7A" />
               <div className="flex-1 border-b border-white/15 pb-3">
                 <p className="text-[16px] font-semibold text-white">Evert Akkerman</p>

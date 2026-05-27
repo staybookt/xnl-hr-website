@@ -10,7 +10,7 @@ export function AntiPositioning() {
     <section className="py-20 md:py-24 lg:py-28 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, ease: SLOW_OUT }}
@@ -26,7 +26,7 @@ export function AntiPositioning() {
           {wontDo.map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: SLOW_OUT }}

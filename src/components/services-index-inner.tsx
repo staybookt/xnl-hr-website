@@ -33,7 +33,7 @@ export function ServicesIndexInner() {
         </Container>
       </section>
 
-      <section className="py-20 md:py-24 bg-[var(--color-paper)]">
+      <section id="pricing" className="py-20 md:py-24 bg-[var(--color-paper)] scroll-mt-24">
         <Container size="wide">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {services.map((s, i) => (

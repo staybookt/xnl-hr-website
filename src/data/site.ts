@@ -36,6 +36,7 @@ export const principals = {
 
 export const nav = [
   { label: "Services", href: "/services" },
+  { label: "Rates", href: "/services#pricing" },
   { label: "Approach", href: "/approach" },
   { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
