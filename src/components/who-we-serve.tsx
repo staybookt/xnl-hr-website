@@ -9,38 +9,46 @@ const FADE_UP = { hidden: { opacity: 1, y: 20 }, show: { opacity: 1, y: 0, trans
 const STAGGER = { hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } } };
 
 
-function OntarioMap() {
+function CanadaMap() {
   return (
-    <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label="Stylized map of southern Ontario with Newmarket pinned">
+    <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label="Stylized map of Canada with Toronto pinned as XNL headquarters">
       <defs>
-        <linearGradient id="onMapBg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="caMapBg" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#E8EDF1"/>
           <stop offset="100%" stopColor="#FAFAFB"/>
         </linearGradient>
       </defs>
-      <rect width="360" height="220" rx="16" fill="url(#onMapBg)"/>
+      <rect width="480" height="260" rx="16" fill="url(#caMapBg)"/>
+      {/* Stylized Canada outline */}
       <path
-        d="M30 90 Q60 70 110 75 Q160 70 200 85 Q240 95 280 90 Q320 85 340 100 L335 125 Q320 145 290 150 Q260 155 230 150 Q200 155 175 165 Q145 175 115 170 Q85 168 60 155 Q35 140 30 115 Z"
+        d="M30 200 Q40 120 70 95 Q90 78 130 80 Q160 70 200 75 Q240 65 280 78 Q310 70 340 80 Q380 75 420 90 Q450 100 455 130 Q450 165 430 185 Q400 200 370 200 L60 200 Q40 200 30 200 Z"
         fill="#2D3D4E"
         opacity="0.85"
       />
-      <ellipse cx="240" cy="170" rx="55" ry="12" fill="#9690B5" opacity="0.4"/>
+      {/* Atlantic provinces hint */}
+      <ellipse cx="430" cy="195" rx="22" ry="8" fill="#2D3D4E" opacity="0.7"/>
+      {/* Toronto/Newmarket pin (HQ) */}
       <g>
-        <circle cx="205" cy="125" r="14" fill="#E89B7A" opacity="0.3"/>
-        <circle cx="205" cy="125" r="6" fill="#E89B7A"/>
-        <circle cx="205" cy="125" r="2.5" fill="#FAF7F2"/>
+        <circle cx="335" cy="178" r="16" fill="#E89B7A" opacity="0.25"/>
+        <circle cx="335" cy="178" r="7" fill="#E89B7A"/>
+        <circle cx="335" cy="178" r="2.8" fill="#FAF7F2"/>
       </g>
-      <text x="218" y="122" fontSize="11" fontWeight="600" fill="#1A1D24">Newmarket</text>
-      <text x="218" y="134" fontSize="9" fill="#6b6b6b" letterSpacing="0.04em">XNL home base</text>
-      <circle cx="195" cy="148" r="3" fill="#6B5F7D"/>
-      <text x="180" y="165" fontSize="9" fill="#6B5F7D" fontWeight="500">GTA</text>
-      <circle cx="130" cy="145" r="3" fill="#6B5F7D"/>
-      <text x="100" y="160" fontSize="9" fill="#6B5F7D" fontWeight="500">SW Ontario</text>
-      <circle cx="285" cy="110" r="3" fill="#6B5F7D"/>
-      <text x="275" y="100" fontSize="9" fill="#6B5F7D" fontWeight="500">Ottawa</text>
-      <text x="20" y="30" fontSize="9" fill="#6b6b6b" letterSpacing="0.18em" fontWeight="600">HEADQUARTERED</text>
-      <line x1="20" y1="36" x2="100" y2="36" stroke="#E89B7A" strokeWidth="2"/>
-      <text x="340" y="30" textAnchor="end" fontSize="9" fill="#6b6b6b" letterSpacing="0.18em" fontWeight="600">CANADA-WIDE</text>
+      <text x="350" y="175" fontSize="12" fontWeight="700" fill="#1A1D24">Newmarket / GTA</text>
+      <text x="350" y="187" fontSize="10" fill="#6b6b6b" letterSpacing="0.04em">XNL headquarters</text>
+      {/* Secondary city dots */}
+      <circle cx="380" cy="180" r="3" fill="#6B5F7D"/>
+      <text x="383" y="195" fontSize="9" fill="#6B5F7D" fontWeight="500">Ottawa / Mtl</text>
+      <circle cx="240" cy="170" r="3" fill="#6B5F7D"/>
+      <text x="218" y="185" fontSize="9" fill="#6B5F7D" fontWeight="500">Prairies</text>
+      <circle cx="110" cy="170" r="3" fill="#6B5F7D"/>
+      <text x="90" y="185" fontSize="9" fill="#6B5F7D" fontWeight="500">Vancouver</text>
+      {/* Connecting arc from HQ to coastal callouts */}
+      <path d="M335 178 Q220 130 110 170" fill="none" stroke="#E89B7A" strokeWidth="1" opacity="0.35" strokeDasharray="3 3"/>
+      <path d="M335 178 Q360 165 380 180" fill="none" stroke="#E89B7A" strokeWidth="1" opacity="0.35" strokeDasharray="3 3"/>
+      {/* Corner marks */}
+      <text x="20" y="28" fontSize="9" fill="#6b6b6b" letterSpacing="0.18em" fontWeight="600">HEADQUARTERED</text>
+      <line x1="20" y1="34" x2="100" y2="34" stroke="#E89B7A" strokeWidth="2"/>
+      <text x="460" y="28" textAnchor="end" fontSize="9" fill="#6b6b6b" letterSpacing="0.18em" fontWeight="600">COAST TO COAST</text>
     </svg>
   );
 }
@@ -112,7 +120,7 @@ export function WhoWeServe() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--color-rule)] rounded-3xl overflow-hidden border border-[var(--color-rule)]">
             {stageFit.map((s, i) => {
-              const isIn = s.state === "in";
+              const isPrimary = s.state === "primary";
               return (
                 <motion.div
                   key={s.range}
@@ -120,21 +128,21 @@ export function WhoWeServe() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-30px" }}
                   transition={{ duration: 0.7, delay: i * 0.08, ease: SLOW_OUT }}
-                  className={`p-7 md:p-9 ${isIn ? "bg-[var(--color-brand-soft)] relative" : "bg-[var(--color-paper)]"}`}
+                  className={`p-7 md:p-9 ${isPrimary ? "bg-[var(--color-brand-soft)] relative" : "bg-[var(--color-paper)]"}`}
                 >
-                  {isIn && (
+                  {isPrimary && (
                     <div className="absolute top-0 left-0 right-0 h-1 bg-[var(--color-brand)]" aria-hidden="true" />
                   )}
-                  <p className={`text-[10px] uppercase tracking-[0.16em] font-semibold mb-3 ${isIn ? "text-[var(--color-brand-deep)]" : "text-[var(--color-mute-soft)]"}`}>
-                    {isIn ? "Sweet spot" : "Not the right fit"}
+                  <p className={`text-[10px] uppercase tracking-[0.16em] font-semibold mb-3 ${isPrimary ? "text-[var(--color-brand-deep)]" : "text-[var(--color-secondary-deep)]"}`}>
+                    {isPrimary ? "Sweet spot" : "Engagement model"}
                   </p>
-                  <p className={`text-[32px] md:text-[40px] leading-none tracking-[-0.025em] font-semibold mb-2 ${isIn ? "text-[var(--color-ink)]" : "text-[var(--color-mute-soft)]"}`}>
+                  <p className={`text-[32px] md:text-[40px] leading-none tracking-[-0.025em] font-semibold mb-2 ${isPrimary ? "text-[var(--color-ink)]" : "text-[var(--color-ink-soft)]"}`}>
                     {s.range}
                   </p>
-                  <p className={`text-[12px] uppercase tracking-[0.1em] font-medium mb-5 ${isIn ? "text-[var(--color-ink-soft)]" : "text-[var(--color-mute)]"}`}>
+                  <p className={`text-[12px] uppercase tracking-[0.1em] font-medium mb-5 ${isPrimary ? "text-[var(--color-ink-soft)]" : "text-[var(--color-ink-soft)]"}`}>
                     {s.label}
                   </p>
-                  <p className={`text-[14px] md:text-[15px] leading-[1.55] ${isIn ? "text-[var(--color-ink-soft)]" : "text-[var(--color-mute)]"}`}>
+                  <p className={`text-[14px] md:text-[15px] leading-[1.55] ${isPrimary ? "text-[var(--color-ink-soft)]" : "text-[var(--color-ink-soft)]"}`}>
                     {s.body}
                   </p>
                 </motion.div>
@@ -162,7 +170,7 @@ export function WhoWeServe() {
             </p>
           </div>
           <div className="lg:col-span-6">
-            <OntarioMap />
+            <CanadaMap />
           </div>
         </motion.div>
       </Container>

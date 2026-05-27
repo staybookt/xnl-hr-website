@@ -114,7 +114,7 @@ export default function Home() {
               <span className="text-[var(--color-secondary)]">One senior partner each.</span>
             </h2>
             <p className="text-[16px] md:text-[17px] leading-[1.6] text-[var(--color-mute)] max-w-2xl">
-              Fractional HR and Workplace Mediation share a craft: senior judgment scoped per file. Editorial extends that craft to the page, for HR teams who need a board memo to land or an op-ed to publish.
+              From handbook updates to wrongful-dismissal prep, Evert handles the full breadth of HR work, scoped per project. Wendy runs independent workplace mediation. Editorial extends that breadth to the page.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">

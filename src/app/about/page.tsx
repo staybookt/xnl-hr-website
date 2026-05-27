@@ -91,6 +91,9 @@ export default function AboutPage() {
                 <p>
                   He runs XNL as a one-partner practice on purpose. No analysts, no bait-and-switch, no monthly retainers you can&rsquo;t opt out of. You get him on the file, and you pay for the work he does.
                 </p>
+                <p>
+                  The work covers the full range. A handbook update or a single policy review can be one week. A wrongful-dismissal file prep, an HRTO defense, or a senior search support engagement runs longer. Evert is happy to do either, and quotes accordingly.
+                </p>
               </div>
               <blockquote className="text-[20px] leading-[1.5] text-[var(--color-ink)] border-l-2 border-[var(--color-brand)] pl-6 my-10 italic font-light">
                 &ldquo;The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.&rdquo;

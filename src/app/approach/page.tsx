@@ -30,9 +30,12 @@ export default function ApproachPage() {
       <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
         <Container size="narrow">
           <p className="eyebrow mb-8">The work, in four moves</p>
-          <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-12">
+          <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
             What actually happens when you put a file in front of us.
           </h2>
+          <p className="text-[16px] md:text-[17px] leading-[1.65] text-[var(--color-mute)] mb-14 max-w-3xl">
+            Not every engagement runs through all four. A handbook update is usually one call plus a delivered draft. A board memo is a 48-hour turnaround. A wrongful-dismissal prep, an HRTO defense, or a senior policy overhaul is the full discipline. The four moves are how we work the heavy files; we scale them to the matter.
+          </p>
 
           <div className="space-y-12">
             <div>
@@ -115,8 +118,8 @@ export default function ApproachPage() {
 
       <PageCTA
         eyebrow="Want this judgment on your file?"
-        headline={<>Bring us<br /><span className="text-brand-gradient">the hard one.</span></>}
-        subhead="30-minute intake call, no cost. We'll tell you straight whether the file is one we should take."
+        headline={<>Bring us<br /><span className="text-brand-gradient">the next one.</span></>}
+        subhead="30-minute intake call, no cost. Handbook update, op-ed draft, or hard file — we'll tell you straight whether the work is one we should take."
       />
     </>
   );
