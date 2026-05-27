@@ -33,16 +33,20 @@ export function HomeHeroAnim({ publications }: { publications: readonly string[]
         </motion.div>
       </motion.div>
 
-      <div className="absolute bottom-8 md:bottom-12 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
+      <div className="absolute bottom-10 md:bottom-16 left-0 right-0 z-10 px-6 md:px-12 lg:px-16">
         <div className="max-w-[1440px] mx-auto">
-          <p className="text-[10px] uppercase tracking-[0.22em] font-semibold text-white/45 text-center mb-3">
-            Where Evert publishes
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-5 md:gap-x-10 gap-y-1 text-[11px] md:text-[13px] text-white/65 font-medium">
+          <div className="flex items-center justify-center gap-4 mb-5">
+            <span className="h-px w-10 md:w-16 bg-[var(--color-brand)]/55" aria-hidden="true" />
+            <p className="text-[11px] md:text-[12px] uppercase tracking-[0.28em] font-semibold text-[var(--color-brand)]">
+              As published in
+            </p>
+            <span className="h-px w-10 md:w-16 bg-[var(--color-brand)]/55" aria-hidden="true" />
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-7 md:gap-x-14 gap-y-2 text-[14px] md:text-[17px] font-semibold text-white/90 tracking-[-0.005em]">
             {publications.slice(0, 5).map((p, i) => (
-              <span key={p} className="flex items-center gap-x-5 md:gap-x-10">
+              <span key={p} className="flex items-center gap-x-7 md:gap-x-14">
                 <span>{p}</span>
-                {i < 4 && <span className="text-white/20 hidden md:inline" aria-hidden="true">·</span>}
+                {i < 4 && <span className="text-white/30 hidden md:inline" aria-hidden="true">·</span>}
               </span>
             ))}
           </div>

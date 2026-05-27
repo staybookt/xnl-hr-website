@@ -2,12 +2,26 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { nav } from "@/data/site";
 import { LogoMark } from "@/components/logo-mark";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Pages whose hero is dark (negative-margin gradient under the transparent nav).
+  // On these, the un-scrolled nav text + logo render light. Everywhere else, dark.
+  const darkHeroPaths = [
+    "/",
+    "/about",
+    "/services/mediation",
+    "/services/hr-support",
+    "/services/editorial",
+  ];
+  const onDarkHero = darkHeroPaths.includes(pathname ?? "");
+  const useLightChrome = onDarkHero && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -19,7 +33,7 @@ export function Nav() {
   return (
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ${
-        scrolled
+        scrolled || !onDarkHero
           ? "bg-[var(--color-paper)]/92 backdrop-blur-md border-b border-[var(--color-rule)]"
           : "bg-transparent border-b border-transparent"
       }`}
@@ -27,7 +41,7 @@ export function Nav() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex h-16 md:h-20 items-center justify-between">
           <Link href="/" aria-label="XNL HR home">
-            <LogoMark size={22} light={!scrolled} />
+            <LogoMark size={22} light={useLightChrome} />
           </Link>
 
           <nav className="hidden md:flex items-center gap-9">
@@ -36,9 +50,9 @@ export function Nav() {
                 key={item.href}
                 href={item.href}
                 className={`text-[14px] font-medium transition-colors ${
-                  scrolled
-                    ? "text-[var(--color-ink-soft)] hover:text-[var(--color-slate)]"
-                    : "text-white/85 hover:text-white"
+                  useLightChrome
+                    ? "text-white/85 hover:text-white"
+                    : "text-[var(--color-ink-soft)] hover:text-[var(--color-slate)]"
                 }`}
               >
                 {item.label}
@@ -47,9 +61,9 @@ export function Nav() {
             <Link
               href="/contact"
               className={`text-[14px] font-medium rounded-full px-5 py-2.5 transition-colors ${
-                scrolled
-                  ? "bg-[var(--color-ink)] text-white hover:bg-[var(--color-slate)]"
-                  : "bg-white/12 text-white border border-white/25 hover:bg-white hover:text-[var(--color-ink)]"
+                useLightChrome
+                  ? "bg-white/12 text-white border border-white/25 hover:bg-white hover:text-[var(--color-ink)]"
+                  : "bg-[var(--color-ink)] text-white hover:bg-[var(--color-slate)]"
               }`}
             >
               Book a call
@@ -62,7 +76,7 @@ export function Nav() {
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
             className={`md:hidden inline-flex items-center justify-center w-10 h-10 ${
-              scrolled ? "text-[var(--color-ink)]" : "text-white"
+              useLightChrome ? "text-white" : "text-[var(--color-ink)]"
             }`}
           >
             <span className="sr-only">Menu</span>

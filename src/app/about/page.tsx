@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/container";
 import { PortraitEvert, PortraitWendy } from "@/components/portrait";
 import { SignatureEvert, SignatureWendy } from "@/components/signature";
-import { VoiceSamples } from "@/components/voice-samples";
-import { FrameworkDiagram } from "@/components/framework-diagram";
 import { PageCTA } from "@/components/page-cta";
 import { contact, site } from "@/data/site";
 
@@ -147,12 +145,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <FrameworkDiagram background="surface" />
-
-      <VoiceSamples background="paper" />
-
       {/* WENDY */}
-      <section className="py-24 md:py-32 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
+      <section className="py-24 md:py-32 bg-[var(--color-paper)] border-t border-[var(--color-rule)]">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="lg:col-span-7 order-2 lg:order-1">

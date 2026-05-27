@@ -7,7 +7,6 @@ import { FAQ } from "@/components/faq";
 import { AntiPositioning } from "@/components/anti-positioning";
 import { Testimonials } from "@/components/testimonials";
 import { RecentThinking } from "@/components/recent-thinking";
-import { OrgChartComparison } from "@/components/org-chart-comparison";
 import { WhoWeServe } from "@/components/who-we-serve";
 import { PullQuoteSlab } from "@/components/pull-quote-slab";
 import { StatsSlab } from "@/components/stats-slab";
@@ -129,8 +128,6 @@ export default function Home() {
       <WhoWeServe />
 
       <AntiPositioning />
-
-      <OrgChartComparison />
 
       {/* WHY XNL */}
       <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
