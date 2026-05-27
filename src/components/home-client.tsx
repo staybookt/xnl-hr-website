@@ -74,14 +74,27 @@ export function HomeFounder() {
                 <p className="text-[12px] text-white/55 uppercase tracking-[0.1em] mt-0.5">Founder · CHRL · LL.M. (NL)</p>
               </div>
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-end pt-8 border-t border-white/15">
-              <div className="md:col-span-8 text-[14px] md:text-[15px] text-white/65 leading-[1.6]">
-                Twenty-five years in Canadian HR. Named to Canada&rsquo;s Top-25 HR Professionals in 2016 and 2017. Randstad Innovation in HR Award, 2015.
+            <div className="pt-8 border-t border-white/15">
+              {/* Credentials chips */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                {["CHRL", "LL.M. (NL)", "25+ years", "25+ bylines", "Canada’s Top-25 · 2016 + 2017", "Randstad Innovation Award · 2015"].map((cred) => (
+                  <span key={cred} className="text-[11px] md:text-[12px] uppercase tracking-[0.12em] font-semibold text-white/85 bg-white/8 border border-white/12 rounded-full px-3 py-1.5">
+                    {cred}
+                  </span>
+                ))}
               </div>
-              <div className="md:col-span-4 md:text-right">
-                <Link href="/about" className="inline-flex items-center gap-2 text-[15px] font-semibold text-white hover:text-[var(--color-brand)] hover:gap-3 transition-all">
-                  About Evert <span aria-hidden="true">→</span>
-                </Link>
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-end">
+                <div className="md:col-span-7 text-[14px] md:text-[15px] text-white/65 leading-[1.6]">
+                  Twenty-five years in Canadian HR. Published in <em className="text-white/85 not-italic font-medium">Canadian HR Reporter, Municipal World, Ottawa Life, Talent Canada</em>, and others. Founded XNL in 2012.
+                </div>
+                <div className="md:col-span-5 md:text-right flex flex-col md:items-end gap-3">
+                  <Link href="/insights/hrto-mandatory-mediation" className="inline-flex items-center gap-2 text-[14px] font-semibold text-[var(--color-brand)] hover:text-[var(--color-brand-glow)] hover:gap-3 transition-all">
+                    Read Evert’s latest piece <span aria-hidden="true">→</span>
+                  </Link>
+                  <Link href="/about" className="inline-flex items-center gap-2 text-[14px] font-semibold text-white hover:text-[var(--color-brand)] hover:gap-3 transition-all">
+                    Full bio + credentials <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

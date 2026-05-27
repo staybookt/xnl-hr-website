@@ -151,18 +151,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* TRACK RECORD */}
-      <section className="bg-[var(--color-ink)] text-white py-24 md:py-32 lg:py-40">
-        <Container size="wide">
-          <div className="max-w-5xl">
-            <p className="eyebrow-light mb-10">Track record</p>
-            <p className="text-[length:var(--text-display-lg)] leading-[1.15] tracking-[-0.025em] font-medium text-white">
-              Twenty-five years of practice. Twenty-five-plus bylines in Canadian HR Reporter, Municipal World, Ottawa Life, Talent Canada, and The Lawyer&rsquo;s Daily. Named to <span className="text-brand-gradient">Canada&rsquo;s Top-25 HR Professionals in 2016 and 2017</span>. Randstad Innovation in HR Award, 2015. One senior partner on every file.
-            </p>
-          </div>
-        </Container>
-      </section>
-
       <Testimonials />
 
       <StatsSlab />

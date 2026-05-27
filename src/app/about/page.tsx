@@ -186,6 +186,17 @@ export default function AboutPage() {
                   </ul>
                 </div>
               </div>
+              <div className="mt-10 pt-8 border-t border-[var(--color-rule)] flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center text-[10px] uppercase tracking-[0.14em] font-semibold text-[var(--color-mute)] bg-[var(--color-surface)] border border-[var(--color-rule)] px-3 py-1.5 rounded-full">
+                  LinkedIn pending
+                </span>
+                <span className="inline-flex items-center text-[10px] uppercase tracking-[0.14em] font-semibold text-[var(--color-mute)] bg-[var(--color-surface)] border border-[var(--color-rule)] px-3 py-1.5 rounded-full">
+                  Real photo + full bio coming
+                </span>
+                <Link href="/services/mediation" className="inline-flex items-center gap-2 text-[13px] font-semibold text-[var(--color-slate)] hover:text-[var(--color-brand-deep)] hover:gap-3 transition-all ml-auto">
+                  Book a session with Wendy <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 1, ease: SLOW_OUT, delay: 0.1 }} className="lg:col-span-5 order-1 lg:order-2">
               <PortraitWendy className="w-full h-auto max-w-[400px] mx-auto" />

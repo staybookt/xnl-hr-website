@@ -2,43 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Container } from "@/components/container";
-import { buyerPersonas, stageFit, industries } from "@/data/site";
+import { buyerPersonas, stageFit } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 const FADE_UP = { hidden: { opacity: 1, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: SLOW_OUT } } };
 const STAGGER = { hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } } };
 
-function IndustryIcon({ name }: { name: string }) {
-  const props = { width: 24, height: 24, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
-  switch (name) {
-    case "factory":
-      return (
-        <svg {...props}><path d="M2 20V10l6 4V10l6 4V8l6 4v8H2z"/><path d="M6 20v-4M12 20v-4M18 20v-4"/></svg>
-      );
-    case "briefcase":
-      return (
-        <svg {...props}><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
-      );
-    case "heart":
-      return (
-        <svg {...props}><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      );
-    case "building":
-      return (
-        <svg {...props}><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h2M13 8h2M9 12h2M13 12h2M9 16h2M13 16h2"/></svg>
-      );
-    case "cross":
-      return (
-        <svg {...props}><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg>
-      );
-    case "shop":
-      return (
-        <svg {...props}><path d="M3 9l2-5h14l2 5"/><path d="M3 9v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9"/><path d="M9 22V12h6v10"/></svg>
-      );
-    default:
-      return null;
-  }
-}
 
 function OntarioMap() {
   return (
@@ -174,59 +143,28 @@ export function WhoWeServe() {
           </div>
         </motion.div>
 
-        {/* INDUSTRIES + GEOGRAPHY */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          <motion.div
-            initial={{ opacity: 1, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: SLOW_OUT }}
-            className="lg:col-span-7"
-          >
-            <p className="eyebrow mb-6">Industries we know</p>
-            <h3 className="text-[28px] md:text-[36px] leading-[1.1] tracking-[-0.025em] font-semibold text-[var(--color-ink)] mb-10">
-              Six sectors, recurring patterns.
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-              {industries.map((ind, i) => (
-                <motion.div
-                  key={ind.name}
-                  initial={{ opacity: 1, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.6, delay: i * 0.05, ease: SLOW_OUT }}
-                  className="flex items-start gap-4 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-rule)] p-5"
-                >
-                  <span className="flex-shrink-0 w-11 h-11 rounded-full bg-[var(--color-paper)] border border-[var(--color-rule)] flex items-center justify-center text-[var(--color-slate)]">
-                    <IndustryIcon name={ind.icon} />
-                  </span>
-                  <div>
-                    <p className="text-[15px] md:text-[16px] font-semibold text-[var(--color-ink)] mb-1">{ind.name}</p>
-                    <p className="text-[12px] leading-[1.5] text-[var(--color-mute)]">{ind.note}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 1, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: SLOW_OUT, delay: 0.1 }}
-            className="lg:col-span-5"
-          >
+        {/* GEOGRAPHY (Industries panel removed Wave 32 — table-stakes, didn't differentiate) */}
+        <motion.div
+          initial={{ opacity: 1, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: SLOW_OUT }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center"
+        >
+          <div className="lg:col-span-6">
             <p className="eyebrow mb-6">Where we work</p>
-            <h3 className="text-[28px] md:text-[36px] leading-[1.1] tracking-[-0.025em] font-semibold text-[var(--color-ink)] mb-8">
+            <h3 className="text-[28px] md:text-[40px] leading-[1.1] tracking-[-0.025em] font-semibold text-[var(--color-ink)] mb-8">
               Headquartered in Ontario.<br />
               <span className="text-[var(--color-secondary)]">Canada-wide on the right files.</span>
             </h3>
-            <OntarioMap />
-            <p className="text-[13px] leading-[1.6] text-[var(--color-mute)] mt-5">
+            <p className="text-[15px] md:text-[16px] leading-[1.65] text-[var(--color-mute)]">
               Most fractional HR engagements are Ontario-based since that&rsquo;s where the legal frameworks (ESA, OHSA, AODA, HRTO) sit and where Evert is licensed. Editorial work travels anywhere. Mediation work travels where the matter doesn&rsquo;t touch a specific tribunal. Out-of-province and federally regulated work, case by case.
             </p>
-          </motion.div>
-        </div>
+          </div>
+          <div className="lg:col-span-6">
+            <OntarioMap />
+          </div>
+        </motion.div>
       </Container>
     </section>
   );
