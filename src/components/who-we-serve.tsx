@@ -19,15 +19,12 @@ function CanadaMap() {
         </linearGradient>
       </defs>
       <rect width="480" height="260" rx="16" fill="url(#caMapBg)"/>
-      {/* Stylized Canada outline */}
       <path
         d="M30 200 Q40 120 70 95 Q90 78 130 80 Q160 70 200 75 Q240 65 280 78 Q310 70 340 80 Q380 75 420 90 Q450 100 455 130 Q450 165 430 185 Q400 200 370 200 L60 200 Q40 200 30 200 Z"
         fill="#2D3D4E"
         opacity="0.85"
       />
-      {/* Atlantic provinces hint */}
       <ellipse cx="430" cy="195" rx="22" ry="8" fill="#2D3D4E" opacity="0.7"/>
-      {/* Toronto/Newmarket pin (HQ) */}
       <g>
         <circle cx="335" cy="178" r="16" fill="#E89B7A" opacity="0.25"/>
         <circle cx="335" cy="178" r="7" fill="#E89B7A"/>
@@ -35,17 +32,14 @@ function CanadaMap() {
       </g>
       <text x="350" y="175" fontSize="12" fontWeight="700" fill="#1A1D24">Newmarket / GTA</text>
       <text x="350" y="187" fontSize="10" fill="#6b6b6b" letterSpacing="0.04em">XNL headquarters</text>
-      {/* Secondary city dots */}
       <circle cx="380" cy="180" r="3" fill="#6B5F7D"/>
       <text x="383" y="195" fontSize="9" fill="#6B5F7D" fontWeight="500">Ottawa / Mtl</text>
       <circle cx="240" cy="170" r="3" fill="#6B5F7D"/>
       <text x="218" y="185" fontSize="9" fill="#6B5F7D" fontWeight="500">Prairies</text>
       <circle cx="110" cy="170" r="3" fill="#6B5F7D"/>
       <text x="90" y="185" fontSize="9" fill="#6B5F7D" fontWeight="500">Vancouver</text>
-      {/* Connecting arc from HQ to coastal callouts */}
       <path d="M335 178 Q220 130 110 170" fill="none" stroke="#E89B7A" strokeWidth="1" opacity="0.35" strokeDasharray="3 3"/>
       <path d="M335 178 Q360 165 380 180" fill="none" stroke="#E89B7A" strokeWidth="1" opacity="0.35" strokeDasharray="3 3"/>
-      {/* Corner marks */}
       <text x="20" y="28" fontSize="9" fill="#6b6b6b" letterSpacing="0.18em" fontWeight="600">HEADQUARTERED</text>
       <line x1="20" y1="34" x2="100" y2="34" stroke="#E89B7A" strokeWidth="2"/>
       <text x="460" y="28" textAnchor="end" fontSize="9" fill="#6b6b6b" letterSpacing="0.18em" fontWeight="600">COAST TO COAST</text>
@@ -55,7 +49,7 @@ function CanadaMap() {
 
 export function WhoWeServe() {
   return (
-    <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
+    <section className="py-16 md:py-20 lg:py-24 bg-[var(--color-paper)]">
       <Container size="wide">
         <motion.div
           initial={{ opacity: 1, y: 20 }}
@@ -64,14 +58,13 @@ export function WhoWeServe() {
           transition={{ duration: 0.8, ease: SLOW_OUT }}
           className="max-w-4xl mb-16 md:mb-24"
         >
-          <p className="eyebrow mb-8">Who we serve</p>
+          <p className="eyebrow mb-8">02 · Who we serve</p>
           <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
             Owner-operated employers,<br />
             <span className="text-[var(--color-secondary)]">in the right size band.</span>
           </h2>
         </motion.div>
 
-        {/* BUYER PERSONAS */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -106,7 +99,6 @@ export function WhoWeServe() {
           ))}
         </motion.div>
 
-        {/* COMPANY STAGE FIT */}
         <motion.div
           initial={{ opacity: 1, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -151,7 +143,6 @@ export function WhoWeServe() {
           </div>
         </motion.div>
 
-        {/* GEOGRAPHY (Industries panel removed Wave 32 — table-stakes, didn't differentiate) */}
         <motion.div
           initial={{ opacity: 1, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

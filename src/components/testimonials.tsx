@@ -7,7 +7,7 @@ const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 
 export function Testimonials() {
   return (
-    <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
+    <section className="py-16 md:py-20 lg:py-24 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ export function Testimonials() {
           transition={{ duration: 0.8, ease: SLOW_OUT }}
           className="max-w-4xl mb-10 md:mb-14"
         >
-          <p className="eyebrow mb-8">In their words</p>
+          <p className="eyebrow mb-8">05 · In their words</p>
           <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
             What clients say when the file&rsquo;s closed.
           </h2>

@@ -8,7 +8,7 @@ const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 
 export function RecentThinking() {
   return (
-    <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
+    <section className="py-16 md:py-20 lg:py-24 bg-[var(--color-paper)]">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,7 +18,7 @@ export function RecentThinking() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-20"
         >
           <div className="max-w-2xl">
-            <p className="eyebrow mb-8">Recent thinking</p>
+            <p className="eyebrow mb-8">07 · Recent thinking</p>
             <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
               Where Evert is publishing.
             </h2>

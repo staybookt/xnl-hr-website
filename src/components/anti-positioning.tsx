@@ -5,9 +5,9 @@ import { wontDo } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 
-export function AntiPositioning() {
+export function AntiPositioning({ index }: { index?: string } = {}) {
   return (
-    <section className="py-20 md:py-24 lg:py-28 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
+    <section className="py-16 md:py-20 lg:py-24 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
           initial={{ opacity: 1, y: 20 }}
@@ -16,7 +16,7 @@ export function AntiPositioning() {
           transition={{ duration: 0.8, ease: SLOW_OUT }}
           className="max-w-4xl mb-12 md:mb-16"
         >
-          <p className="eyebrow mb-6">What we don&rsquo;t do</p>
+          <p className="eyebrow mb-6">{index ? `${index} · ` : ""}What we don&rsquo;t do</p>
           <h2 className="text-[28px] md:text-[40px] lg:text-[48px] leading-[1.1] tracking-[-0.025em] font-semibold text-[var(--color-ink)]">
             Senior judgment isn&rsquo;t everything.<br />
             <span className="text-[var(--color-secondary)]">Here&rsquo;s what to call someone else for.</span>

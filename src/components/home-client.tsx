@@ -61,7 +61,7 @@ export function HomeFounder() {
     <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden border-t border-white/10">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 70% 60% at 12% 30%, rgba(150, 144, 181, 0.30) 0%, transparent 60%), radial-gradient(ellipse 70% 55% at 90% 80%, rgba(232, 155, 122, 0.28) 0%, transparent 60%), radial-gradient(ellipse 55% 45% at 50% 100%, rgba(168, 181, 168, 0.18) 0%, transparent 60%)" }} />
       <Container size="wide" className="relative">
-        <p className="eyebrow-light mb-10 md:mb-14">The founder</p>
+        <p className="eyebrow-light mb-10 md:mb-14">06 · The founder</p>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <motion.div initial={{ opacity: 1, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 1, ease: SLOW_OUT }} className="lg:col-span-4 max-w-[340px]">
             <PortraitEvert className="w-full h-auto" />
@@ -79,7 +79,6 @@ export function HomeFounder() {
               </div>
             </motion.div>
             <div className="pt-8 border-t border-white/15">
-              {/* Credentials chips */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {["CHRL", "LL.M. (NL)", "25+ years", "25+ bylines", "Canada’s Top-25 · 2016 + 2017", "Randstad Innovation Award · 2015"].map((cred) => (
                   <span key={cred} className="text-[11px] md:text-[12px] uppercase tracking-[0.12em] font-semibold text-white/85 bg-white/8 border border-white/12 rounded-full px-3 py-1.5">

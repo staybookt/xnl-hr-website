@@ -21,8 +21,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-// Skip the static CDN cache so a bare URL fetch always sees the latest build.
-// Vercel's edge was pinning stale HTML for `/`; this forces a fresh render per request.
 export const revalidate = 0;
 
 const publications = [
@@ -104,11 +102,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section id="services" className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
+      {/* 01 SERVICES */}
+      <section id="services" className="py-16 md:py-20 lg:py-24 bg-[var(--color-paper)]">
         <Container size="wide">
           <div className="max-w-4xl mb-16 md:mb-24">
-            <p className="eyebrow mb-8">What we do</p>
+            <p className="eyebrow mb-8">01 · What we do</p>
             <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-6">
               Three practices.<br />
               <span className="text-[var(--color-secondary)]">One senior partner each.</span>
@@ -127,13 +125,13 @@ export default function Home() {
 
       <WhoWeServe />
 
-      <AntiPositioning />
+      <AntiPositioning index="03" />
 
-      {/* WHY XNL */}
-      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
+      {/* 04 THE HONEST COMPARISON */}
+      <section className="py-16 md:py-20 lg:py-24 bg-[var(--color-paper)]">
         <Container size="wide">
           <div className="max-w-4xl mb-12 md:mb-16">
-            <p className="eyebrow mb-8">Why XNL</p>
+            <p className="eyebrow mb-8">04 · The honest comparison</p>
             <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-6">
               Three ways to solve an HR problem.<br />
               <span className="text-[var(--color-secondary)]">One that doesn&rsquo;t cost a year of overhead.</span>
@@ -142,9 +140,7 @@ export default function Home() {
               We&rsquo;re not the right call for every employer. Here&rsquo;s the honest comparison.
             </p>
           </div>
-          <div className="overflow-x-auto -mx-6 md:mx-0 px-6 md:px-0">
-            <div className="min-w-[820px] md:min-w-0"><Comparison /></div>
-          </div>
+          <Comparison />
         </Container>
       </section>
 
@@ -156,12 +152,12 @@ export default function Home() {
 
       <RecentThinking />
 
-      {/* FAQ */}
-      <section className="py-24 md:py-32 lg:py-40 bg-[var(--color-paper)]">
+      {/* 08 FAQ */}
+      <section className="py-16 md:py-20 lg:py-24 bg-[var(--color-paper)]">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             <div className="lg:col-span-4">
-              <p className="eyebrow mb-8">Common questions</p>
+              <p className="eyebrow mb-8">08 · Common questions</p>
               <h2 className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">The honest answers.</h2>
               <p className="text-[16px] md:text-[17px] leading-[1.6] text-[var(--color-mute)] mb-10">
                 Pricing, timing, fit, what we won&rsquo;t take on. Everything we get asked on the intake call.
@@ -190,8 +186,9 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative bg-[var(--color-ink)] text-white py-28 md:py-36 lg:py-44 overflow-hidden">
-        <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 65% 55% at 12% 25%, rgba(150, 144, 181, 0.32) 0%, transparent 60%), radial-gradient(ellipse 75% 60% at 88% 78%, rgba(232, 155, 122, 0.38) 0%, transparent 60%)" }} />
+      <section className="relative bg-[var(--color-ink)] text-white py-24 md:py-32 lg:py-40 overflow-hidden">
+        <HeroImage src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=80" alt="" imageOpacity={0.18} />
+        <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 65% 55% at 12% 25%, rgba(150, 144, 181, 0.38) 0%, transparent 60%), radial-gradient(ellipse 75% 60% at 88% 78%, rgba(232, 155, 122, 0.45) 0%, transparent 60%)" }} />
         <Container size="wide" className="relative">
           <div className="max-w-5xl">
             <p className="eyebrow-brand mb-8">Next step</p>
