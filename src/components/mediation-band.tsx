@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export function MediationBand() {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 1, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -31,7 +31,7 @@ export function MediationBand() {
           <div className="md:col-span-3 md:text-right">
             <Link
               href="/services/mediation"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-ink)] text-white px-6 py-3 text-[14px] md:text-[15px] font-medium hover:bg-[var(--color-brand)] transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-ink)] text-white px-6 py-3.5 text-[14px] md:text-[15px] font-semibold hover:bg-[var(--color-brand)] transition-colors"
             >
               Book Wendy <span aria-hidden="true">→</span>
             </Link>

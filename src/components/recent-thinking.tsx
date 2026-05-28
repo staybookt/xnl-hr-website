@@ -11,11 +11,11 @@ export function RecentThinking() {
     <section className="py-16 md:py-20 lg:py-24 bg-[var(--color-paper)]">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: SLOW_OUT }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-20"
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-20"
         >
           <div className="max-w-2xl">
             <p className="eyebrow mb-8">07 · Recent thinking</p>
@@ -35,16 +35,16 @@ export function RecentThinking() {
           {articles.map((a, i) => (
             <motion.article
               key={i}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: SLOW_OUT }}
             >
               <Link
                 href={a.url}
-                className="group block h-full rounded-3xl bg-[var(--color-surface)] border border-[var(--color-rule)] p-8 md:p-9 hover:border-[var(--color-rule-strong)] hover:-translate-y-1 transition-all duration-500 flex flex-col"
+                className="group flex flex-col h-full rounded-3xl bg-[var(--color-surface)] border border-[var(--color-rule)] p-7 md:p-9 hover:border-[var(--color-rule-strong)] hover:-translate-y-1 transition-all duration-500"
               >
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
                   <span className="text-[11px] uppercase tracking-[0.14em] font-semibold text-[var(--color-secondary-deep)]">
                     {a.publication}
                   </span>
@@ -57,7 +57,7 @@ export function RecentThinking() {
                     </span>
                   )}
                 </div>
-                <h3 className="text-[20px] md:text-[22px] leading-[1.25] tracking-[-0.018em] font-semibold text-[var(--color-ink)] mb-4">
+                <h3 className="text-[19px] md:text-[22px] leading-[1.25] tracking-[-0.018em] font-semibold text-[var(--color-ink)] mb-4">
                   {a.title}
                 </h3>
                 <p className="text-[14px] md:text-[15px] leading-[1.6] text-[var(--color-mute)] mb-8 flex-1">
