@@ -14,15 +14,15 @@ export function Footer() {
             "radial-gradient(ellipse 55% 50% at 10% 30%, rgba(150, 144, 181, 0.18) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 92% 75%, rgba(232, 155, 122, 0.16) 0%, transparent 60%)",
         }}
       />
-      <div className="relative max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16 py-16 md:py-20">
-        <div className="flex items-center gap-3 mb-12 md:mb-14">
+      <div className="relative max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16 py-14 md:py-20">
+        <div className="flex items-center gap-3 mb-10 md:mb-14">
           <span className="inline-block w-2 h-2 rounded-full bg-[var(--color-brand)]" aria-hidden="true" />
-          <p className="text-[11px] uppercase tracking-[0.22em] font-semibold text-white/75">
+          <p className="text-[10px] md:text-[11px] uppercase tracking-[0.22em] font-semibold text-white/75">
             {site.shortName} · {site.tagline}
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
           <div>
             <h3 className="text-[11px] uppercase tracking-[0.14em] font-semibold text-white/45 mb-5">
               Practice
@@ -81,7 +81,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 md:mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-5 md:items-center justify-between text-[12px] text-white/55">
+        <div className="mt-12 md:mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 md:gap-5 md:items-center justify-between text-[12px] text-white/55">
           <p>© {year} {site.legalName}. Newmarket, Ontario.</p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>

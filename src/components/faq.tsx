@@ -19,9 +19,9 @@ export function FAQ({ items }: { items: readonly QA[] }) {
               type="button"
               onClick={() => setOpen(isOpen ? null : i)}
               aria-expanded={isOpen}
-              className="w-full flex items-center justify-between gap-8 py-7 md:py-8 text-left group"
+              className="w-full flex items-center justify-between gap-4 md:gap-8 py-6 md:py-8 text-left group"
             >
-              <span className="text-[18px] md:text-[22px] leading-[1.35] tracking-[-0.018em] font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-slate)] transition-colors">
+              <span className="text-[17px] md:text-[22px] leading-[1.35] tracking-[-0.018em] font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-slate)] transition-colors">
                 {item.q}
               </span>
               <span
@@ -43,7 +43,7 @@ export function FAQ({ items }: { items: readonly QA[] }) {
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <div className="pb-8 md:pb-10 pr-16 text-[16px] md:text-[18px] leading-[1.6] text-[var(--color-mute)] max-w-3xl">
+                  <div className="pb-7 md:pb-10 pr-4 md:pr-16 text-[15px] md:text-[18px] leading-[1.6] text-[var(--color-mute)] max-w-3xl">
                     {item.a}
                   </div>
                 </motion.div>
