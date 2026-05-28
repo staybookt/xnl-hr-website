@@ -10,7 +10,7 @@ export function Testimonials() {
     <section className="py-16 md:py-20 lg:py-24 bg-[var(--color-surface)] border-y border-[var(--color-rule)]">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: SLOW_OUT }}
@@ -23,7 +23,7 @@ export function Testimonials() {
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 1, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, delay: 0.1, ease: SLOW_OUT }}
@@ -36,16 +36,16 @@ export function Testimonials() {
           {testimonials.slice(0, 3).map((t, i) => (
             <motion.figure
               key={i}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: SLOW_OUT }}
-              className="flex flex-col rounded-3xl bg-[var(--color-paper)] border border-[var(--color-rule)] p-8 md:p-10 hover:border-[var(--color-rule-strong)] transition-colors"
+              className="flex flex-col rounded-3xl bg-[var(--color-paper)] border border-[var(--color-rule)] p-7 md:p-10 hover:border-[var(--color-rule-strong)] transition-colors"
             >
               <span aria-hidden="true" className="text-[48px] leading-none text-[var(--color-brand)] font-semibold mb-4 -ml-1">
                 &ldquo;
               </span>
-              <blockquote className="text-[17px] md:text-[18px] leading-[1.55] text-[var(--color-ink-soft)] mb-8 flex-1">
+              <blockquote className="text-[16px] md:text-[18px] leading-[1.55] text-[var(--color-ink-soft)] mb-8 flex-1">
                 {t.quote}
               </blockquote>
               <figcaption className="pt-6 border-t border-[var(--color-rule)]">
