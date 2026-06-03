@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ServicesIndexInner } from "@/components/services-index-inner";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Services · Fractional HR + Editorial · XNL HR & Communications",
   description:
-    "Three practices, one senior partner each. Fractional HR with Evert Akkerman, workplace mediation with Wendy Akkerman, editorial and communications drawn from 25+ Canadian bylines.",
+    "Two practices, one senior partner each. Fractional HR and editorial for owner-operated Canadian businesses and not-for-profits. Project-priced or capped hourly. No retainers required. Founded 2012 by Evert Akkerman (CHRL, LL.M.).",
   alternates: { canonical: "/services" },
 };
 
