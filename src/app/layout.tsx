@@ -3,7 +3,6 @@ import { Geist, Caveat } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { NoticeBar } from "@/components/notice-bar";
 import { StickyBookingBar } from "@/components/sticky-booking-bar";
 import { site } from "@/data/site";
 
@@ -29,14 +28,18 @@ export const metadata: Metadata = {
   description: site.description,
   keywords: [
     "fractional HR",
-    "workplace mediation",
+    "fractional HR Canada",
+    "fractional HR Ontario",
     "HR consultant Ontario",
-    "HRTO mandatory mediation",
+    "HR consultant Newmarket",
     "outsourced HR",
     "HR for small business Canada",
     "CHRL",
-    "Newmarket HR",
+    "Evert Akkerman",
+    "XNL HR",
     "Canadian HR Reporter",
+    "editorial HR writing",
+    "HR op-ed ghostwriting",
   ],
   authors: [{ name: "Evert Akkerman", url: "https://www.linkedin.com/in/evertakkerman/" }],
   openGraph: {
@@ -57,7 +60,7 @@ export const metadata: Metadata = {
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   "@id": `${site.url}/#organization`,
   name: site.legalName,
   alternateName: site.shortName,
@@ -66,8 +69,24 @@ const organizationJsonLd = {
   foundingDate: "2012",
   email: "info@xnlhr.com",
   telephone: "+1-289-338-4001",
+  priceRange: "$$",
   address: { "@type": "PostalAddress", addressLocality: "Newmarket", addressRegion: "ON", addressCountry: "CA" },
-  founder: { "@type": "Person", name: "Evert Akkerman" },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Ontario" },
+    { "@type": "Country", name: "Canada" },
+  ],
+  knowsAbout: [
+    "Fractional human resources",
+    "HR consulting",
+    "Employment standards",
+    "Workplace policy",
+    "Employee terminations",
+    "Employee handbooks",
+    "HR compliance",
+    "Editorial writing for HR",
+    "Op-ed ghostwriting",
+  ],
+  founder: { "@id": `${site.url}/about#evert` },
   sameAs: ["https://www.linkedin.com/in/evertakkerman/"],
 };
 
@@ -90,7 +109,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       </head>
       <body>
-        <NoticeBar />
         <Nav />
         <main>{children}</main>
         <Footer />
