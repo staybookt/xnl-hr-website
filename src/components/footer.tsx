@@ -41,8 +41,7 @@ export function Footer() {
               Services
             </h3>
             <ul className="space-y-2.5 text-[14px] text-white/85">
-              <li><Link href="/services/hr-support" className="hover:text-white transition-colors">HR Support</Link></li>
-              <li><Link href="/services/mediation" className="hover:text-white transition-colors">Workplace Mediation</Link></li>
+              <li><Link href="/services/hr-support" className="hover:text-white transition-colors">Fractional HR</Link></li>
               <li><Link href="/services/editorial" className="hover:text-white transition-colors">Editorial &amp; Communications</Link></li>
               <li><Link href="/services#pricing" className="hover:text-white transition-colors">Rates</Link></li>
             </ul>
@@ -70,13 +69,6 @@ export function Footer() {
                   Evert on LinkedIn
                 </a>
               </li>
-              {principals.wendy.linkedin && (
-                <li>
-                  <a href={principals.wendy.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                    Wendy on LinkedIn
-                  </a>
-                </li>
-              )}
             </ul>
           </div>
         </div>

@@ -15,13 +15,13 @@ export function HomeHeroAnim({ publications }: { publications: readonly string[]
     <>
       <motion.div initial="hidden" animate="show" variants={STAGGER} className="max-w-5xl mx-auto text-center">
         <motion.p variants={FADE_UP} className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold text-white/65 mb-10">
-          Fractional HR · Workplace Mediation · Editorial
+          Fractional HR · Editorial · Canada-wide
         </motion.p>
         <motion.h1 variants={FADE_UP} className="text-[length:var(--text-hero)] leading-[var(--text-hero--line-height)] tracking-[var(--text-hero--letter-spacing)] font-semibold text-white mb-10">
-          The outsourced<br />HR <span className="text-brand-gradient">department.</span>
+          Your outsourced<br />HR <span className="text-brand-gradient">department</span>
         </motion.h1>
         <motion.p variants={FADE_UP} className="text-[length:var(--text-body-xl)] leading-[var(--text-body-xl--line-height)] text-white/80 max-w-2xl mx-auto mb-14">
-          Senior HR judgment, scoped by the project. For owner-operated employers and not-for-profits across Canada.
+          Senior HR judgment, scoped by the project. For owner-operated businesses and not-for-profits across Canada.
         </motion.p>
         <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center justify-center">
           <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-brand)] text-white px-8 py-4 text-[16px] font-semibold hover:bg-[var(--color-brand-deep)] transition-colors shadow-lg shadow-[var(--color-brand)]/20">
@@ -69,7 +69,7 @@ export function HomeFounder() {
           </motion.div>
           <div className="lg:col-span-8">
             <motion.blockquote initial={{ opacity: 1, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.9, ease: SLOW_OUT }} className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-white mb-10">
-              <span className="text-[var(--color-brand)]">&ldquo;</span>The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.<span className="text-[var(--color-brand)]">&rdquo;</span>
+              <span className="text-[var(--color-brand)]">&ldquo;</span>In many organizations, performance reviews are a ritual dance: a lot of movement and no progress. Meanwhile, your exposure grows.<span className="text-[var(--color-brand)]">&rdquo;</span>
             </motion.blockquote>
             <motion.div initial={{ opacity: 1, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.7, ease: SLOW_OUT, delay: 0.1 }} className="flex items-end gap-8 mb-12">
               <SignatureEvert size={56} color="#E89B7A" />
@@ -88,11 +88,11 @@ export function HomeFounder() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-end">
                 <div className="md:col-span-7 text-[14px] md:text-[15px] text-white/65 leading-[1.6]">
-                  Twenty-five years in Canadian HR. Published in <em className="text-white/85 not-italic font-medium">Canadian HR Reporter, Municipal World, Ottawa Life, Talent Canada</em>, and others. Founded XNL in 2012.
+                  Twenty-five years in Canadian HR. Published in <em className="text-white/85 not-italic font-medium">Canadian HR Reporter, Municipal World, HR News Canada, Talent Canada</em>, and others. Founded XNL in 2012.
                 </div>
                 <div className="md:col-span-5 md:text-right flex flex-col md:items-end gap-3">
-                  <Link href="/insights/hrto-mandatory-mediation" className="inline-flex items-center gap-2 text-[14px] font-semibold text-[var(--color-brand)] hover:text-[var(--color-brand-glow)] hover:gap-3 transition-all">
-                    Read Evert’s latest piece <span aria-hidden="true">→</span>
+                  <Link href="/insights" className="inline-flex items-center gap-2 text-[14px] font-semibold text-[var(--color-brand)] hover:text-[var(--color-brand-glow)] hover:gap-3 transition-all">
+                    Read Evert’s recent bylines <span aria-hidden="true">→</span>
                   </Link>
                   <Link href="/about" className="inline-flex items-center gap-2 text-[14px] font-semibold text-white hover:text-[var(--color-brand)] hover:gap-3 transition-all">
                     Full bio + credentials <span aria-hidden="true">→</span>

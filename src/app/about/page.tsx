@@ -3,39 +3,40 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/container";
-import { PortraitEvert, PortraitWendy } from "@/components/portrait";
-import { SignatureEvert, SignatureWendy } from "@/components/signature";
+import { PortraitEvert } from "@/components/portrait";
+import { SignatureEvert } from "@/components/signature";
 import { PageCTA } from "@/components/page-cta";
 import { contact, site } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 
-const personJsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": `${site.url}/about#evert`,
-    name: "Evert Akkerman",
-    jobTitle: "Founder, Fractional HR + Editorial",
-    worksFor: { "@id": `${site.url}/#organization` },
-    hasCredential: ["CHRL", "LL.M. (NL)"],
-    knowsLanguage: ["en", "nl"],
-    award: [
-      "Canada's Top-25 HR Professionals (2016)",
-      "Canada's Top-25 HR Professionals (2017)",
-      "Randstad Innovation in HR Award (2015)",
-    ],
-    sameAs: ["https://www.linkedin.com/in/evertakkerman/"],
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": `${site.url}/about#wendy`,
-    name: "Wendy Akkerman",
-    jobTitle: "Workplace Mediator",
-    worksFor: { "@id": `${site.url}/#organization` },
-  },
-];
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${site.url}/about#evert`,
+  name: "Evert Akkerman",
+  jobTitle: "Founder, Fractional HR + Editorial",
+  worksFor: { "@id": `${site.url}/#organization` },
+  hasCredential: ["CHRL", "LL.M. (NL)"],
+  knowsLanguage: ["en", "nl"],
+  knowsAbout: [
+    "Fractional human resources",
+    "Canadian employment standards",
+    "Workplace policy",
+    "Employee terminations",
+    "HR compliance",
+    "Editorial writing",
+    "Op-ed ghostwriting",
+  ],
+  award: [
+    "Canada's Top-25 HR Professionals (2016)",
+    "Canada's Top-25 HR Professionals (2017)",
+    "Randstad Innovation in HR Award (2015)",
+  ],
+  sameAs: [
+    "https://www.linkedin.com/in/evertakkerman/",
+  ],
+};
 
 export default function AboutPage() {
   return (
@@ -59,7 +60,7 @@ export default function AboutPage() {
                 25 years in Canadian HR.<br /><span className="text-brand-gradient">Built on judgment, not retainers.</span>
               </h1>
               <p className="text-[length:var(--text-body-xl)] leading-[1.55] text-white/80 max-w-2xl">
-                XNL HR &amp; Communications is a one-partner practice in Newmarket, Ontario. Founded by Evert Akkerman in 2012. Joined in 2026 by Wendy Akkerman for workplace mediation. Most engagements are Ontario-based; the practice works Canada-wide on the right files.
+                XNL HR &amp; Communications is a one-partner practice in Newmarket, Ontario. Founded by Evert Akkerman in 2012. Most engagements are Ontario-based; the practice works Canada-wide on the right files.
               </p>
             </div>
           </Container>
@@ -84,7 +85,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-5 text-[16px] md:text-[17px] leading-[1.7] md:leading-[1.75] text-[var(--color-ink-soft)]">
                 <p>
-                  Evert has been writing about Canadian HR for thirteen years. Op-eds, guest commentary, and feature columns in <span className="font-medium">Canadian HR Reporter</span>, <span className="font-medium">Municipal World</span>, <span className="font-medium">Ottawa Life</span>, <span className="font-medium">Talent Canada</span>, and <span className="font-medium">The Lawyer&rsquo;s Daily</span>. The throughline: plain, direct, defensible language for senior audiences.
+                  Evert has been writing about Canadian HR for thirteen years. Op-eds, guest commentary, and feature columns in <span className="font-medium">Canadian HR Reporter</span>, <span className="font-medium">Municipal World</span>, <span className="font-medium">HR News Canada</span>, <span className="font-medium">Talent Canada</span>, and <span className="font-medium">The Lawyer&rsquo;s Daily</span>. The throughline: plain, direct, defensible language for senior audiences.
                 </p>
                 <p>
                   Before founding XNL in 2012, Evert managed HR for a Canadian financial institution. He holds an LL.M. from a Dutch law school and a CHRL designation from the Human Resources Professionals Association.
@@ -93,11 +94,11 @@ export default function AboutPage() {
                   He runs XNL as a one-partner practice on purpose. No analysts, no bait-and-switch, no monthly retainers you can&rsquo;t opt out of. You get him on the file, and you pay for the work he does.
                 </p>
                 <p>
-                  The work covers the full range. A handbook update or a single policy review can be one week. A wrongful-dismissal file prep, an HRTO defense, or a senior search support engagement runs longer. Evert is happy to do either, and quotes accordingly.
+                  The work covers the full range. A handbook update or a single policy review can be one week. A wrongful-dismissal file prep or a senior search support engagement runs longer. Evert is happy to do either, and quotes accordingly.
                 </p>
               </div>
               <blockquote className="text-[18px] md:text-[20px] leading-[1.5] text-[var(--color-ink)] border-l-2 border-[var(--color-brand)] pl-5 md:pl-6 my-10 italic font-light">
-                &ldquo;The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.&rdquo;
+                &ldquo;In many organizations, performance reviews are a ritual dance: a lot of movement and no progress. Meanwhile, your exposure grows.&rdquo;
               </blockquote>
               <div className="flex items-end gap-5 md:gap-6 mt-8">
                 <SignatureEvert size={56} color="#1A1D24" />
@@ -149,71 +150,10 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* WENDY */}
-      <section className="py-20 md:py-32 bg-[var(--color-paper)] border-t border-[var(--color-rule)]">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <motion.div initial={{ opacity: 1, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: SLOW_OUT }} className="lg:col-span-7 order-2 lg:order-1">
-              <p className="eyebrow mb-5">Workplace Mediation · senior partner</p>
-              <h2 className="text-[length:var(--text-display-lg)] leading-[var(--text-display-lg--line-height)] tracking-[var(--text-display-lg--letter-spacing)] font-semibold text-[var(--color-ink)] mb-8">
-                Wendy Akkerman.
-              </h2>
-              <span className="inline-flex items-center text-[10px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2.5 py-1 rounded-full mb-6">Bio pending</span>
-              <div className="space-y-5 text-[16px] md:text-[17px] leading-[1.7] md:leading-[1.75] text-[var(--color-ink-soft)]">
-                <p><span className="text-[var(--color-mute-soft)] italic">[Placeholder bio]</span> Wendy joined XNL in 2026 as the practice&rsquo;s workplace mediator. She brings independent, neutral mediation to Ontario employers, timed to the new HRTO mandatory-mediation rule that took effect June 2025.</p>
-                <p>Her engagements typically resolve workplace conflict, harassment complaints, and termination disputes before they reach formal proceedings. When they don&rsquo;t, the mediation record stands up. Sessions are confidential. The record is preserved either way.</p>
-              </div>
-              <blockquote className="text-[18px] md:text-[20px] leading-[1.5] text-[var(--color-ink)] border-l-2 border-[var(--color-brand)] pl-5 md:pl-6 my-10 italic font-light">
-                &ldquo;The room doesn&rsquo;t need a referee. It needs someone who can hear what is not being said.&rdquo;
-              </blockquote>
-              <div className="flex items-end gap-5 md:gap-6 mt-8">
-                <SignatureWendy size={52} color="#1A1D24" />
-                <div className="text-[12px] uppercase tracking-[0.14em] text-[var(--color-mute)] pb-2">Wendy Akkerman</div>
-              </div>
-              <div className="mt-12 pt-10 border-t border-[var(--color-rule)] grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div>
-                  <p className="eyebrow mb-3">Credentials</p>
-                  <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)] italic">
-                    <li>[Placeholder] Q-Med, IMI, or other professional mediator credentials</li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="eyebrow mb-3">Practice focus</p>
-                  <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)]">
-                    <li>Workplace conflict + harassment</li>
-                    <li>HRTO mandatory mediation</li>
-                    <li>Termination + severance disputes</li>
-                    <li>Board-level governance conflicts</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="mt-10 pt-8 border-t border-[var(--color-rule)] flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center text-[10px] uppercase tracking-[0.14em] font-semibold text-[var(--color-mute)] bg-[var(--color-surface)] border border-[var(--color-rule)] px-3 py-1.5 rounded-full">
-                  LinkedIn pending
-                </span>
-                <span className="inline-flex items-center text-[10px] uppercase tracking-[0.14em] font-semibold text-[var(--color-mute)] bg-[var(--color-surface)] border border-[var(--color-rule)] px-3 py-1.5 rounded-full">
-                  Real photo + full bio coming
-                </span>
-                <Link href="/services/mediation" className="inline-flex items-center gap-2 text-[13px] font-semibold text-[var(--color-slate)] hover:text-[var(--color-brand-deep)] hover:gap-3 transition-all sm:ml-auto">
-                  Book a session with Wendy <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </motion.div>
-            <motion.div initial={{ opacity: 1, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 1, ease: SLOW_OUT, delay: 0.1 }} className="lg:col-span-5 order-1 lg:order-2">
-              <PortraitWendy className="w-full h-auto max-w-[400px] mx-auto" />
-              <div className="flex items-center justify-between mt-4 text-[13px] text-[var(--color-mute)] max-w-[400px] mx-auto">
-                <span className="font-medium text-[var(--color-ink)]">Wendy Akkerman</span>
-                <span className="inline-flex items-center text-[9px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2 py-0.5 rounded-full">Illustrated</span>
-              </div>
-            </motion.div>
-          </div>
-        </Container>
-      </section>
-
       <PageCTA
         eyebrow="Next step"
         headline={<>Ready to talk<br /><span className="text-brand-gradient">to the practice?</span></>}
-        subhead={`30-minute intake, no cost. Call ${contact.phone} or book through the contact page.`}
+        subhead={`30-minute intake, no cost. Call ${contact.phone} or email through the contact page.`}
       />
     </>
   );

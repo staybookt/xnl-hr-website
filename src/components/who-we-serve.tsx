@@ -11,7 +11,7 @@ const STAGGER = { hidden: {}, show: { transition: { staggerChildren: 0.08, delay
 
 function CanadaMap() {
   return (
-    <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label="Stylized map of Canada with Toronto pinned as XNL headquarters">
+    <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label="Stylized map of Canada with Newmarket pinned as XNL headquarters">
       <defs>
         <linearGradient id="caMapBg" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#E8EDF1"/>
@@ -60,8 +60,8 @@ export function WhoWeServe() {
         >
           <p className="eyebrow mb-8">02 · Who we serve</p>
           <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)]">
-            Owner-operated employers,<br />
-            <span className="text-[var(--color-secondary)]">in the right size band.</span>
+            Owner-operated businesses,<br />
+            <span className="text-[var(--color-secondary)]">of any size.</span>
           </h2>
         </motion.div>
 
@@ -157,7 +157,7 @@ export function WhoWeServe() {
               <span className="text-[var(--color-secondary)]">Canada-wide on the right files.</span>
             </h3>
             <p className="text-[15px] md:text-[16px] leading-[1.65] text-[var(--color-mute)]">
-              Most fractional HR engagements are Ontario-based since that&rsquo;s where the legal frameworks (ESA, OHSA, AODA, HRTO) sit and where Evert is licensed. Editorial work travels anywhere. Mediation work travels where the matter doesn&rsquo;t touch a specific tribunal. Out-of-province and federally regulated work, case by case.
+              Most fractional HR engagements are Ontario-based since that&rsquo;s where the legal frameworks (ESA, OHSA, AODA) sit and where Evert is licensed. Editorial work travels anywhere. Out-of-province and federally regulated work, case by case.
             </p>
           </div>
           <div className="lg:col-span-6">

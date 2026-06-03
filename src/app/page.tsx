@@ -15,9 +15,9 @@ import { HomeHeroAnim, HomeFounder } from "@/components/home-client";
 import { contact, services, faqs, site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "XNL HR & Communications · fractional HR, workplace mediation, editorial",
+  title: "XNL HR & Communications · fractional HR, editorial · Newmarket, Ontario",
   description:
-    "Senior HR judgment, scoped by the project. Fractional HR and workplace mediation for owner-operated employers and not-for-profits. Headquartered in Newmarket, Ontario. Canada-wide on the right files.",
+    "Fractional HR and editorial for owner-operated businesses and not-for-profits across Canada. Senior judgment, scoped by the project. Founded 2012 by Evert Akkerman (CHRL, LL.M.). Headquartered in Newmarket, Ontario.",
   alternates: { canonical: "/" },
 };
 
@@ -26,7 +26,7 @@ export const revalidate = 0;
 const publications = [
   "Canadian HR Reporter",
   "Municipal World",
-  "Ottawa Life",
+  "HR News Canada",
   "Talent Canada",
   "The Lawyer's Daily",
   "HR Professional Now",
@@ -42,7 +42,8 @@ const localBusinessJsonLd = {
   url: site.url,
   description: site.description,
   foundingDate: "2012",
-  founder: { "@type": "Person", name: "Evert Akkerman", jobTitle: "Founder, CHRL, LL.M." },
+  priceRange: "$$",
+  founder: { "@id": `${site.url}/about#evert` },
   address: { "@type": "PostalAddress", addressLocality: "Newmarket", addressRegion: "ON", addressCountry: "CA" },
   telephone: "+1-289-338-4001",
   email: "info@xnlhr.com",
@@ -50,7 +51,7 @@ const localBusinessJsonLd = {
     { "@type": "AdministrativeArea", name: "Ontario" },
     { "@type": "Country", name: "Canada" },
   ],
-  serviceType: ["Fractional HR", "Workplace Mediation", "Editorial & Communications"],
+  serviceType: ["Fractional HR", "Editorial & Communications"],
   knowsLanguage: ["en", "nl"],
   award: [
     "Canada's Top-25 HR Professionals (2016)",
@@ -109,14 +110,14 @@ export default function Home() {
           <div className="max-w-4xl mb-16 md:mb-24">
             <p className="eyebrow mb-8">01 · What we do</p>
             <h2 className="text-[length:var(--text-display-2xl)] leading-[var(--text-display-2xl--line-height)] tracking-[var(--text-display-2xl--letter-spacing)] font-semibold text-[var(--color-ink)] mb-6">
-              Three practices.<br />
+              Two practices.<br />
               <span className="text-[var(--color-secondary)]">One senior partner each.</span>
             </h2>
             <p className="text-[16px] md:text-[17px] leading-[1.6] text-[var(--color-mute)] max-w-2xl">
-              From handbook updates to wrongful-dismissal prep, Evert handles the full breadth of HR work, scoped per project. Wendy runs independent workplace mediation. Editorial extends that breadth to the page.
+              From handbook updates to wrongful-dismissal prep, Evert handles the full breadth of HR work, scoped per project. We offer on-demand HR support for small and mid-size businesses and serve as a sounding board for entrepreneurs. Editorial extends that breadth to the page.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl">
             {services.map((s, i) => <ServiceCard key={s.slug} service={s} index={i} />)}
           </div>
         </Container>
@@ -138,7 +139,7 @@ export default function Home() {
               <span className="text-[var(--color-secondary)]">One that doesn&rsquo;t cost a year of overhead.</span>
             </h2>
             <p className="text-[17px] md:text-[18px] leading-[1.6] text-[var(--color-mute)] max-w-2xl">
-              We&rsquo;re not the right call for every employer. Here&rsquo;s the honest comparison.
+              We&rsquo;re not the right call for every business. Here&rsquo;s the honest comparison.
             </p>
           </div>
           <Comparison />
