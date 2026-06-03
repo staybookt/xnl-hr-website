@@ -25,7 +25,8 @@ const hrSupportProcess = [
   { n: "04", title: "Stay close", time: "As needed", body: "Quarterly check-ins. Call when you need us. No monthly retainer required." },
 ];
 
-const hrSupportScenarios = scenarios.filter((s) => s.key !== "hrto");
+// Wave 40: scenarios no longer contains the "hrto" key (mediation excised). Use all scenarios directly.
+const hrSupportScenarios = scenarios;
 
 export default function HRSupportPage() {
   return (
@@ -85,7 +86,7 @@ export default function HRSupportPage() {
               Pick the one that&rsquo;s on your desk.
             </h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {hrSupportScenarios.map((s, i) => (
               <motion.div key={s.key} initial={{ opacity: 1, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.6, delay: i * 0.06, ease: SLOW_OUT }}>
                 <Link href={`/contact?topic=${s.key}`} className="group flex flex-col h-full rounded-2xl bg-[var(--color-surface)] border border-[var(--color-rule)] hover:border-[var(--color-slate)]/40 hover:bg-[var(--color-paper)] px-5 py-5 md:px-6 md:py-6 transition-all hover:-translate-y-0.5">
