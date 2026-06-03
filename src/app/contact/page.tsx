@@ -1,7 +1,11 @@
 import { Container } from "@/components/container";
 import { contact, principals, scenarios } from "@/data/site";
 
-export const metadata = { title: "Contact" };
+export const metadata = {
+  title: "Contact Evert Akkerman · XNL HR & Communications",
+  description: "Speak to Evert Akkerman, CHRL. Phone or email to book a 30-minute intro call. Fractional HR and editorial for owner-operated Canadian businesses. Newmarket, Ontario.",
+  alternates: { canonical: "/contact" },
+};
 
 type Props = {
   searchParams: Promise<{ topic?: string }>;
@@ -76,12 +80,12 @@ export default async function Contact({ searchParams }: Props) {
           </a>
         </div>
 
-        <div className="mt-10 rounded-2xl bg-[var(--color-brand-soft)] border border-[var(--color-rule)] p-6 md:p-8">
-          <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] mb-2">
-            Online booking · coming soon
+        <div className="mt-10 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-rule)] p-6 md:p-8">
+          <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-[var(--color-mute)] mb-2">
+            How we work
           </p>
           <p className="text-[15px] md:text-[16px] leading-[1.55] text-[var(--color-ink-soft)]">
-            We&rsquo;re wiring up a calendar so you can book Evert directly. Until then, the fastest path is the phone above.
+            Phone or email. We don&rsquo;t use online booking. The intake is a conversation, and conversations start on the line.
           </p>
         </div>
 
