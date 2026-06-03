@@ -80,12 +80,59 @@ export const services = [
 
 export const credentials = ["Since 2012", "CHRL", "LL.M. (NL)", "Randstad Innovation in HR Award", "Canada's Top-25 HR · 2016, 2017"] as const;
 
+// Real attributed testimonials. Each one is from a named client with permission.
+// First three (Burd, Lodzinski, Emanuel) are featured on the homepage. All five appear on /testimonials.
 export const testimonials = [
-  { quote: "We had a termination going sideways and a board meeting in 72 hours. Evert had us documented, defensible, and confident before the meeting. The room felt different.", role: "Executive Director", org: "Mid-size Ontario nonprofit", placeholder: true, practice: "hr" as const },
-  { quote: "Evert wrote the board memo I'd been trying to write for two weeks. It landed in 20 minutes of his time.", role: "COO", org: "Ontario municipal corporation", placeholder: true, practice: "editorial" as const },
-  { quote: "Our handbook hadn't been touched since 2018. Evert had a defensible rewrite in our hands inside four weeks, with a clean compliance trail for every change.", role: "Founder + CEO", org: "Manufacturing firm, GTA", placeholder: true, practice: "hr" as const },
-  { quote: "We needed an op-ed in Canadian HR Reporter under our managing partner's byline. Evert delivered a draft we barely touched before publishing.", role: "Managing Partner", org: "Professional services firm", placeholder: true, practice: "editorial" as const },
-  { quote: "Our HR generalist runs day-to-day fine. When the executive termination landed, she didn't have the depth. Evert filled the gap for the six weeks it mattered, then we went back to business as usual.", role: "COO", org: "Healthcare services group", placeholder: true, practice: "hr" as const },
+  {
+    quote: "Doing the reviews together was so productive. The whole process has been a very positive one for me personally and helped me more clearly understand what my expectations are and what a reasonable expectation from an HR lens is. I appreciate your clear thinking and your insights. I am so relieved; you are very skilled at what you do, and I am so grateful that Jim recommended you. The Partners are all pleased with your professionalism, efficiency, and the results of this project.",
+    name: "Ruthie Burd",
+    title: "Founder & President",
+    org: "The Lunch Lady Group",
+    location: "Markham, Ontario",
+    date: "2025",
+    engagement: "Performance review process",
+    practice: "hr" as const,
+  },
+  {
+    quote: "Your approach is cognitively ergonomic. You take one or two words out without changing the meaning of the sentence, making it quicker to grasp. Each of those steps adds up throughout a document, and now it takes fewer steps to grasp the meaning.",
+    name: "Dr. Adam Lodzinski",
+    title: "Author",
+    org: "The Four Essentials of Conflict Resolution",
+    location: "",
+    date: "2022",
+    engagement: "Book editing (230 pages)",
+    practice: "editorial" as const,
+  },
+  {
+    quote: "You exceeded expectations with a high-quality execution of delivery. Very much appreciated.",
+    name: "Chris Emanuel",
+    title: "Outgoing President & CEO",
+    org: "Central York Chamber of Commerce",
+    location: "",
+    date: "November 2025",
+    engagement: "Successor offer letter and job description",
+    practice: "hr" as const,
+  },
+  {
+    quote: "I had the great privilege of working very closely with Evert during a time when our organization was undergoing the changes that come with amalgamation (Habitat for Humanity Brampton, Caledon, York and Toronto joined). Evert was great to work with. This was not only evident personally but articulated by every member of our leadership team and staff. Through Evert's inclusive leadership style we came up with solutions to further our mission as one strong united team. Evert's professionalism and strong work ethic was a tremendous asset to us especially during this time of growth and change. I was pleased to have Evert as an HR resource. He brought impressive value to our organization and I would highly recommend him.",
+    name: "Thomas Fischer",
+    title: "Former VP, Regional Development",
+    org: "Habitat for Humanity GTA",
+    location: "",
+    date: "2014",
+    engagement: "Organizational amalgamation · HR lead",
+    practice: "hr" as const,
+  },
+  {
+    quote: "Congratulations to our Resident HR Guru, Evert Akkerman, on winning a Randstad award for his work establishing the successful co-op program at Anova Fertility & Reproductive Health. Well done, Evert!",
+    name: "Dr. Marjorie Dixon",
+    title: "CEO",
+    org: "Anova Fertility & Reproductive Health",
+    location: "",
+    date: "October 2017",
+    engagement: "Co-op program (Randstad Innovation Award)",
+    practice: "hr" as const,
+  },
 ] as const;
 
 export const articles = [

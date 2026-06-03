@@ -8,10 +8,9 @@ import { testimonials } from "@/data/site";
 
 const SLOW_OUT = [0.16, 1, 0.3, 1] as const;
 
-const practiceLabel = {
+const practiceLabel: Record<string, string> = {
   hr: "Fractional HR",
-  mediation: "Workplace Mediation",
-  editorial: "Editorial & Communications",
+  editorial: "Editorial",
 };
 
 export default function TestimonialsPage() {
@@ -27,7 +26,7 @@ export default function TestimonialsPage() {
               <span className="text-brand-gradient">when the file&rsquo;s closed.</span>
             </h1>
             <p className="text-[length:var(--text-body-xl)] leading-[1.55] text-[var(--color-mute)] max-w-3xl">
-              The accounts below are composites drawn from actual engagements across all three practices. Names and identifying details are withheld for confidentiality. Real attributed testimonials are added with each client&rsquo;s written permission.
+              Real attributed testimonials from named clients across both practices. Each quote was shared with permission. Engagements span 2014 to 2025.
             </p>
           </div>
         </Container>
@@ -40,40 +39,50 @@ export default function TestimonialsPage() {
             {testimonials.map((t, i) => (
               <motion.figure
                 key={i}
-                initial={{ opacity: 1, y: 16 }}
+                initial={{ opacity: 1, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.7, delay: (i % 3) * 0.08, ease: SLOW_OUT }}
-                className="flex flex-col rounded-3xl bg-[var(--color-surface)] border border-[var(--color-rule)] p-8 md:p-9 hover:border-[var(--color-rule-strong)] transition-colors"
+                className="flex flex-col rounded-3xl bg-[var(--color-surface)] border border-[var(--color-rule)] p-7 md:p-9 hover:border-[var(--color-rule-strong)] transition-colors"
               >
-                <div className="flex items-center justify-between mb-5">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-5">
                   <span className="text-[10px] uppercase tracking-[0.16em] font-semibold text-[var(--color-brand-deep)]">
                     {practiceLabel[t.practice] ?? "XNL"}
                   </span>
-                  <span className="text-[9px] uppercase tracking-[0.14em] font-semibold text-[var(--color-mute)] bg-[var(--color-paper)] border border-[var(--color-rule)] px-2 py-0.5 rounded-full">
-                    Composite
+                  <span className="text-[10px] uppercase tracking-[0.12em] font-medium text-[var(--color-mute)]">
+                    {t.date}
                   </span>
                 </div>
                 <span aria-hidden="true" className="text-[44px] leading-none text-[var(--color-brand)] font-semibold mb-3 -ml-1">
                   &ldquo;
                 </span>
-                <blockquote className="text-[16px] md:text-[17px] leading-[1.55] text-[var(--color-ink-soft)] mb-7 flex-1">
+                <blockquote className="text-[15px] md:text-[16px] leading-[1.6] text-[var(--color-ink-soft)] mb-7 flex-1">
                   {t.quote}
                 </blockquote>
                 <figcaption className="pt-5 border-t border-[var(--color-rule)]">
-                  <p className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[var(--color-ink)] mb-1">
-                    {t.role}
+                  <p className="text-[15px] font-semibold text-[var(--color-ink)] leading-[1.3]">
+                    {t.name}
                   </p>
-                  <p className="text-[13px] leading-[1.5] text-[var(--color-mute)]">
-                    {t.org}
+                  <p className="text-[13px] leading-[1.5] text-[var(--color-mute)] mt-0.5">
+                    {t.title}{t.title && t.org ? ", " : ""}{t.org}
                   </p>
+                  {t.location && (
+                    <p className="text-[12px] leading-[1.5] text-[var(--color-mute-soft)] mt-1">
+                      {t.location}
+                    </p>
+                  )}
+                  {t.engagement && (
+                    <p className="text-[10px] uppercase tracking-[0.12em] font-semibold text-[var(--color-secondary-deep)] mt-3">
+                      Engagement · {t.engagement}
+                    </p>
+                  )}
                 </figcaption>
               </motion.figure>
             ))}
           </div>
 
           <p className="text-[13px] md:text-[14px] leading-[1.55] text-[var(--color-mute)] mt-14 md:mt-20 max-w-3xl">
-            All testimonials presented as composites until clients have signed off on attributed quotes. If you&rsquo;ve worked with XNL and would like to share an attributed testimonial, please{" "}
+            All testimonials shown above are from named clients with permission. If you&rsquo;ve worked with XNL and would like to add an attributed testimonial, please{" "}
             <Link href="/contact" className="text-[var(--color-slate)] underline underline-offset-4 hover:text-[var(--color-brand-deep)]">contact us</Link>.
           </p>
         </Container>
