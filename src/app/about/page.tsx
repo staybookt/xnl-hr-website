@@ -33,6 +33,7 @@ const personJsonLd = {
     "Canada's Top-25 HR Professionals (2017)",
     "Randstad Innovation in HR Award (2015)",
   ],
+  image: `${site.url}/img/evert.jpg`,
   sameAs: [
     "https://www.linkedin.com/in/evertakkerman/",
   ],
@@ -73,10 +74,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <motion.div initial={{ opacity: 1, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 1, ease: SLOW_OUT }} className="lg:col-span-5">
               <PortraitEvert className="w-full h-auto max-w-[400px] mx-auto" />
-              <div className="flex items-center justify-between mt-4 text-[13px] text-[var(--color-mute)] max-w-[400px] mx-auto">
-                <span className="font-medium text-[var(--color-ink)]">Evert Akkerman</span>
-                <span className="inline-flex items-center text-[9px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand-deep)] bg-[var(--color-brand-soft)] px-2 py-0.5 rounded-full">Illustrated</span>
-              </div>
+              <p className="text-center mt-4 text-[13px] font-medium text-[var(--color-ink)] max-w-[400px] mx-auto">
+                Evert Akkerman
+              </p>
             </motion.div>
             <motion.div initial={{ opacity: 1, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: SLOW_OUT, delay: 0.1 }} className="lg:col-span-7">
               <p className="eyebrow mb-5">Founder · senior partner</p>
@@ -85,7 +85,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-5 text-[16px] md:text-[17px] leading-[1.7] md:leading-[1.75] text-[var(--color-ink-soft)]">
                 <p>
-                  Evert has been writing about Canadian HR for thirteen years. Op-eds, guest commentary, and feature columns in <span className="font-medium">Canadian HR Reporter</span>, <span className="font-medium">Municipal World</span>, <span className="font-medium">HR News Canada</span>, <span className="font-medium">Talent Canada</span>, and <span className="font-medium">The Lawyer&rsquo;s Daily</span>. The throughline: plain, direct, defensible language for senior audiences.
+                  Evert has been writing about Canadian HR for thirteen years. Op-eds, guest commentary, and feature columns in <span className="font-medium">Canadian HR Reporter</span>, <span className="font-medium">Municipal World</span>, <span className="font-medium">HR News Canada</span>, <span className="font-medium">Talent Canada</span>, <span className="font-medium">Law360 Canada</span>, and <span className="font-medium">The Lawyer&rsquo;s Daily</span>. The throughline: plain, direct, defensible language for senior audiences.
                 </p>
                 <p>
                   Before founding XNL in 2012, Evert managed HR for a Canadian financial institution. He holds an LL.M. from a Dutch law school and a CHRL designation from the Human Resources Professionals Association.
@@ -122,11 +122,11 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <p className="eyebrow mb-3">Representative engagements</p>
-                  <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)] italic">
-                    <li>[Placeholder. Evert to confirm what&rsquo;s publishable.]</li>
-                    <li>Manufacturer, ~80 employees: executive termination file rebuild</li>
-                    <li>NFP board: governance review + HR strategy alignment</li>
-                    <li>Professional services firm: handbook overhaul + AODA audit</li>
+                  <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)]">
+                    <li>The Lunch Lady Group: performance review process (2025)</li>
+                    <li>Central York Chamber of Commerce: successor offer + JD (2025)</li>
+                    <li>Habitat for Humanity GTA: amalgamation HR lead (2014)</li>
+                    <li>Anova Fertility: co-op program (Randstad Award, 2015)</li>
                   </ul>
                 </div>
                 <div>

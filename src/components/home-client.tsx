@@ -65,7 +65,6 @@ export function HomeFounder() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <motion.div initial={{ opacity: 1, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 1, ease: SLOW_OUT }} className="lg:col-span-4 max-w-[340px]">
             <PortraitEvert className="w-full h-auto" />
-            <span className="inline-flex items-center text-[9px] uppercase tracking-[0.14em] font-semibold text-white/45 mt-3">Illustrated</span>
           </motion.div>
           <div className="lg:col-span-8">
             <motion.blockquote initial={{ opacity: 1, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.9, ease: SLOW_OUT }} className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-white mb-10">
@@ -88,7 +87,7 @@ export function HomeFounder() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-end">
                 <div className="md:col-span-7 text-[14px] md:text-[15px] text-white/65 leading-[1.6]">
-                  Twenty-five years in Canadian HR. Published in <em className="text-white/85 not-italic font-medium">Canadian HR Reporter, Municipal World, HR News Canada, Talent Canada</em>, and others. Founded XNL in 2012.
+                  Twenty-five years in Canadian HR. Published in <em className="text-white/85 not-italic font-medium">Canadian HR Reporter, Municipal World, HR News Canada, Talent Canada, Law360 Canada</em>, and others. Founded XNL in 2012.
                 </div>
                 <div className="md:col-span-5 md:text-right flex flex-col md:items-end gap-3">
                   <Link href="/insights" className="inline-flex items-center gap-2 text-[14px] font-semibold text-[var(--color-brand)] hover:text-[var(--color-brand-glow)] hover:gap-3 transition-all">
