@@ -34,7 +34,7 @@ export default function ApproachPage() {
             What actually happens when you put a file in front of us.
           </h2>
           <p className="text-[16px] md:text-[17px] leading-[1.65] text-[var(--color-mute)] mb-14 max-w-3xl">
-            Not every engagement runs through all four. A handbook update is usually one call plus a delivered draft. A board memo is a 48-hour turnaround. A wrongful-dismissal prep, an HRTO defense, or a senior policy overhaul is the full discipline. The four moves are how we work the heavy files; we scale them to the matter.
+            Not every engagement runs through all four. A handbook update is usually one call plus a delivered draft. A board memo is a 48-hour turnaround. A wrongful-dismissal prep or a senior policy overhaul is the full discipline. The four moves are how we work the heavy files; we scale them to the matter.
           </p>
 
           <div className="space-y-12">
@@ -47,7 +47,7 @@ export default function ApproachPage() {
                 Half the work of senior judgment is knowing what you don&rsquo;t yet know. Most HR engagements arrive with a presenting problem (the termination, the complaint, the policy gap) and a hidden one. The hidden one is usually what determined the outcome.
               </p>
               <p className="text-[17px] md:text-[18px] leading-[1.75] text-[var(--color-ink-soft)]">
-                The first hour of every engagement is listening. To the person across from us. To what the file says. To what the room can&rsquo;t yet name. We don&rsquo;t form a recommendation until we&rsquo;ve heard it whole.
+                The first hour of every engagement is listening. To the person across from us. To what the file says. To what the room can&rsquo;t yet name. We don&rsquo;t make a recommendation until we&rsquo;ve heard it whole.
               </p>
             </div>
 
@@ -101,13 +101,13 @@ export default function ApproachPage() {
               You can buy templates from a hundred places for less money. What you can&rsquo;t buy from those places is the judgment to know which template applies to your situation, what to adapt for it, and where the legal frameworks have shifted under documentation you wrote last year.
             </p>
             <p className="text-[17px] md:text-[18px] leading-[1.75] text-[var(--color-ink-soft)]">
-              That&rsquo;s what we sell. The deliverable is a file, a memo, a handbook, a mediation record. The actual product is the judgment that produced it.
+              That&rsquo;s what we sell. The deliverable is a file, a memo, a handbook. The actual product is the judgment that produced it.
             </p>
           </div>
 
           <div className="mt-16 flex flex-col sm:flex-row gap-4 sm:gap-8 items-start sm:items-center">
             <Link href="/services" className="inline-flex items-center gap-2 text-[15px] font-semibold text-[var(--color-slate)] hover:gap-3 transition-all">
-              See the three practices <span aria-hidden="true">→</span>
+              See the two practices <span aria-hidden="true">→</span>
             </Link>
             <Link href="/insights" className="inline-flex items-center gap-2 text-[15px] font-semibold text-[var(--color-slate)] hover:gap-3 transition-all">
               Read recent insights <span aria-hidden="true">→</span>
@@ -119,7 +119,7 @@ export default function ApproachPage() {
       <PageCTA
         eyebrow="Want this judgment on your file?"
         headline={<>Bring us<br /><span className="text-brand-gradient">the next one.</span></>}
-        subhead="30-minute intake call, no cost. Handbook update, op-ed draft, or hard file — we'll tell you straight whether the work is one we should take."
+        subhead="30-minute intake call, no cost. Handbook update, op-ed draft, or hard file. We'll tell you straight whether the work is one we should take."
       />
     </>
   );

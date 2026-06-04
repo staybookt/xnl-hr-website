@@ -76,8 +76,6 @@ export function Footer() {
         <div className="mt-12 md:mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 md:gap-5 md:items-center justify-between text-[12px] text-white/55">
           <p>© {year} {site.legalName}. Newmarket, Ontario.</p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
-            <span aria-hidden="true" className="text-white/25">·</span>
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <span aria-hidden="true" className="text-white/25">·</span>
             <p>

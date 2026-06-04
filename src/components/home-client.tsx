@@ -68,7 +68,7 @@ export function HomeFounder() {
           </motion.div>
           <div className="lg:col-span-8">
             <motion.blockquote initial={{ opacity: 1, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.9, ease: SLOW_OUT }} className="text-[length:var(--text-display-xl)] leading-[var(--text-display-xl--line-height)] tracking-[var(--text-display-xl--letter-spacing)] font-semibold text-white mb-10">
-              <span className="text-[var(--color-brand)]">&ldquo;</span>In many organizations, performance reviews are a ritual dance: a lot of movement and no progress. Meanwhile, your exposure grows.<span className="text-[var(--color-brand)]">&rdquo;</span>
+              <span className="text-[var(--color-brand)]">&ldquo;</span>The cheapest HR mistake is the one you spot before it becomes a wrongful dismissal claim.<span className="text-[var(--color-brand)]">&rdquo;</span>
             </motion.blockquote>
             <motion.div initial={{ opacity: 1, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.7, ease: SLOW_OUT, delay: 0.1 }} className="flex items-end gap-8 mb-12">
               <SignatureEvert size={56} color="#E89B7A" />

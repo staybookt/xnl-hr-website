@@ -11,14 +11,25 @@ export function StickyBookingBar() {
   useEffect(() => {
     if (dismissed) return;
     const onScroll = () => {
-      // Wait until well past the hero on mobile so the bar doesn't fight first-impression content.
       const isNarrow = window.innerWidth < 768;
       const threshold = window.innerHeight * (isNarrow ? 1.5 : 0.7);
-      setVisible(window.scrollY > threshold);
+      const scrolledPast = window.scrollY > threshold;
+
+      // Hide when the footer is in view so it doesn't block the StayBookt credit
+      // or any footer link. ~720px from doc bottom is the safe buffer for the
+      // tallest variant of the dark footer.
+      const nearBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 720;
+
+      setVisible(scrolledPast && !nearBottom);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, [dismissed]);
 
   return (

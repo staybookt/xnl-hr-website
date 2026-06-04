@@ -34,9 +34,8 @@ export function PullQuoteSlab() {
             transition={{ duration: 0.9, ease: SLOW_OUT, delay: 0.1 }}
             className="text-[length:var(--text-display-lg)] md:text-[length:var(--text-hero)] leading-[1.1] md:leading-[1.08] tracking-[-0.025em] font-semibold text-white"
           >
-            Senior judgment doesn&rsquo;t scale by adding bodies.
-            <br />
-            <span className="text-brand-gradient">It scales by being on the file.</span>
+            In many organizations, performance reviews are a ritual dance:{" "}
+            <span className="text-brand-gradient">a lot of movement and no progress.</span> Meanwhile, your exposure grows.
           </motion.blockquote>
           <motion.div
             initial={{ opacity: 1, y: 12 }}

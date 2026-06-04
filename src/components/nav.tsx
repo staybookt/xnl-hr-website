@@ -58,13 +58,10 @@ export function Nav() {
                 {item.label}
               </Link>
             ))}
+            {/* Book a call — always coral on both light and dark chrome for readability. */}
             <Link
               href="/contact"
-              className={`text-[14px] font-medium rounded-full px-5 py-2.5 transition-colors ${
-                useLightChrome
-                  ? "bg-white/12 text-white border border-white/25 hover:bg-white hover:text-[var(--color-ink)]"
-                  : "bg-[var(--color-ink)] text-white hover:bg-[var(--color-slate)]"
-              }`}
+              className="text-[14px] font-semibold rounded-full px-5 py-2.5 bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-deep)] transition-colors shadow-sm"
             >
               Book a call
             </Link>
@@ -111,7 +108,7 @@ export function Nav() {
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="mt-2 inline-flex w-fit rounded-full bg-[var(--color-brand)] text-white px-6 py-3 text-[15px] font-medium"
+              className="mt-2 inline-flex w-fit rounded-full bg-[var(--color-brand)] text-white px-6 py-3 text-[15px] font-semibold"
             >
               Book a call
             </Link>

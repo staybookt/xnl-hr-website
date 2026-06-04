@@ -18,6 +18,10 @@ type Service = {
 };
 
 export function ServiceCard({ service, index }: { service: Service; index: number }) {
+  // Wendy's note: the label "BEST FOR" already implies "For", so the forLine
+  // should start with the audience, not "For owner-operated...". Strip a leading "For ".
+  const forLineClean = service.forLine.replace(/^For\s+/i, "");
+
   return (
     <motion.div
       initial={{ opacity: 1, y: 12 }}
@@ -93,7 +97,7 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
 
           <p className="text-[12px] leading-[1.5] text-[var(--color-mute-soft)] mb-6">
             <span className="uppercase tracking-[0.1em] font-semibold text-[var(--color-mute)] mr-1.5">Best for</span>
-            {service.forLine}
+            {forLineClean}
           </p>
 
           <span className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-brand)] group-hover:gap-3 transition-all">
