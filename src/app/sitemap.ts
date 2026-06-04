@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site, services, articles } from "@/data/site";
+import { site, services } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -20,13 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
     changeFrequency: "monthly" as const,
   }));
-  const insightPages: MetadataRoute.Sitemap = articles
-    .filter((a) => a.url !== "#")
-    .map((a) => ({
-      url: `${site.url}${a.url}`,
-      lastModified: now,
-      priority: 0.7,
-      changeFrequency: "monthly" as const,
-    }));
-  return [...base, ...servicePages, ...insightPages];
+  // Articles are external links to publications (Talent Canada, Law360 Canada).
+  // /insights is included in `base` above; individual article URLs aren't on xnlhr.com,
+  // so they don't belong in the sitemap.
+  return [...base, ...servicePages];
 }
