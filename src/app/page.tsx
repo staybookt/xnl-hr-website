@@ -28,7 +28,7 @@ const publications = [
   "Municipal World",
   "HR News Canada",
   "Talent Canada",
-  "The Lawyer's Daily",
+  "Law360 Canada",
   "HR Professional Now",
   "HRD Canada",
 ];
