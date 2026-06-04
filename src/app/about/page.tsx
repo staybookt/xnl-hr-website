@@ -33,7 +33,7 @@ const personJsonLd = {
     "Canada's Top-25 HR Professionals (2017)",
     "Randstad Innovation in HR Award (2015)",
   ],
-  image: `${site.url}/img/evert.jpg`,
+  image: `${site.url}/img/Evert%20headshot%202025.jpg`,
   sameAs: [
     "https://www.linkedin.com/in/evertakkerman/",
   ],

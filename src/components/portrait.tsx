@@ -4,12 +4,12 @@ type Props = {
   className?: string;
 };
 
-// Real headshot of Evert Akkerman. Photo provided 2025. Replaces the prior SVG illustration.
+// Real headshot of Evert Akkerman. Uploaded via GitHub web UI 2025.
 export function PortraitEvert({ className = "w-full h-auto" }: Props) {
   return (
     <div className={`relative overflow-hidden rounded-3xl ${className}`} style={{ aspectRatio: "338 / 444" }}>
       <Image
-        src="/img/evert.jpg"
+        src="/img/Evert%20headshot%202025.jpg"
         alt="Evert Akkerman, CHRL, founder of XNL HR & Communications"
         fill
         sizes="(max-width: 768px) 80vw, 400px"
