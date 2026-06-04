@@ -80,8 +80,6 @@ export const services = [
 
 export const credentials = ["Since 2012", "CHRL", "LL.M. (NL)", "Randstad Innovation in HR Award", "Canada's Top-25 HR · 2016, 2017"] as const;
 
-// Real attributed testimonials. Each one is from a named client with permission.
-// First three (Burd, Lodzinski, Emanuel) are featured on the homepage. All five appear on /testimonials.
 export const testimonials = [
   {
     quote: "Doing the reviews together was so productive. The whole process has been a very positive one for me personally and helped me more clearly understand what my expectations are and what a reasonable expectation from an HR lens is. I appreciate your clear thinking and your insights. I am so relieved; you are very skilled at what you do, and I am so grateful that Jim recommended you. The Partners are all pleased with your professionalism, efficiency, and the results of this project.",
@@ -135,36 +133,84 @@ export const testimonials = [
   },
 ] as const;
 
+// Real Evert bylines. Talent Canada articles link out directly to the publication.
+// Law360 Canada articles live behind a subscription; we link to a PDF request via email.
+// First three appear on the homepage Recent Thinking strip (chosen for recency + breadth).
 export const articles = [
   {
-    slug: "cheapest-hr-mistake",
-    title: "Why the cheapest HR mistake is the one you spot first",
-    publication: "Canadian HR Reporter",
-    date: "March 2026",
-    excerpt: "Most wrongful dismissal claims have a signal weeks before they file. The cost of catching them early vs. defending them later isn't close.",
-    url: "#",
-    placeholder: true,
+    slug: "timberwolves-mount-fuji",
+    title: "From spotted timberwolves to moving Mount Fuji: The art and wit of job interviews",
+    publication: "Talent Canada",
+    date: "January 2024",
+    excerpt: "Conducting a job interview is always more art than science, but there are some guardrails that can be put in place to ensure HR and the hiring manager get the information they need to make the best decision.",
+    url: "https://www.talentcanada.ca/from-spotted-timberwolves-to-moving-mount-fuji-the-art-and-wit-of-job-interviews/",
+    external: true,
+    type: "feature" as const,
+    placeholder: false,
     original: false,
   },
   {
-    slug: "hiring-search-problem",
-    title: "Hiring is a search problem, not a sales problem",
-    publication: "Municipal World",
-    date: "November 2025",
-    excerpt: "The best hires aren't sold on you. They're found. That distinction changes the entire process, the cost, and the retention math.",
-    url: "#",
-    placeholder: true,
+    slug: "bailing-on-billing",
+    title: "How to deal with bailing on billing",
+    publication: "Law360 Canada",
+    date: "January 2024",
+    excerpt: "Sooner or later, every business owner and service provider runs into this issue: people who buy their product or use their services, and then don't pay. While it's typically a small percentage, the few you have to chase for payment tend to soak up a disproportionate share of your attention.",
+    url: "mailto:info@xnlhr.com?subject=Request%20PDF%20·%20How%20to%20deal%20with%20bailing%20on%20billing%20(Law360%20Canada)&body=Hi%20Evert%2C%0A%0AWould%20you%20mind%20sending%20me%20the%20PDF%20of%20your%20Law360%20Canada%20column%20%22How%20to%20deal%20with%20bailing%20on%20billing%22%20(January%2012%2C%202024)%3F%0A%0AThanks.",
+    external: true,
+    type: "byline" as const,
+    placeholder: false,
+    original: false,
+    requestPdf: true,
+  },
+  {
+    slug: "person-of-authority",
+    title: "‘Person of authority’: When it comes to harassment, executives can’t count on progressive discipline",
+    publication: "Talent Canada",
+    date: "November 2023",
+    excerpt: "Across Canada, employers are required by law to ensure that their workplace is free of discrimination and harassment. While putting a Violence and Harassment Policy in place is mandatory, it cannot be a standalone measure. When organizations don't enforce policies, harassment cases tend to result in higher compensatory awards.",
+    url: "https://www.talentcanada.ca/person-of-authority-when-it-comes-to-harassment-executives-cant-count-on-progressive-discipline/",
+    external: true,
+    type: "co-byline" as const,
+    placeholder: false,
     original: false,
   },
   {
-    slug: "performance-reviews-ritual-dance",
-    title: "Performance reviews are a ritual dance",
-    publication: "HR News Canada",
-    date: "September 2025",
-    excerpt: "In many organizations, performance reviews are a ritual dance: a lot of movement and no progress. Meanwhile, your exposure grows.",
-    url: "#",
-    placeholder: true,
+    slug: "bad-service-bites-back",
+    title: "When bad service bites back",
+    publication: "Law360 Canada",
+    date: "July 2023",
+    excerpt: "It continues to surprise me how often businesses in hospitality, retail and financial services disrespect and disappoint their customers. Customer service isn't hard — it just takes a bit of effort.",
+    url: "mailto:info@xnlhr.com?subject=Request%20PDF%20·%20When%20bad%20service%20bites%20back%20(Law360%20Canada)&body=Hi%20Evert%2C%0A%0AWould%20you%20mind%20sending%20me%20the%20PDF%20of%20your%20Law360%20Canada%20column%20%22When%20bad%20service%20bites%20back%22%20(July%2020%2C%202023)%3F%0A%0AThanks.",
+    external: true,
+    type: "byline" as const,
+    placeholder: false,
     original: false,
+    requestPdf: true,
+  },
+  {
+    slug: "wage-fixing-monopolies",
+    title: "Opinion: Wage fixing, no-poaching crackdown set to begin — yet Canada is comfortable with monopolies",
+    publication: "Talent Canada",
+    date: "June 2023",
+    excerpt: "On June 23, two important changes to the Competition Act come into effect. The amendments prohibit wage-fixing agreements between employers, as well as 'no-poaching' agreements that entail not soliciting or hiring each other's employees.",
+    url: "https://www.talentcanada.ca/opinion-wage-fixing-no-poaching-crackdown-set-to-begin-yet-canada-is-comfortable-with-monopolies-oligarchies/",
+    external: true,
+    type: "byline" as const,
+    placeholder: false,
+    original: false,
+  },
+  {
+    slug: "renting-out-suits",
+    title: "Renting out suits, maintaining residents, other job-hunting traps",
+    publication: "Law360 Canada",
+    date: "March 2023",
+    excerpt: "The pandemic triggered a lot of movement on the labour market. The sudden availability of a bonanza of talent and a willingness of formerly immobile people to try something new has been great for the recruitment side of my HR practice. However, while the level of applications rose, the level of care seems to have dropped.",
+    url: "mailto:info@xnlhr.com?subject=Request%20PDF%20·%20Renting%20out%20suits%20(Law360%20Canada)&body=Hi%20Evert%2C%0A%0AWould%20you%20mind%20sending%20me%20the%20PDF%20of%20your%20Law360%20Canada%20column%20%22Renting%20out%20suits%2C%20maintaining%20residents%2C%20other%20job-hunting%20traps%22%20(March%2016%2C%202023)%3F%0A%0AThanks.",
+    external: true,
+    type: "byline" as const,
+    placeholder: false,
+    original: false,
+    requestPdf: true,
   },
 ] as const;
 
@@ -173,7 +219,7 @@ export const publications = [
   { name: "Municipal World", weight: 300, tracking: "0.02em", style: "italic", uppercase: false },
   { name: "HR News Canada", weight: 400, tracking: "0.04em", style: "italic", uppercase: false },
   { name: "Talent Canada", weight: 700, tracking: "-0.03em", style: "normal", uppercase: false },
-  { name: "The Lawyer's Daily", weight: 400, tracking: "0.01em", style: "italic", uppercase: false },
+  { name: "Law360 Canada", weight: 400, tracking: "0.01em", style: "italic", uppercase: false },
   { name: "HR Professional Now", weight: 500, tracking: "0.12em", style: "normal", uppercase: true },
   { name: "HRD Canada", weight: 700, tracking: "-0.015em", style: "italic", uppercase: false },
 ] as const;
@@ -234,7 +280,7 @@ export const editorialFaqs = [
   { q: "How long is a typical project?", a: "One to three weeks per piece. Urgent pieces can move faster (48-hour minimum). Book-length editing runs longer and scopes separately." },
   { q: "Do you ghostwrite?", a: "Yes, both attributed and unattributed. Many of Evert's bylines began as ghostwriting engagements for HR leaders. The client gets to decide whose name lands on it." },
   { q: "What's the turnaround on urgent work?", a: "48 hours minimum for a one-page memo. Tighter than that, we'll tell you straight whether we can deliver." },
-  { q: "Do you handle technical HR writing?", a: "That's the wheelhouse. 25+ bylines in Canadian HR Reporter, Municipal World, Talent Canada, HR News Canada, and others on HR, employment law, and workplace governance." },
+  { q: "Do you handle technical HR writing?", a: "That's the wheelhouse. Bylines in Canadian HR Reporter, Municipal World, Talent Canada, HR News Canada, Law360 Canada, and others on HR, employment law, and workplace governance." },
   { q: "Can you work in Dutch?", a: "Yes. Evert is Dutch-native and works EN to NL fluently. Useful for Canadian subsidiaries of Dutch parent companies or for North American firms with operations in the Netherlands." },
 ] as const;
 
