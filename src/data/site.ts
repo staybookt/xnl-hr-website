@@ -306,7 +306,7 @@ export const comparison = {
   rows: [
     { label: "Pricing model", traditional: "Monthly retainer, often $5k to $15k", inhouse: "$90k to $160k salary + benefits", xnl: "Fixed-fee project or capped hourly" },
     { label: "Who's on the file", traditional: "Junior staff, partner reviews", inhouse: "One generalist", xnl: "Senior partner directly" },
-    { label: "Time to start", traditional: "Two to six weeks (RFP, onboarding)", inhouse: "Three to six months (hire, ramp)", xnl: "Project-by-project" },
+    { label: "Time to start", traditional: "Two to six weeks (RFP, onboarding)", inhouse: "Three to six months (hire, ramp)", xnl: "Under two weeks" },
     { label: "Specialty depth", traditional: "Broad but generic", inhouse: "Day-to-day only", xnl: "25 years, published" },
     { label: "Lock-in", traditional: "Six- to twelve-month contracts", inhouse: "Permanent overhead", xnl: "Project-by-project" },
   ],
