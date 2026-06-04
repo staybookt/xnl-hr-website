@@ -17,7 +17,7 @@ import { contact, services, faqs, site } from "@/data/site";
 export const metadata: Metadata = {
   title: "XNL HR & Communications · fractional HR, editorial · Newmarket, Ontario",
   description:
-    "Fractional HR and editorial for owner-operated businesses and not-for-profits across Canada. Senior judgment, scoped by the project. Founded 2012 by Evert Akkerman (CHRL, LL.M.). Headquartered in Newmarket, Ontario.",
+    "Fractional HR and editorial for owner-operated Canadian businesses and not-for-profits. Senior judgment, scoped by the project. Founded 2012 by Evert Akkerman (CHRL, LL.M.). Headquartered in Newmarket, Ontario.",
   alternates: { canonical: "/" },
 };
 
@@ -114,7 +114,7 @@ export default function Home() {
               <span className="text-[var(--color-secondary)]">One senior partner each.</span>
             </h2>
             <p className="text-[16px] md:text-[17px] leading-[1.6] text-[var(--color-mute)] max-w-2xl">
-              From handbook updates to wrongful-dismissal prep, Evert handles the full breadth of HR work, scoped per project. We offer on-demand HR support for small and mid-size businesses and serve as a sounding board for entrepreneurs. Editorial extends that breadth to the page.
+              Fractional HR and editorial services for owner-operated Canadian businesses and not-for-profits. One partner on every file. No retainers required. No junior staff.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl">

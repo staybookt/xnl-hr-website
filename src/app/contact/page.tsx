@@ -57,7 +57,6 @@ export default async function Contact({ searchParams }: Props) {
             <p className="text-[28px] md:text-[36px] leading-none tracking-[-0.02em] font-semibold mb-3">
               {contact.phone}
             </p>
-            <p className="text-[13px] text-white/55">{contact.hours}</p>
             <p className="text-[13px] uppercase tracking-[0.14em] font-semibold mt-6 inline-flex items-center gap-1.5 group-hover:gap-3 transition-all">
               Tap to call <span aria-hidden="true">→</span>
             </p>

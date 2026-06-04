@@ -132,8 +132,8 @@ export default function AboutPage() {
                 <div>
                   <p className="eyebrow mb-3">Languages</p>
                   <ul className="space-y-1.5 text-[14px] leading-[1.6] text-[var(--color-ink-soft)]">
-                    <li>English · Native</li>
-                    <li>Nederlands · Native (EN to NL translation)</li>
+                    <li>English · Fluent</li>
+                    <li>Dutch · Native</li>
                   </ul>
                 </div>
               </div>
