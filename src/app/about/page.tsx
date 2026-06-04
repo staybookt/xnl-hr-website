@@ -85,7 +85,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-5 text-[16px] md:text-[17px] leading-[1.7] md:leading-[1.75] text-[var(--color-ink-soft)]">
                 <p>
-                  Evert has been writing about Canadian HR for thirteen years. Op-eds, guest commentary, and feature columns in <span className="font-medium">Canadian HR Reporter</span>, <span className="font-medium">Municipal World</span>, <span className="font-medium">HR News Canada</span>, <span className="font-medium">Talent Canada</span>, <span className="font-medium">Law360 Canada</span>, and <span className="font-medium">The Lawyer&rsquo;s Daily</span>. The throughline: plain, direct, defensible language for senior audiences.
+                  Evert has been writing about Canadian HR for thirteen years. Op-eds, guest commentary, and feature columns in <span className="font-medium">Canadian HR Reporter</span>, <span className="font-medium">Municipal World</span>, <span className="font-medium">HR News Canada</span>, <span className="font-medium">Talent Canada</span>, and <span className="font-medium">Law360 Canada</span>. The throughline: plain, direct, defensible language for senior audiences.
                 </p>
                 <p>
                   Before founding XNL in 2012, Evert managed HR for a Canadian financial institution. He holds an LL.M. from a Dutch law school and a CHRL designation from the Human Resources Professionals Association.
