@@ -262,7 +262,7 @@ export const faqs = [
   { q: "How fast can you start?", a: "Intake call within 48 hours. Scoped proposal in three business days. Live engagement typically within two weeks of the intake. Urgent terminations or active complaints can move faster." },
   { q: "Do you work outside Ontario?", a: "Yes. Most fractional HR engagements are Ontario-based since that's where the legal frameworks (ESA, OHSA, AODA) sit and where Evert is licensed. Editorial work travels anywhere. Out-of-province fractional HR happens case by case, usually for companies with operations in multiple provinces or Canadian subsidiaries of international parents." },
   { q: "What size company is the right fit?", a: "Owner-operated SMBs (roughly 5 to 100 employees) and not-for-profits without a senior HR lead." },
-  { q: "How do I book a call?", a: "Call 289.338.4001 or email info@xnlhr.com. Online booking is not how we work. The intake call is a conversation, and conversations start with a phone or email." },
+  { q: "How do I book a call?", a: "Call 289.338.4001 or email info@xnlhr.com. Online booking is not how we work. The intake call is a conversation, and conversations start with a phone call or email." },
   { q: "What if I'm not sure XNL is the right fit?", a: "That's what the 30-minute intake call is for. No cost, no obligation. If we're not the right fit, we'll tell you straight, and we'll refer you to someone who is." },
 ] as const;
 
@@ -306,7 +306,7 @@ export const comparison = {
   rows: [
     { label: "Pricing model", traditional: "Monthly retainer, often $5k to $15k", inhouse: "$90k to $160k salary + benefits", xnl: "Fixed-fee project or capped hourly" },
     { label: "Who's on the file", traditional: "Junior staff, partner reviews", inhouse: "One generalist", xnl: "Senior partner directly" },
-    { label: "Time to start", traditional: "Two to six weeks (RFP, onboarding)", inhouse: "Three to six months (hire, ramp)", xnl: "Under two weeks" },
+    { label: "Time to start", traditional: "Two to six weeks (RFP, onboarding)", inhouse: "Three to six months (hire, ramp)", xnl: "Project-by-project" },
     { label: "Specialty depth", traditional: "Broad but generic", inhouse: "Day-to-day only", xnl: "25 years, published" },
     { label: "Lock-in", traditional: "Six- to twelve-month contracts", inhouse: "Permanent overhead", xnl: "Project-by-project" },
   ],
