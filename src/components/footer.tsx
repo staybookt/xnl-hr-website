@@ -55,7 +55,6 @@ export function Footer() {
               <li><a href={`tel:${contact.phoneE164}`} className="hover:text-white transition-colors">{contact.phone}</a></li>
               <li><a href={`mailto:${contact.email}`} className="hover:text-white transition-colors break-all">{contact.email}</a></li>
               <li className="text-white/65">{contact.address.locality}, {contact.address.region}</li>
-              <li className="text-white/55">{contact.hours}</li>
             </ul>
           </div>
 
