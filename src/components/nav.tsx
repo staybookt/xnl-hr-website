@@ -58,10 +58,13 @@ export function Nav() {
                 {item.label}
               </Link>
             ))}
-            {/* Book a call — always coral on both light and dark chrome for readability. */}
+            {/* Book a call — always coral with white text. Inline style forces
+                #ffffff so it can't be overridden by global link or nav color
+                rules (Tailwind text-white was getting suppressed on /contact). */}
             <Link
               href="/contact"
-              className="text-[14px] font-semibold rounded-full px-5 py-2.5 bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-deep)] transition-colors shadow-sm"
+              style={{ color: "#ffffff" }}
+              className="text-[14px] font-semibold rounded-full px-5 py-2.5 bg-[var(--color-brand)] hover:bg-[var(--color-brand-deep)] transition-colors shadow-sm"
             >
               Book a call
             </Link>
@@ -119,7 +122,8 @@ export function Nav() {
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="mt-2 inline-flex w-fit rounded-full bg-[var(--color-brand)] text-white px-6 py-3 text-[15px] font-semibold"
+              style={{ color: "#ffffff" }}
+              className="mt-2 inline-flex w-fit rounded-full bg-[var(--color-brand)] px-6 py-3 text-[15px] font-semibold"
             >
               Book a call
             </Link>
