@@ -93,14 +93,25 @@ export function Nav() {
           </button>
         </div>
 
+        {/* Mobile menu — matches chrome state so it doesn't drop down as a
+            jarring dark block on light pages. Light pages → paper menu with
+            dark text. Dark hero pages (unscrolled) → ink menu with white text. */}
         {mobileOpen && (
-          <nav className="md:hidden flex flex-col py-8 gap-6 border-t border-white/15 bg-[var(--color-ink)] -mx-6 px-6">
+          <nav
+            className={`md:hidden flex flex-col py-8 gap-6 -mx-6 px-6 border-t ${
+              useLightChrome
+                ? "bg-[var(--color-ink)] border-white/15"
+                : "bg-[var(--color-paper)] border-[var(--color-rule)]"
+            }`}
+          >
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-[19px] font-medium text-white"
+                className={`text-[19px] font-medium ${
+                  useLightChrome ? "text-white" : "text-[var(--color-ink)]"
+                }`}
               >
                 {item.label}
               </Link>
