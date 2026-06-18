@@ -82,6 +82,16 @@ export const credentials = ["Since 2012", "CHRL", "LL.M. (NL)", "Randstad Innova
 
 export const testimonials = [
   {
+    quote: "As always, Evert, thank you for your professionalism and for your guidance as we navigate HR matters. Your support is much appreciated.",
+    name: "Joe Rizzi",
+    title: "President",
+    org: "Ice Works Bath Co.",
+    location: "Newmarket, Ontario",
+    date: "June 2026",
+    engagement: "Ongoing HR advisory",
+    practice: "hr" as const,
+  },
+  {
     quote: "Doing the reviews together was so productive. The whole process has been a very positive one for me personally and helped me more clearly understand what my expectations are and what a reasonable expectation from an HR lens is. I appreciate your clear thinking and your insights. I am so relieved; you are very skilled at what you do, and I am so grateful that Jim recommended you. The Partners are all pleased with your professionalism, efficiency, and the results of this project.",
     name: "Ruthie Burd",
     title: "Founder & President",
