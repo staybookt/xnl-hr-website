@@ -1,4 +1,5 @@
 import { Container } from "@/components/container";
+import { TrackedLink } from "@/components/tracked-link";
 import { contact, principals, scenarios } from "@/data/site";
 
 export const metadata = {
@@ -47,8 +48,10 @@ export default async function Contact({ searchParams }: Props) {
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14">
-          <a
+          <TrackedLink
             href={`tel:${contact.phoneE164}`}
+            event="call_click"
+            properties={{ location: "contact_page", scenario: scenario?.key ?? "none" }}
             className="group block rounded-3xl bg-[var(--color-ink)] text-white p-8 md:p-10 hover:bg-[var(--color-slate)] transition-colors"
           >
             <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-[var(--color-brand)] mb-4">
@@ -60,10 +63,12 @@ export default async function Contact({ searchParams }: Props) {
             <p className="text-[13px] uppercase tracking-[0.14em] font-semibold mt-6 inline-flex items-center gap-1.5 group-hover:gap-3 transition-all">
               Tap to call <span aria-hidden="true">→</span>
             </p>
-          </a>
+          </TrackedLink>
 
-          <a
+          <TrackedLink
             href={`mailto:${contact.email}?subject=${encodeURIComponent(scenario ? `XNL inquiry · ${scenario.label}` : "XNL intake request")}`}
+            event="email_click"
+            properties={{ location: "contact_page", scenario: scenario?.key ?? "none" }}
             className="group block rounded-3xl bg-[var(--color-surface)] border border-[var(--color-rule)] p-8 md:p-10 hover:border-[var(--color-rule-strong)] transition-colors"
           >
             <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-[var(--color-secondary-deep)] mb-4">
@@ -76,7 +81,7 @@ export default async function Contact({ searchParams }: Props) {
             <p className="text-[13px] uppercase tracking-[0.14em] font-semibold text-[var(--color-slate)] mt-6 inline-flex items-center gap-1.5 group-hover:gap-3 transition-all">
               Open mail <span aria-hidden="true">→</span>
             </p>
-          </a>
+          </TrackedLink>
         </div>
 
         <div className="mt-10 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-rule)] p-6 md:p-8">
