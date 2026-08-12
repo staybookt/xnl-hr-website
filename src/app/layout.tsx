@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Caveat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -113,6 +115,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <StickyBookingBar />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
